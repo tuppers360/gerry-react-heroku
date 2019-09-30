@@ -47,7 +47,7 @@ export const HolliesStory = () => (
             <div className="card rounded-0">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_1.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_1.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -55,7 +55,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_3.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_3.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -63,7 +63,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_4.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_4.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -75,7 +75,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_2.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_2.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -83,7 +83,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_5.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_5.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -91,7 +91,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_8.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_8.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -193,7 +193,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_1.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_1.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -201,7 +201,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_3.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_3.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -209,7 +209,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_4.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_4.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -221,7 +221,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_2.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_2.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -229,7 +229,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_5.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_5.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>
@@ -237,7 +237,7 @@ export const HolliesStory = () => (
             <div className="card">
               <img
                 className="card-img"
-                src="%PUBLIC_URL%/images/hollie_8.jpg"
+                src={process.env.PUBLIC_URL + "images/hollie_8.jpg"}
                 alt="Card"
               />
               <div className="card-img-overlay"></div>

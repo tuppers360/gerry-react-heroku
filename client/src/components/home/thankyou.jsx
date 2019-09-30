@@ -9,7 +9,7 @@ export const ThankYou = () => (
           <div className="card">
             <img
               className="card-img"
-              src="%PUBLIC_URL%/images/thankyou_1.jpg"
+              src={process.env.PUBLIC_URL + "images/thankyou_1.jpg"}
               alt="Card"
             />
             <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
@@ -25,7 +25,7 @@ export const ThankYou = () => (
           <div className="card">
             <img
               className="card-img"
-              src="%PUBLIC_URL%/images/thankyou_2.jpg"
+              src={process.env.PUBLIC_URL + "images/thankyou_2.jpg"}
               alt="Card"
             />
             <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
@@ -45,7 +45,7 @@ export const ThankYou = () => (
           <div className="card">
             <img
               className="card-img-top"
-              src="%PUBLIC_URL%/images/thankyou_3.jpg"
+              src={process.env.PUBLIC_URL + "images/thankyou_3.jpg"}
               alt="Bologna"
             />
             <div className="card-body">
@@ -61,7 +61,7 @@ export const ThankYou = () => (
           <div className="card">
             <img
               className="card-img-top"
-              src="%PUBLIC_URL%/images/thankyou_4.jpg"
+              src={process.env.PUBLIC_URL + "images/thankyou_4.jpg"}
               alt="Bologna"
             />
             <div className="card-body">
@@ -77,7 +77,7 @@ export const ThankYou = () => (
           <div className="card">
             <img
               className="card-img-top"
-              src="%PUBLIC_URL%/images/thankyou_5.jpg"
+              src={process.env.PUBLIC_URL + "images/thankyou_5.jpg"}
               alt="Bologna"
             />
             <div className="card-body">

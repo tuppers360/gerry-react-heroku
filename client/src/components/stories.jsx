@@ -13,7 +13,7 @@ export const Stories = () => (
         <div className="card">
           <img
             className="card-img-top"
-            src="%PUBLIC_URL%/images/nepal.jpg"
+            src={process.env.PUBLIC_URL + "images/nepal.jpg"}
             alt="Flex Card 1"
           />
           <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
@@ -31,7 +31,7 @@ export const Stories = () => (
         <div className="card">
           <img
             className="card-img-top"
-            src="%PUBLIC_URL%/images/stories.jpg"
+            src={process.env.PUBLIC_URL + "images/stories.jpg"}
             alt="Flex Card 1"
           />
           <div className="card-img-overlay text-white d-flex flex-column text-center justify-content-center">
@@ -41,7 +41,7 @@ export const Stories = () => (
         <div className="card">
           <img
             className="card-img-top"
-            src="%PUBLIC_URL%/images/stories.jpg"
+            src={process.env.PUBLIC_URL + "images/stories.jpg"}
             alt="Flex Card 1"
           />
           <div className="card-img-overlay text-white d-flex flex-column text-center justify-content-center">
@@ -53,7 +53,7 @@ export const Stories = () => (
         <div className="card">
           <img
             className="card-img-top"
-            src="%PUBLIC_URL%/images/stories.jpg"
+            src={process.env.PUBLIC_URL + "images/stories.jpg"}
             alt="Flex Card 1"
           />
           <div className="card-img-overlay text-white d-flex flex-column text-center justify-content-center">
@@ -63,7 +63,7 @@ export const Stories = () => (
         <div className="card">
           <img
             className="card-img-top"
-            src="%PUBLIC_URL%/images/stories.jpg"
+            src={process.env.PUBLIC_URL + "images/stories.jpg"}
             alt="Flex Card 1"
           />
           <div className="card-img-overlay text-white d-flex flex-column text-center justify-content-center">
@@ -73,7 +73,7 @@ export const Stories = () => (
         <div className="card">
           <img
             className="card-img-top"
-            src="%PUBLIC_URL%/images/stories.jpg"
+            src={process.env.PUBLIC_URL + "images/stories.jpg"}
             alt="Flex Card 1"
           />
           <div className="card-img-overlay text-white d-flex flex-column text-center justify-content-center">
