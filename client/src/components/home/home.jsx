@@ -1,17 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ThankYou } from "./home/thankyou";
+import { ThankYou } from "../thankyou";
+import BlackpoolTower from "./blackpool_tower_darker_resize.png";
 
 export const Home = () => (
   <React.Fragment>
     <div className="landing">
       <div className="home-wrap">
         <div className="home-inner">
-          <img
-            src="/images/blackpool_tower_darker_resize.png"
-            className="home-inner-img"
-            alt=""
-          />
+          <img src={BlackpoolTower} className="home-inner-img" alt="" />
         </div>
       </div>
     </div>
