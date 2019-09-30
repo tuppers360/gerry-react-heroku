@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import NavBar from "./components/navBar";
+import { Route, Switch } from "react-router-dom";
+import { Home } from "./components/home";
+import { About } from "./components/about";
+import { Apply } from "./components/apply";
+import { Contact } from "./components/contact";
+import { Footer } from "./components/footer";
+import { Stories } from "./components/stories";
+import { HolliesStory } from "./components/stories/holliesStory";
+import { NoMatch } from "./components/noMatch";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <NavBar />
+        <main>
+          <Switch>
+            <Route path="/stories/hollies-story" component={HolliesStory} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/stories" component={Stories} />
+            <Route path="/apply" component={Apply} />
+            <Route path="/" component={Home} />
+            <Route component={NoMatch}></Route>
+          </Switch>
+        </main>
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
