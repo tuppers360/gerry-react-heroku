@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ThankYou } from "../thankyou";
 import BlackpoolTower from "./blackpool_tower_darker_resize.png";
+import Nepal from "./nepal.jpg";
+import StoriesImage from "./stories.jpg";
 
 export const Home = () => (
   <React.Fragment>
@@ -49,11 +51,7 @@ export const Home = () => (
     <section className="homeStories">
       <div className="card-group">
         <div className="card">
-          <img
-            className="card-img-top"
-            src="/images/nepal.jpg"
-            alt="Flex Card 1"
-          />
+          <img className="card-img-top" src={Nepal} alt="Flex Card 1" />
           <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
             <h1 className="text-center">Hollies Story</h1>
             <p className="card-text text-right">
@@ -67,11 +65,7 @@ export const Home = () => (
           </div>
         </div>
         <div className="card">
-          <img
-            className="card-img-top"
-            src="/images/stories.jpg"
-            alt="Flex Card 1"
-          />
+          <img className="card-img-top" src={StoriesImage} alt="Flex Card 1" />
           <div className="card-img-overlay text-white d-flex flex-column text-center justify-content-center">
             <h4 className="card-title text-warning">Our Goal</h4>
             <h1 className="card-subtitle mb-2">
@@ -87,6 +81,6 @@ export const Home = () => (
       </div>
     </section>
     {/* End Jumbotron Section */}
-    <ThankYou />
+    {/* <ThankYou /> */}
   </React.Fragment>
 );
