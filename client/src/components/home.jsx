@@ -8,10 +8,7 @@ export const Home = () => (
       <div className="home-wrap">
         <div className="home-inner">
           <img
-            src={
-              process.env.PUBLIC_URL +
-              "images/blackpool_tower_darker_resize.png"
-            }
+            src="/images/blackpool_tower_darker_resize.png"
             className="home-inner-img"
             alt=""
           />
@@ -57,7 +54,7 @@ export const Home = () => (
         <div className="card">
           <img
             className="card-img-top"
-            src={process.env.PUBLIC_URL + "images/nepal.jpg"}
+            src="/images/nepal.jpg"
             alt="Flex Card 1"
           />
           <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
@@ -75,7 +72,7 @@ export const Home = () => (
         <div className="card">
           <img
             className="card-img-top"
-            src={process.env.PUBLIC_URL + "images/stories.jpg"}
+            src="/images/stories.jpg"
             alt="Flex Card 1"
           />
           <div className="card-img-overlay text-white d-flex flex-column text-center justify-content-center">

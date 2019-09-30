@@ -45,27 +45,15 @@ export const HolliesStory = () => (
         <div className="row">
           <div className="card-group hollieStory">
             <div className="card rounded-0">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_1.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_1.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_3.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_3.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_4.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_4.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
           </div>
@@ -73,27 +61,15 @@ export const HolliesStory = () => (
         <div className="row">
           <div className="card-group hollieStory">
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_2.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_2.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_5.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_5.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_8.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_8.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
           </div>
@@ -191,27 +167,15 @@ export const HolliesStory = () => (
         <div className="row">
           <div className="card-deck">
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_1.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_1.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_3.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_3.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_4.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_4.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
           </div>
@@ -219,27 +183,15 @@ export const HolliesStory = () => (
         <div className="row">
           <div className="card-deck">
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_2.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_2.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_5.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_5.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img
-                className="card-img"
-                src={process.env.PUBLIC_URL + "images/hollie_8.jpg"}
-                alt="Card"
-              />
+              <img className="card-img" src="/images/hollie_8.jpg" alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
           </div>
