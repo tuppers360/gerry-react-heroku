@@ -151,6 +151,10 @@ h3.heading {
   text-transform: uppercase;
   font-weight: 700;
 }
+.thankyou .card {
+  margin-top: -1rem;
+  border: none;
+}
 .thankyou .card-subtitle {
   font-size: 2rem;
   font-weight: 700;

@@ -1,4 +1,9 @@
 import React from "react";
+import Thankyou1 from "./thankyou_1.jpg";
+import Thankyou2 from "./thankyou_2.jpg";
+import Thankyou3 from "./thankyou_3.jpg";
+import Thankyou4 from "./thankyou_4.jpg";
+import Thankyou5 from "./thankyou_5.jpg";
 
 export const ThankYou = () => (
   <React.Fragment>
@@ -7,7 +12,7 @@ export const ThankYou = () => (
       <div className="row">
         <div className="card-deck narrow">
           <div className="card">
-            <img className="card-img" src="/images/thankyou_1.jpg" alt="Card" />
+            <img className="card-img" src={Thankyou1} alt="Card" />
             <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
               <h4 className="card-title text-light">Thank you</h4>
               <h6 className="card-subtitle mb-2">Some Local Group</h6>
@@ -19,7 +24,7 @@ export const ThankYou = () => (
             </div>
           </div>
           <div className="card">
-            <img className="card-img" src="/images/thankyou_2.jpg" alt="Card" />
+            <img className="card-img" src={Thankyou2} alt="Card" />
             <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
               <h4 className="card-title text-warning">Thank you</h4>
               <h6 className="card-subtitle mb-2">Some Local Group</h6>
@@ -35,11 +40,7 @@ export const ThankYou = () => (
       <div className="row">
         <div className="card-deck narrow">
           <div className="card">
-            <img
-              className="card-img-top"
-              src="/images/thankyou_3.jpg"
-              alt="Bologna"
-            />
+            <img className="card-img-top" src={Thankyou3} alt="Bologna" />
             <div className="card-body">
               <h5 className="card-title">Thank you</h5>
               <h6 className="card-subtitle mb-2">Some Local Group</h6>
@@ -51,11 +52,7 @@ export const ThankYou = () => (
             </div>
           </div>
           <div className="card">
-            <img
-              className="card-img-top"
-              src="/images/thankyou_4.jpg"
-              alt="Bologna"
-            />
+            <img className="card-img-top" src={Thankyou4} alt="Bologna" />
             <div className="card-body">
               <h5 className="card-title">Thank you</h5>
               <h6 className="card-subtitle mb-2">Some Local Group</h6>
@@ -67,11 +64,7 @@ export const ThankYou = () => (
             </div>
           </div>
           <div className="card">
-            <img
-              className="card-img-top"
-              src="/images/thankyou_5.jpg"
-              alt="Bologna"
-            />
+            <img className="card-img-top" src={Thankyou5} alt="Bologna" />
             <div className="card-body">
               <h5 className="card-title">Thank you</h5>
               <h6 className="card-subtitle mb-2">Some Local Group</h6>

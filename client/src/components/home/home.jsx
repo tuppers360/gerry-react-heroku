@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ThankYou } from "../thankyou";
+import { ThankYou } from "./../thankyou/thankyou";
 import BlackpoolTower from "./blackpool_tower_darker_resize.png";
 import Nepal from "./nepal.jpg";
 import StoriesImage from "./stories.jpg";
@@ -81,6 +81,6 @@ export const Home = () => (
       </div>
     </section>
     {/* End Jumbotron Section */}
-    {/* <ThankYou /> */}
+    <ThankYou />
   </React.Fragment>
 );
