@@ -2,9 +2,9 @@ import React from "react";
 
 export const Apply = () => (
   <React.Fragment>
-    <section id="top" class="jumbotron header-jumbotron">
-      <div class="narrow">
-        <h1 class="jumbotron-heading">Apply</h1>
+    <section id="top" className="jumbotron header-jumbotron">
+      <div className="narrow">
+        <h1 className="jumbotron-heading">Apply</h1>
       </div>
     </section>
     <div className="narrow">

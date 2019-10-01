@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import NavBar from "./components/navBar";
+import Navigationbar from "./components/navigationbar";
+import ScrollToTop from "./components/scrollToTop";
 import { Route, Switch } from "react-router-dom";
 import { Home } from "./components/home/home";
 import { About } from "./components/about";
@@ -15,19 +16,21 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar />
-        <main>
-          <Switch>
-            <Route path="/stories/hollies-story" component={HolliesStory} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/stories" component={Stories} />
-            <Route path="/apply" component={Apply} />
-            <Route path="/" component={Home} />
-            <Route component={NoMatch}></Route>
-          </Switch>
-        </main>
-        <Footer />
+        <Navigationbar />
+        <ScrollToTop>
+          <main>
+            <Switch>
+              <Route path="/stories/hollies-story" component={HolliesStory} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/stories" component={Stories} />
+              <Route path="/apply" component={Apply} />
+              <Route path="/" component={Home} />
+              <Route component={NoMatch}></Route>
+            </Switch>
+          </main>
+          <Footer />
+        </ScrollToTop>
       </React.Fragment>
     );
   }
