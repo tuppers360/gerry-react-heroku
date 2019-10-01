@@ -1,4 +1,12 @@
 import React from "react";
+import HollieStory_1 from "./hollie_1.jpg";
+import HollieStory_2 from "./hollie_2.jpg";
+import HollieStory_3 from "./hollie_3.jpg";
+import HollieStory_4 from "./hollie_4.jpg";
+import HollieStory_5 from "./hollie_5.jpg";
+import HollieStory_6 from "./hollie_6.jpg";
+import HollieStory_7 from "./hollie_7.jpg";
+import HollieStory_8 from "./hollie_8.jpg";
 
 export const HolliesStory = () => (
   <React.Fragment>
@@ -45,15 +53,15 @@ export const HolliesStory = () => (
         <div className="row">
           <div className="card-group hollieStory">
             <div className="card rounded-0">
-              <img className="card-img" src="/images/hollie_1.jpg" alt="Card" />
+              <img className="card-img" src={HollieStory_1} alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img className="card-img" src="/images/hollie_3.jpg" alt="Card" />
+              <img className="card-img" src={HollieStory_3} alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img className="card-img" src="/images/hollie_4.jpg" alt="Card" />
+              <img className="card-img" src={HollieStory_4} alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
           </div>
@@ -61,15 +69,15 @@ export const HolliesStory = () => (
         <div className="row">
           <div className="card-group hollieStory">
             <div className="card">
-              <img className="card-img" src="/images/hollie_2.jpg" alt="Card" />
+              <img className="card-img" src={HollieStory_2} alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img className="card-img" src="/images/hollie_5.jpg" alt="Card" />
+              <img className="card-img" src={HollieStory_5} alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img className="card-img" src="/images/hollie_8.jpg" alt="Card" />
+              <img className="card-img" src={HollieStory_8} alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
           </div>
@@ -165,33 +173,17 @@ export const HolliesStory = () => (
       </p>
       <section>
         <div className="row">
-          <div className="card-deck">
+          <div className="card-group hollieStory">
             <div className="card">
-              <img className="card-img" src="/images/hollie_1.jpg" alt="Card" />
+              <img className="card-img" src={HollieStory_6} alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img className="card-img" src="/images/hollie_3.jpg" alt="Card" />
+              <img className="card-img" src={HollieStory_7} alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
             <div className="card">
-              <img className="card-img" src="/images/hollie_4.jpg" alt="Card" />
-              <div className="card-img-overlay"></div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="card-deck">
-            <div className="card">
-              <img className="card-img" src="/images/hollie_2.jpg" alt="Card" />
-              <div className="card-img-overlay"></div>
-            </div>
-            <div className="card">
-              <img className="card-img" src="/images/hollie_5.jpg" alt="Card" />
-              <div className="card-img-overlay"></div>
-            </div>
-            <div className="card">
-              <img className="card-img" src="/images/hollie_8.jpg" alt="Card" />
+              <img className="card-img" src={HollieStory_7} alt="Card" />
               <div className="card-img-overlay"></div>
             </div>
           </div>

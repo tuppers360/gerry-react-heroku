@@ -6,8 +6,8 @@ import { About } from "./components/about";
 import { Apply } from "./components/apply";
 import { Contact } from "./components/contact";
 import { Footer } from "./components/footer";
-import { Stories } from "./components/stories";
-import { HolliesStory } from "./components/stories/holliesStory";
+import { Stories } from "./components/stories/stories";
+import { HolliesStory } from "./components/stories/holliesStory/holliesStory";
 import { NoMatch } from "./components/noMatch";
 import "./App.css";
 

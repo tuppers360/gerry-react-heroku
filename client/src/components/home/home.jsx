@@ -54,7 +54,7 @@ export const Home = () => (
           <img className="card-img-top" src={Nepal} alt="Flex Card 1" />
           <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
             <h1 className="text-center">Hollies Story</h1>
-            <p className="card-text text-right">
+            <p className="card-text text-center">
               <Link
                 to="/stories/hollies-story"
                 className="btn btn-lg btn-primary"
