@@ -259,3 +259,14 @@ footer .social .fa-instagram:hover {
   background-image: url("./assets/beachImage.jpg") !important;
   background-size: cover !important;
 } */
+
+.error {
+  color: red;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.inputError {
+  border-color: red;
+  border-width: 1px;
+}
