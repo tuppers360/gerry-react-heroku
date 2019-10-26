@@ -3,13 +3,18 @@ import useForm from "./../utils/useForm.component";
 import validate from "./../utils/validate";
 
 const ContactForm = () => {
+  //TODO: using this causes error of changing uncontrolled input
+  //const initialValues = { name: "", email: "", message: "" };
+
   const { handleChange, handleSubmit, handleBlur, values, errors } = useForm(
+    //initialValues,
     submit,
     validate
   );
 
   function submit() {
-    console.log("Submitted Successfully");
+    console.log("No errors, submit callback called!");
+    console.log("Submitted Successfully", values, errors);
   }
 
   return (
@@ -47,7 +52,7 @@ const ContactForm = () => {
         <small id="emailHelp" className="form-text text-muted">
           We'll never share your email with anyone else.
         </small>
-        {errors.name && <p className="error">{errors.name}</p>}
+        {errors.email && <p className="error">{errors.email}</p>}
       </div>
       <div className="form-group">
         <label htmlFor="message">Message</label>

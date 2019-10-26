@@ -28,14 +28,14 @@ const useForm = (callback, validate) => {
     if (isSubmitting) {
       const noErrors = Object.keys(errors).length === 0;
       if (noErrors) {
-        console.log("Submitted Successfully", values, errors);
+        callback();
         setIsSubmitting(false);
       } else {
         console.log("NOT Submitted Successfully", values, errors);
         setIsSubmitting(false);
       }
     }
-  }, [errors, isSubmitting, values]);
+  }, [errors, isSubmitting, values, callback]);
 
   return {
     handleChange,
