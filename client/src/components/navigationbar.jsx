@@ -34,10 +34,6 @@ const Styles = styled.div`
     background: rgba(12, 91, 136, 1) !important;
     transition: background-color 1s ease 0s;
   }
-  .custom-margin-top {
-    color: black;
-    margin-top: 4rem;
-  }
 `;
 
 const RouterNavLink = ({ children, ...props }) => (
