@@ -17,40 +17,6 @@ body {
 [class*="col-"] {
   padding: 1rem;
 }
-/*====================== Navigation ======================*/
-
-.navbar {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.1rem;
-  /* background: #0c5b88 !important; */
-  padding: 0.7rem 1rem;
-  transition: background-color 0.5s ease 0s;
-}
-.navbar-brand {
-  color: white;
-  height: 2rem;
-}
-.navbar-nav li {
-  padding-right: 0.7rem;
-}
-.navbar-nav .nav-link {
-  color: white;
-  padding-top: 0.8rem;
-}
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:hover {
-  color: #9ad1ec;
-}
-.navbar.always-solid {
-  background: rgba(12, 91, 136, 1) !important;
-  transition: background-color 1s ease 0s;
-}
-.custom-margin-top {
-  color: black;
-  margin-top: 4rem;
-}
 
 /*====================== Landing Section ======================*/
 
@@ -84,9 +50,9 @@ body {
 /*====================== Mission Section ======================*/
 
 .narrow {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 .btn-sm {
   border-width: medium;
@@ -98,10 +64,9 @@ body {
   margin: 1rem;
 }
 .jumbotron {
-  margin-top: 3rem;
   margin-bottom: 0;
   border-radius: 0;
-  padding: 0.5rem 0 1rem;
+  padding: 1rem 0 1rem 0;
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -130,7 +95,6 @@ h3.heading {
 }
 /* ============ HOME STORIES SECTION ===============*/
 .homeStories .card {
-  margin-top: -1rem;
   border: none;
 }
 .homeStories img {
@@ -152,7 +116,7 @@ h3.heading {
   font-weight: 700;
 }
 .thankyou .card {
-  margin-top: -1rem;
+  margin-top: 1rem;
   border: none;
 }
 .thankyou .card-subtitle {
