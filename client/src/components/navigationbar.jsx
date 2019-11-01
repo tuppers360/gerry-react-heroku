@@ -1,55 +1,79 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Nav, Navbar, Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import styled from "styled-components";
+import logo from "../assets/crown.svg";
+
+const Styles = styled.div`
+  .navbar {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    /* background: #0c5b88 !important; */
+    transition: background-color 0.5s ease 0s;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+  .navbar-brand {
+    color: white;
+    height: 2rem;
+  }
+  .navbar-nav {
+    align-items: center;
+  }
+  .navbar-nav .nav-link {
+    color: white;
+    padding-top: 0.8rem;
+    align-items: center;
+  }
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link:hover {
+    color: #9ad1ec;
+  }
+  .navbar.always-solid {
+    background: rgba(12, 91, 136, 1) !important;
+    transition: background-color 1s ease 0s;
+  }
+  .custom-margin-top {
+    color: black;
+    margin-top: 4rem;
+  }
+`;
+
+const RouterNavLink = ({ children, ...props }) => (
+  <LinkContainer {...props}>
+    <Nav.Link active={false}>{children}</Nav.Link>
+  </LinkContainer>
+);
 
 const NavigationBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top always-solid">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          GRT
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="custom-toggler-icon">
-            <i className="fa fa-bars"></i>
-          </span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto">
-            <li className="nav-item active">
-              <NavLink className="nav-link" to="/">
-                Home<span className="sr-only">(current)</span>
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/stories">
-                Stories
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
-                About Us
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/contact">
-                Contact Us
-              </NavLink>
-            </li>
-          </ul>
-          <Link className="btn btn-lg btn-danger" to="/#mission">
-            Donate
-          </Link>
-        </div>
-      </div>
-    </nav>
+    <Styles>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <LinkContainer to="/">
+          <Navbar.Brand>
+            <img
+              src={logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
+        </LinkContainer>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mx-auto">
+            <RouterNavLink to="/stories">Stories</RouterNavLink>
+            <RouterNavLink to="/contact">Contact</RouterNavLink>
+            <RouterNavLink to="/about">About</RouterNavLink>
+          </Nav>
+          <RouterNavLink to="/donate">
+            <Button className="btn btn-lg btn-danger">Donate</Button>
+          </RouterNavLink>
+        </Navbar.Collapse>
+      </Navbar>
+    </Styles>
   );
 };
 

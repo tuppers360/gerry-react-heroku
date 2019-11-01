@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navigationbar from "./components/navigationbar";
+import NavigationBar from "./components/navigationbar";
 import ScrollToTop from "./components/scrollToTop";
 import { Route, Switch } from "react-router-dom";
 import { Home } from "./components/home/home";
@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navigationbar />
+        <NavigationBar />
         <ScrollToTop>
           <main>
             <Switch>
