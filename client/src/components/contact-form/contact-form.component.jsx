@@ -1,6 +1,6 @@
 import React from "react";
 import useForm from "./../utils/useForm.component";
-import validate from "./../utils/validate";
+import validate from "../utils/validateContactForm";
 
 const ContactForm = () => {
   //TODO: using this causes error of changing uncontrolled input
@@ -27,7 +27,7 @@ const ContactForm = () => {
           }`}
           name="name"
           type="text"
-          aria-describedby="emailHelp"
+          aria-describedby="Name Help"
           placeholder="Enter name"
           value={values.name}
           onChange={handleChange}
@@ -43,7 +43,7 @@ const ContactForm = () => {
           className={`${
             errors.email ? "form-control inputError" : "form-control"
           }`}
-          aria-describedby="emailHelp"
+          aria-describedby="Email Help"
           placeholder="Enter email"
           value={values.email}
           onChange={handleChange}
@@ -62,7 +62,7 @@ const ContactForm = () => {
           className={`${
             errors.message ? "form-control inputError" : "form-control"
           }`}
-          aria-describedby="emailHelp"
+          aria-describedby="Message Help text"
           placeholder="Enter your message"
           value={values.message}
           onChange={handleChange}
