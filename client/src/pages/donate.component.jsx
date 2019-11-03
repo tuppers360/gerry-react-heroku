@@ -28,16 +28,16 @@ const Donate = () => {
             <div className="text-center">
               <h2>Donate and help the local youths of Blackpool</h2>
 
-              <h3>You're donating £{donation}</h3>
+              <h3 className="mt-5">You're donating £{donation}</h3>
 
-              <div>
+              <div className="mt-5">
                 <img
                   src={GiftAidLogo}
                   className="home-inner-img"
                   alt="Gift Aid"
                 />
               </div>
-              <p>
+              <p className="mt-3">
                 Are you a UK tax payer? With Gift Aid, your donation of £
                 {donation} would be worth £{donation * 1.25} at no extra cost to
                 you.
@@ -45,7 +45,7 @@ const Donate = () => {
               <span className="btn btn-warning btn-lg">
                 Boost your donation
               </span>
-              <div className="form-check">
+              <div className="form-check mt-3">
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -57,19 +57,19 @@ const Donate = () => {
                   Please claim Gift Aid on my behalf
                 </label>
               </div>
-              <p>
+              <small className="mt-5">
                 I confirm that this is my own money and I would like The Gerry
-                Richardson Trust to treat all the donations I have made for the
-                past 4 years and any future donations I make, unless I notify
+                Richardson Trust to treat all the donations I have made in the
+                past (if any) and any future donations I make, unless I notify
                 you otherwise, as Gift Aid donations.
-              </p>
-              <p>
+              </small>
+              <small>
                 I also confirm that I am a UK taxpayer and understand that if I
                 pay less Income Tax and/or Capital Gains Tax in the current tax
                 year than the amount of Gift Aid claimed on all my donations it
                 is my responsibility to pay any difference.
-              </p>
-              <div className="input-group input-group-lg test-align">
+              </small>
+              <div className="input-group input-group-lg test-align mt-3">
                 <label htmlFor="donation"></label>
                 <input
                   name="donation"
@@ -80,7 +80,7 @@ const Donate = () => {
                   onChange={handleChange}
                 />
               </div>
-              <div>
+              <div className="mt-3">
                 <StripeCheckoutButton donation={donation} />
               </div>
             </div>
