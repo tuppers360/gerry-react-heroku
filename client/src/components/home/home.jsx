@@ -1,17 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ThankYou } from "./../thankyou/thankyou";
-import BlackpoolTower from "./blackpool_tower_darker_resize.png";
+import GerryLogo from "./source1-resize.png";
 import Nepal from "./nepal.jpg";
 import StoriesImage from "./stories.jpg";
 
 export const Home = () => (
   <React.Fragment>
-    <div className="landing">
+    <div className="landing col-md-12 col-xs-10">
       <div className="home-wrap">
-        <div className="home-inner">
-          <img src={BlackpoolTower} className="home-inner-img" alt="" />
-        </div>
+        <div className="home-inner text-center"></div>
       </div>
     </div>
     <div className="caption text-center">

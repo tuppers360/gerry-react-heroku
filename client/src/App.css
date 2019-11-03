@@ -19,9 +19,13 @@ body {
 }
 
 /*====================== Landing Section ======================*/
-
+.landing {
+  background-color: #0c5b88 !important;
+  height: 1000px;
+}
 .home-inner img {
   background-size: cover;
+  border: none;
 }
 .caption {
   width: 100%;

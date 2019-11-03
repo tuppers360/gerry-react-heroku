@@ -9,7 +9,7 @@ const Styles = styled.div`
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.1rem;
-    /* background: #0c5b88 !important; */
+    background: #0c5b88 !important;
     transition: background-color 0.5s ease 0s;
     padding-left: 10px;
     padding-right: 5px;
