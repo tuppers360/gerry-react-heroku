@@ -234,3 +234,8 @@ footer .social .fa-instagram:hover {
   border-color: red;
   border-width: 1px;
 }
+
+.test-align {
+  display: inline-block;
+  text-align: center;
+}
