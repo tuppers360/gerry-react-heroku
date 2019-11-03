@@ -5,6 +5,8 @@ import axios from "axios";
 const StripeCheckoutButton = ({ donation }) => {
   const priceForStripe = donation * 100;
   const publishableKey = "pk_test_mulYoJrIT0rm9q96siCf8uxp00G8VFbxYd";
+  //TODO: change so that key is pulled from .env variable instead of hardcoding
+  //const publishableKey = {process.env.STRIPE_PUBLIC_KEY};
 
   const onToken = token => {
     axios({
