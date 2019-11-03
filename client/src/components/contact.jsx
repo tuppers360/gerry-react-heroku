@@ -20,7 +20,7 @@ export const Contact = () => (
             </div>
           </div>
         </div>
-        <div className="col-md-4 col-sm-4">
+        <div className="col-md-4 col-sm-12">
           <div className="card bg-light mb-3">
             <div className="card-header text-white text-uppercase contact-card-header">
               <i className="fa fa-home"></i> Get in touch
