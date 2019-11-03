@@ -37,7 +37,7 @@ app.post("/donate", (req, res) => {
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,
-    currency: "gbp"
+    currency: "GBP"
   };
 
   stripe.charges.create(body, (stripeErr, stripeRes) => {
