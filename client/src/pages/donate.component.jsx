@@ -73,7 +73,7 @@ const Donate = () => {
                   onChange={handleChange}
                 />
               </div>
-              <div className="btn btn-warning btn-lg">
+              <div>
                 <StripeCheckoutButton donation={donation} />
               </div>
             </div>
