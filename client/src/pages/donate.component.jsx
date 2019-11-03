@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import StripeCheckoutButton from "./../components/stripe-button/stripe-button.component";
+import GiftAidLogo from "../../src/assets/gift-aid-logo.png";
 
 const Donate = () => {
   const [donation, setDonation] = useState(5);
@@ -29,7 +30,13 @@ const Donate = () => {
 
               <h3>You're donating £{donation}</h3>
 
-              <h1>Gift Aid It</h1>
+              <div>
+                <img
+                  src={GiftAidLogo}
+                  className="home-inner-img"
+                  alt="Gift Aid"
+                />
+              </div>
               <p>
                 Are you a UK tax payer? With Gift Aid, your donation of £
                 {donation} would be worth £{donation * 1.25} at no extra cost to
