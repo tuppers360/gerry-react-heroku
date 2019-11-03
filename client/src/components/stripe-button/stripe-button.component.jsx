@@ -19,6 +19,7 @@ const StripeCheckoutButton = ({ donation }) => {
     })
       .then(response => {
         alert("Payment successful");
+        console.log(response);
       })
       .catch(error => {
         console.log("Payment error: ", JSON.parse(error));
