@@ -11,7 +11,7 @@ export default function validate(values) {
   }
   //Date Of Birth
   if (!values.dateOfBirth) {
-    errors.dateOfBirth = "Please enter your date of birth";
+    errors.dateOfBirth = "Please enter your date of birth format dd/mm/yyyy";
   }
   //email
   if (!values.email) {
@@ -31,5 +31,6 @@ export default function validate(values) {
   if (!values.apply) {
     errors.apply = "Please add your message";
   }
+
   return errors;
 }
