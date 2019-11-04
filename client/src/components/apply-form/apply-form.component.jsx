@@ -1,5 +1,5 @@
 import React from "react";
-import useForm from "./../utils/useForm.component";
+import useForm from "./../utils/useApplyForm.component";
 import validate from "../utils/validateApplyForm";
 
 const ApplyForm = () => {
@@ -21,16 +21,16 @@ const ApplyForm = () => {
     <form onSubmit={handleSubmit} noValidate>
       <div className="form-row">
         <div className="col-md-6">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="firstName">First Name</label>
           <input
             className={`${
               errors.firstName ? "form-control inputError" : "form-control"
             }`}
-            name="firstname"
+            name="firstName"
             type="text"
-            aria-describedby="Name Help"
+            aria-describedby="First Name"
             placeholder="Enter name"
-            value={values.firstname}
+            value={values.firstName}
             onChange={handleChange}
             onBlur={handleBlur}
           />
@@ -39,7 +39,7 @@ const ApplyForm = () => {
           )}
         </div>
         <div className="col-md-6">
-          <label htmlFor="name">Last Name</label>
+          <label htmlFor="lastName">Last Name</label>
           <input
             className={`${
               errors.lastName ? "form-control inputError" : "form-control"
@@ -98,12 +98,12 @@ const ApplyForm = () => {
       </div>
       <div className="form-row">
         <div className="col-md-6">
-          <label htmlFor="email">Address</label>
+          <label htmlFor="address">Address</label>
           <input
             name="address"
             type="text"
             className={`${
-              errors.email ? "form-control inputError" : "form-control"
+              errors.address ? "form-control inputError" : "form-control"
             }`}
             aria-describedby="Address"
             placeholder="Address"
@@ -132,7 +132,7 @@ const ApplyForm = () => {
       </div>
       <div className="form-row">
         <div className="col-md-12">
-          <label htmlFor="message">
+          <label htmlFor="apply">
             Please provide us with as much information about your application as
             possible. How will this funding make a difference? Who will benefit?
           </label>
@@ -156,47 +156,6 @@ const ApplyForm = () => {
         Submit form
       </button>
     </form>
-    //     <label htmlFor="email">Email address</label>
-    //     <input
-    //       name="email"
-    //       type="email"
-    //       className={`${
-    //         errors.email ? "form-control inputError" : "form-control"
-    //       }`}
-    //       aria-describedby="Email Help"
-    //       placeholder="Enter email"
-    //       value={values.email}
-    //       onChange={handleChange}
-    //       onBlur={handleBlur}
-    //     />
-    //     <small id="emailHelp" className="form-text text-muted">
-    //       We'll never share your email with anyone else.
-    //     </small>
-    //     {errors.email && <p className="error">{errors.email}</p>}
-    //   </div>
-    //   <div className="form-group">
-    //     <label htmlFor="message">Message</label>
-    //     <textarea
-    //       name="message"
-    //       type="text"
-    //       className={`${
-    //         errors.message ? "form-control inputError" : "form-control"
-    //       }`}
-    //       aria-describedby="Message Help text"
-    //       placeholder="Enter your message"
-    //       value={values.message}
-    //       onChange={handleChange}
-    //       onBlur={handleBlur}
-    //       rows="6"
-    //     ></textarea>
-    //     {errors.message && <p className="error">{errors.message}</p>}
-    //   </div>
-    //   <div className="mx-auto">
-    //     <button type="submit" className="btn btn-primary text-right">
-    //       Submit
-    //     </button>
-    //   </div>
-    // </form>
   );
 };
 

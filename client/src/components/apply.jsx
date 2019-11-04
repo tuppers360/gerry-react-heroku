@@ -39,7 +39,7 @@ export const Apply = () => (
               application but prior to the Trustees’ quarterly meeting, eg
               receiving the result of an outstanding funding application or
               needing to change details on this application, you will need to
-              use the Change of Details form in the Existing Grantees’ Page.
+              contact us to let us know about this change.
             </li>
             <li>
               Trustees do not enter into any communication about rejected
