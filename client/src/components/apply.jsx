@@ -23,7 +23,10 @@ export const Apply = () => (
           </p>
           <ul>
             <li>All form fileds are required.</li>
-            <li>Your application must meet our criteria.</li>
+            <li>
+              Your application must meet our criteria - live within 15 miles of
+              Blackpool Tower and be under the age of 25
+            </li>
             <li>
               If your application is successful, you will be sent an offer
               letter by email as soon as possible after the meeting which will
