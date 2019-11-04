@@ -15,6 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
+app.get("/api/public-key", (req, res) => {
+  res.send({ publicKey: process.env.STRIPE_PUBLIC_KEY });
+});
+
 app.get("/api", (req, res) => {
   const user = req.query.user || "tuppers360";
   axios.get(`https://api.github.com/users/${user}`).then(response => {
@@ -33,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 
-app.post("/donate", (req, res) => {
+app.post("/api/donate", (req, res) => {
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,

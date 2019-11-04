@@ -4,13 +4,12 @@ import axios from "axios";
 
 const StripeCheckoutButton = ({ donation }) => {
   const priceForStripe = donation * 100;
-  const publishableKey = "pk_test_mulYoJrIT0rm9q96siCf8uxp00G8VFbxYd";
   //TODO: change so that key is pulled from .env variable instead of hardcoding
-  //const publishableKey = {process.env.STRIPE_PUBLIC_KEY};
+  const publicKey = "pk_test_mulYoJrIT0rm9q96siCf8uxp00G8VFbxYd";
 
   const onToken = token => {
     axios({
-      url: "donate",
+      url: "/api/donate",
       method: "post",
       data: {
         amount: priceForStripe,
@@ -40,7 +39,7 @@ const StripeCheckoutButton = ({ donation }) => {
       panelLabel="Donate"
       token={onToken}
       currency="GBP"
-      stripeKey={publishableKey}
+      stripeKey={publicKey}
     />
   );
 };
