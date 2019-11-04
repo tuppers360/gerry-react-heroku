@@ -13,22 +13,20 @@ body {
   display: block;
 }
 
-/*--- Extra Bootstrap Column Padding --*/
-[class*="col-"] {
-  padding: 1rem;
-}
-
 /*====================== Landing Section ======================*/
+.landing {
+  background-color: #0c5b88 !important;
+}
 .home-inner img {
   background-size: cover;
 }
-.caption {
+/* .caption {
   width: 100%;
   max-width: 100%;
-  position: absolute;
+  /* position: absolute;
   top: 30%;
   z-index: 1;
-}
+} */
 .caption h1 {
   color: white;
   font-size: 3.8rem;

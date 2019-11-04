@@ -7,24 +7,20 @@ import StoriesImage from "./stories.jpg";
 
 export const Home = () => (
   <React.Fragment>
-    <div className="landing">
-      <div className="home-wrap">
-        <div className="home-inner">
-          <img
-            src={GerryLogo}
-            className="home-inner-img"
-            alt="Landing - Blackpool Tower"
-          />
+    <div className="landing mb-3">
+      <div className="card text-center border-0">
+        <img className="card-img" src={GerryLogo} alt="Blackpool Tower" />
+        <div className="card-img-overlay text-white d-flex flex-column justify-content-center caption">
+          <h1>The</h1>
+          <h1>Gerry Richardson</h1>
+          <h1>Trust</h1>
+          <p className="card-text">
+            <a href="#mission" className="btn btn-lg btn-primary">
+              Our Mission
+            </a>
+          </p>
         </div>
       </div>
-    </div>
-    <div className="caption text-center">
-      <h1>The</h1>
-      <h1>Gerry Richardson</h1>
-      <h1>Trust</h1>
-      <a className="btn btn-lg btn-primary" href="#mission">
-        Our Mission
-      </a>
     </div>
     {/* Start Mission Section */}
     <div id="mission" className="offset">
