@@ -47,8 +47,9 @@ export const Apply = () => (
             </li>
             <li>
               Once you submit your application, you will receive an
-              acknowledgement email within a few minutes containing a printable
-              PDF version of your completed application.
+              acknowledgement email within a few minutes confirming receipt of
+              your application. Should we require further information we will
+              contact you by email.
             </li>
           </ul>
           <ApplyForm />
