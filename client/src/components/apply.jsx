@@ -30,12 +30,7 @@ export const Apply = () => (
             <li>
               If your application is successful, you will be sent an offer
               letter by email as soon as possible after the meeting which will
-              include terms and conditions for your acceptance. You will also be
-              required to return a Monitoring and Evaluation Form (see Existing
-              Grantees’ Page) towards the end of each year of the grant award.
-              Trustees will need to approve this before any further grant is
-              awarded. Visits to projects may be made by Trustees as part of
-              this process.
+              include terms and conditions for your acceptance.
             </li>
             <li>
               If further information becomes available after submission of your
