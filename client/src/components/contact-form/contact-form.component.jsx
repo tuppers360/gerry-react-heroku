@@ -1,6 +1,7 @@
 import React from "react";
 import useForm from "./../utils/useForm.component";
 import validate from "../utils/validateContactForm";
+import axios from "axios";
 
 const ContactForm = () => {
   //TODO: using this causes error of changing uncontrolled input
@@ -12,9 +13,25 @@ const ContactForm = () => {
     validate
   );
 
-  function submit() {
-    console.log("No errors, submit callback called!");
-    console.log("Submitted Successfully", values, errors);
+  async function submit() {
+    values.subject = "Contact from Gerry Richardson Trust";
+    try {
+      await axios
+        .post("/api/mailgun/contact", {
+          values
+        })
+        .then(
+          response => {
+            console.log(response);
+            console.log("No errors, submit callback called!");
+          },
+          error => {
+            console.log(error);
+          }
+        );
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
