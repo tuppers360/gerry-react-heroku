@@ -23,7 +23,7 @@ const ContactForm = () => {
           placeholder="Enter name"
           ref={register({ required: "Please enter your name" })}
         />
-        {errors.name && <p className="error">{errors.name.message}</p>}
+        {errors.name && <span className="error">{errors.name.message}</span>}
       </div>
       <div className="form-group">
         <label htmlFor="email">Email address</label>
@@ -46,7 +46,7 @@ const ContactForm = () => {
         <small id="emailHelp" className="form-text text-muted">
           We'll never share your email with anyone else.
         </small>
-        {errors.email && <p className="error">{errors.email.message}</p>}
+        {errors.email && <span className="error">{errors.email.message}</span>}
       </div>
       <div className="form-group">
         <label htmlFor="message">Message</label>
@@ -61,7 +61,9 @@ const ContactForm = () => {
           ref={register({ required: "Please enter your message" })}
           rows="6"
         ></textarea>
-        {errors.message && <p className="error">{errors.message.message}</p>}
+        {errors.message && (
+          <span className="error">{errors.message.message}</span>
+        )}
       </div>
       <div className="mx-auto">
         <button type="submit" className="btn btn-primary text-right">
