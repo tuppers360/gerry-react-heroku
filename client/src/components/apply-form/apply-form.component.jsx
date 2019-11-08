@@ -1,24 +1,16 @@
 import React from "react";
-import useForm from "./../utils/useApplyForm.component";
-import validate from "../utils/validateApplyForm";
+import useForm from "react-hook-form";
 
 const ApplyForm = () => {
-  //TODO: using this causes error of changing uncontrolled input
-  //const initialValues = { name: "", email: "", message: "" };
+  const { register, handleSubmit, errors } = useForm();
 
-  const { handleChange, handleSubmit, handleBlur, values, errors } = useForm(
-    //initialValues,
-    submit,
-    validate
-  );
-
-  function submit() {
-    console.log("No errors, submit callback called!");
-    console.log("Submitted Successfully", values, errors);
-  }
+  const onSubmit = (data, e) => {
+    console.log("Submitted Successfully", data, errors);
+    e.target.reset();
+  };
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <div className="form-row">
         <div className="col-md-6">
           <label htmlFor="firstName">First Name</label>
@@ -30,12 +22,10 @@ const ApplyForm = () => {
             type="text"
             aria-describedby="First Name"
             placeholder="Enter name"
-            value={values.firstName}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            ref={register({ required: "Please enter your first name" })}
           />
           {errors.firstName && (
-            <span className="error">{errors.firstName}</span>
+            <span className="error">{errors.firstName.message}</span>
           )}
         </div>
         <div className="col-md-6">
@@ -48,11 +38,11 @@ const ApplyForm = () => {
             type="text"
             aria-describedby="Name Help"
             placeholder="Enter name"
-            value={values.lastName}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            ref={register({ required: "Please enter your last name" })}
           />
-          {errors.lastName && <span className="error">{errors.lastName}</span>}
+          {errors.lastName && (
+            <span className="error">{errors.lastName.message}</span>
+          )}
         </div>
       </div>
       <div className="form-row">
@@ -66,12 +56,16 @@ const ApplyForm = () => {
             type="text"
             aria-describedby="Date Of Birth"
             placeholder="Enter date of birth"
-            value={values.dateOfBirth}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            ref={register({
+              required: "Please enter date of birth",
+              pattern: {
+                value: /^(0[1-9]|1[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/([0-9]{4})$/,
+                message: "Please enter your date of birth format dd/mm/yyyy"
+              }
+            })}
           />
           {errors.dateOfBirth && (
-            <span className="error">{errors.dateOfBirth}</span>
+            <span className="error">{errors.dateOfBirth.message}</span>
           )}
         </div>
       </div>
@@ -86,14 +80,20 @@ const ApplyForm = () => {
             }`}
             aria-describedby="Email Help"
             placeholder="Enter email"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            ref={register({
+              required: "Please enter your email address",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                message: "Please enter a valid email address"
+              }
+            })}
           />
           <small id="emailHelp" className="form-text text-muted">
             We'll never share your email with anyone else.
           </small>
-          {errors.email && <span className="error">{errors.email}</span>}
+          {errors.email && (
+            <span className="error">{errors.email.message}</span>
+          )}
         </div>
       </div>
       <div className="form-row">
@@ -107,11 +107,11 @@ const ApplyForm = () => {
             }`}
             aria-describedby="Address"
             placeholder="Address"
-            value={values.address}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            ref={register({ required: "Please enter your address" })}
           />
-          {errors.address && <span className="error">{errors.address}</span>}
+          {errors.address && (
+            <span className="error">{errors.address.message}</span>
+          )}
         </div>
         <div className="col-md-6">
           <label htmlFor="postCode">Post Code</label>
@@ -123,11 +123,11 @@ const ApplyForm = () => {
             }`}
             aria-describedby="Post Code"
             placeholder="Post Code"
-            value={values.postCode}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            ref={register({ required: "Please enter your post code" })}
           />
-          {errors.postCode && <span className="error">{errors.postCode}</span>}
+          {errors.postCode && (
+            <span className="error">{errors.postCode.message}</span>
+          )}
         </div>
       </div>
       <div className="form-row">
@@ -144,12 +144,12 @@ const ApplyForm = () => {
             }`}
             aria-describedby="Application text"
             placeholder="Enter your message"
-            value={values.apply}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            ref={register({ required: "Please enter your application" })}
             rows="6"
           ></textarea>
-          {errors.apply && <span className="error">{errors.apply}</span>}
+          {errors.apply && (
+            <span className="error">{errors.apply.message}</span>
+          )}
         </div>
       </div>
       <button className="btn btn-primary" type="submit">
