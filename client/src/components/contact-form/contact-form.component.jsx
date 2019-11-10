@@ -1,29 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import useForm from "react-hook-form";
 
 const ContactForm = () => {
   const { register, handleSubmit, errors } = useForm();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
 
   const onSubmit = async (data, e) => {
-        try {
+    e.preventDefault();
+    data.subject = "Contact from Gerry Richardson Trust";
+    console.log("FORMDATA:", formData);
+    try {
       await axios
-        .post("/api/mailgun/contact", {
-          values
-        })
+        .post(
+          "/api/nodemailer/contact",
+          { body: data },
+          { headers: { "Content-Type": "application/json" } }
+        )
         .then(
-          response => {
-            console.log(response);
+          res => {
+            console.log(res);
             console.log("No errors, submit callback called!");
-    e.target.reset();
+            e.target.reset();
           },
           error => {
             console.log(error);
           }
         );
     } catch (error) {
-      console.log(error);}
-    
+      console.log(error);
+    }
+  };
+
+  const handleInputChange = e => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    console.log("FORMDATA:", formData);
   };
 
   return (
@@ -36,6 +53,8 @@ const ContactForm = () => {
           }`}
           name="name"
           type="text"
+          onChange={handleInputChange}
+          value={formData.name}
           aria-describedby="Name Help"
           placeholder="Enter name"
           ref={register({ required: "Please enter your name" })}
@@ -45,11 +64,13 @@ const ContactForm = () => {
       <div className="form-group">
         <label htmlFor="email">Email address</label>
         <input
-          name="email"
-          type="email"
           className={`${
             errors.email ? "form-control inputError" : "form-control"
           }`}
+          name="email"
+          type="email"
+          onChange={handleInputChange}
+          value={formData.email}
           aria-describedby="Email Help"
           placeholder="Enter email"
           ref={register({
@@ -70,6 +91,8 @@ const ContactForm = () => {
         <textarea
           name="message"
           type="text"
+          onChange={handleInputChange}
+          value={formData.message}
           className={`${
             errors.message ? "form-control inputError" : "form-control"
           }`}
