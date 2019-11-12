@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ThankYou } from "./../thankyou/thankyou";
-import GerryLogo from "./blackpool_tower_darker_resize.png";
 import Nepal from "./nepal.jpg";
 import StoriesImage from "./stories.jpg";
 
