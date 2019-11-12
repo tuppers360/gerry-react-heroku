@@ -1,11 +1,67 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ThankYou } from "./../thankyou/thankyou";
+import GerryLogo from "./blackpool_tower_darker_resize.png";
+import styled from "styled-components";
 import Nepal from "./nepal.jpg";
 import StoriesImage from "./stories.jpg";
 
+const Styles = styled.div`
+  /*====================== Landing Section ======================*/
+  .landing {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: table;
+    z-index: -1;
+  }
+  .home-wrap {
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .home-inner {
+    background-image: url(${GerryLogo});
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  /* Landing Section - Caption */
+  .caption {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+  }
+  .caption h1 {
+    font-size: 4.5rem;
+    letter-spacing: 0.3rem;
+    text-shadow: 0.1rem 0.1rem 0.8rem black;
+    padding-bottom: 1rem;
+  }
+  .caption h3 {
+    font-size: 2.5rem;
+    text-shadow: 0.1rem 0.1rem 0.8rem black;
+    padding-bottom: 2rem;
+  }
+  .caption .btn-lg {
+    border-width: medium;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+  }
+`;
+
 export const Home = () => (
-  <React.Fragment>
+  <Styles>
     <div className="landing">
       <div className="home-wrap">
         <div className="home-inner"></div>
@@ -78,5 +134,5 @@ export const Home = () => (
     </section>
     {/* End Jumbotron Section */}
     <ThankYou />
-  </React.Fragment>
+  </Styles>
 );
