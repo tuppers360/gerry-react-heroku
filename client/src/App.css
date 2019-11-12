@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
 
+html {
+  padding: env(safe-area-insert);
+}
 body {
   overflow-x: hidden;
   font-family: "Lato", sans-serif;
@@ -12,36 +15,63 @@ body {
   content: "";
   display: block;
 }
+.text-gerry {
+  color: #0c5b88;
+}
 
 /*====================== Landing Section ======================*/
 .landing {
-  background-color: #0c5b88 !important;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: table;
+  z-index: -1;
 }
-.home-inner img {
+.home-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.home-inner {
+  background-image: url("/images/blackpool_tower_darker_resize.png");
+  position: fixed;
+  height: 100%;
+  width: 100%;
   background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
 }
-/* .caption {
+
+/* Landing Section - Caption */
+.caption {
   width: 100%;
   max-width: 100%;
-  /* position: absolute;
+  position: absolute;
   top: 30%;
   z-index: 1;
-} */
+}
 .caption h1 {
-  color: white;
-  font-size: 3.8rem;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-size: 4.5rem;
   letter-spacing: 0.3rem;
   text-shadow: 0.1rem 0.1rem 0.8rem black;
   padding-bottom: 1rem;
 }
+
 .caption h3 {
-  color: white;
   font-size: 2.5rem;
-  font-weight: 400;
   text-shadow: 0.1rem 0.1rem 0.8rem black;
   padding-bottom: 2rem;
+}
+
+.caption .btn-lg {
+  border-width: medium;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
 }
 
 /*====================== Mission Section ======================*/
@@ -61,6 +91,7 @@ body {
   margin: 1rem;
 }
 .jumbotron {
+  margin-top: 4rem;
   margin-bottom: 0;
   border-radius: 0;
   padding: 1rem 0 1rem 0;
