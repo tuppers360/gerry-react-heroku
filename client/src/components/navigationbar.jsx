@@ -7,32 +7,54 @@ import logo from "../assets/crown.svg";
 const Styles = styled.div`
   .navbar {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.1rem;
-    background: #0c5b88 !important;
-    transition: background-color 0.5s ease 0s;
-    padding-left: 10px;
-    padding-right: 5px;
+    padding: 0rem 1rem;
+    font-size: 0.9rem;
   }
   .navbar-brand {
     color: white;
     height: 2rem;
   }
   .navbar-nav {
-    align-items: center;
+    padding-top: 1rem;
+    padding-right: 0.8rem;
   }
   .navbar-nav .nav-link {
     color: white;
-    padding-top: 0.8rem;
-    align-items: center;
+    padding-top: 0rem;
   }
   .navbar-nav .nav-link.active,
   .navbar-nav .nav-link:hover {
     color: #9ad1ec;
   }
   .navbar.always-solid {
-    background: rgba(12, 91, 136, 1) !important;
+    background: rgba(12, 91, 136, 0.9) !important;
     transition: background-color 1s ease 0s;
+  }
+  .navbar-toggler {
+    padding: 1.15rem 0.75rem;
+  }
+  .custom-toggler-icon {
+    color: white;
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+  .navbar.solid {
+    background: rgba(12, 91, 136, 0.7) !important;
+  }
+  /* Remove Button Outline */
+  button:focus,
+  a:focus {
+    outline: 0;
+    /* TODO: Look this up and check if can be removed */
+    -webkit-appearance: none;
+    box-shadow: none;
+  }
+  button,
+  a,
+  a.btn {
+    transition: all 0.6s ease;
   }
 `;
 
@@ -45,7 +67,7 @@ const RouterNavLink = ({ children, ...props }) => (
 const NavigationBar = () => {
   return (
     <Styles>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" fixed="top" className="always-solid">
         <LinkContainer to="/">
           <Navbar.Brand>
             <img
@@ -57,9 +79,13 @@ const NavigationBar = () => {
             />
           </Navbar.Brand>
         </LinkContainer>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav">
+          <span className="custom-toggler-icon">
+            <i className="fas fa-bars"></i>
+          </span>
+        </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto">
+          <Nav className="ml-auto">
             <RouterNavLink to="/stories">Stories</RouterNavLink>
             <RouterNavLink to="/contact">Contact</RouterNavLink>
             <RouterNavLink to="/about">About</RouterNavLink>
