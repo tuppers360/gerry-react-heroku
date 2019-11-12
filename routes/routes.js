@@ -8,6 +8,7 @@ jsonParser = bodyParser.json();
 
 router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
   let data = req.body;
+
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     name: "www.suptgerryrichardson.co.uk",
