@@ -3,11 +3,12 @@ import StripeCheckoutButton from "./../components/stripe-button/stripe-button.co
 import GiftAidLogo from "../../src/assets/gift-aid-logo.png";
 
 const Donate = () => {
-  const [donation, setDonation] = useState(5);
+  const [donation, setDonation] = useState("");
   const [giftAid, setGiftAid] = useState(false);
 
   const handleChange = e => {
-    setDonation(e.target.value);
+    const filteredInput = e.target.value.replace(/[^0-9.]/g, "");
+    setDonation(filteredInput);
   };
 
   const handleGiftAid = e => {
@@ -24,12 +25,50 @@ const Donate = () => {
       </section>
       <div className="narrow">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-md-8 col-sm-12 col-12">
             <div className="text-center">
-              <h2>Donate and help the local youths of Blackpool</h2>
-
+              <h1>Donate to The Gerry Richardson Trust</h1>
+              <h3>
+                Help us plan for the future and promote youth development by
+                supporting young people within 15 miles of Blackpool Tower
+              </h3>
               <h3 className="mt-5">You're donating £{donation}</h3>
-
+              <div></div>
+              <div className="input-group input-group-lg test-align mt-3">
+                <label htmlFor="donation"></label>
+                <input
+                  name="donation"
+                  type="text"
+                  aria-describedby="Donation"
+                  placeholder="Enter Donation"
+                  min="1"
+                  value={donation}
+                  onChange={handleChange}
+                  className="text-center col-2 col-sm-2 col-md-2 input-lg"
+                />
+              </div>
+              <div className="donate-message row justify-content-center mt-3">
+                <div className="col-6">
+                  {donation > 0 && (
+                    <span>
+                      £<span>{donation} </span>
+                      <span>
+                        could help someone travel to Africe to help sick
+                        children
+                      </span>
+                    </span>
+                  )}
+                  {donation < 1 && (
+                    <span>
+                      Help us plan for the future and support the local youths
+                      within 15 miles of Blackpool Tower.{" "}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div className="mt-3">
+                <StripeCheckoutButton donation={donation} />
+              </div>
               <div className="mt-5">
                 <img
                   src={GiftAidLogo}
@@ -38,11 +77,23 @@ const Donate = () => {
                 />
               </div>
               <p className="mt-3">
-                Are you a UK tax payer? With Gift Aid, your donation of £
-                {donation} would be worth £{donation * 1.25} at no extra cost to
-                you.
+                Are you a UK tax payer? With Gift Aid boost your donation by{" "}
+                <strong>
+                  25%{" "}
+                  {donation > 0 && (
+                    <span>
+                      (
+                      {new Intl.NumberFormat("en-GB", {
+                        style: "currency",
+                        currency: "GBP"
+                      }).format(donation * 0.25)}
+                      )
+                    </span>
+                  )}
+                </strong>{" "}
+                at no extra cost to you.
               </p>
-              <span className="btn btn-warning btn-lg">
+              <span className="btn btn-warning btn-lg mt-3">
                 Boost your donation
               </span>
               <div className="form-check mt-3">
@@ -69,23 +120,9 @@ const Donate = () => {
                 year than the amount of Gift Aid claimed on all my donations it
                 is my responsibility to pay any difference.
               </small>
-              <div className="input-group input-group-lg test-align mt-3">
-                <label htmlFor="donation"></label>
-                <input
-                  name="donation"
-                  type="text"
-                  aria-describedby="Donation"
-                  placeholder="Enter Donation"
-                  value={donation}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="mt-3">
-                <StripeCheckoutButton donation={donation} />
-              </div>
             </div>
           </div>
-          <div className="col-md-4 col-sm-4">
+          <div className="col-md-4 col-sm-12 col-12">
             <div className="card bg-light mb-3">
               <div className="card-header text-white text-uppercase contact-card-header">
                 <i className="fas fa-gift"></i> Other Ways to donate
