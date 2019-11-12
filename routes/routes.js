@@ -7,10 +7,7 @@ urlEncoder = bodyParser.urlencoded({ extended: true });
 jsonParser = bodyParser.json();
 
 router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
-  console.log("THIS IS THE SERVER");
-  console.log(req.body);
   let data = req.body;
-  console.log(data);
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     name: "www.suptgerryrichardson.co.uk",
@@ -36,8 +33,6 @@ router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
     }
   });
 
-  console.log("CHECK:", data.body.email);
-
   let mailOptions = {
     from: data.body.email, // sender address
     to: "contactus@suptgerryrichardson.co.uk", // list of receivers
@@ -46,7 +41,6 @@ router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
     html: data.body.message // html body
   };
 
-  // send mail with defined transport object
   // send mail with defined transport object
   await transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
