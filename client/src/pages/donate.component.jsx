@@ -33,7 +33,52 @@ const Donate = () => {
                 supporting young people within 15 miles of Blackpool Tower
               </h3>
               <h3 className="mt-5">You're donating £{donation}</h3>
-              <div></div>
+              <div className="donationbox">
+                <div class="radio-tile-group">
+                  <div class="input-container">
+                    <input
+                      id="walk"
+                      class="radio-button"
+                      type="radio"
+                      name="radio"
+                    />
+                    <div class="radio-tile">
+                      <div class="icon walk-icon"></div>
+                      <label for="walk" class="radio-tile-label">
+                        Make a <span>£10</span> Donation
+                      </label>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <input
+                      id="bike"
+                      class="radio-button"
+                      type="radio"
+                      name="radio"
+                    />
+                    <div class="radio-tile">
+                      <div class="icon bike-icon"></div>
+                      <label for="bike" class="radio-tile-label">
+                        Make a <span>£20</span> Donation
+                      </label>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <input
+                      id="bike"
+                      class="radio-button"
+                      type="radio"
+                      name="radio"
+                    />
+                    <div class="radio-tile">
+                      <div class="icon bike-icon"></div>
+                      <label for="bike" class="radio-tile-label">
+                        Make a <span>£50</span> Donation
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="input-group input-group-lg test-align mt-3">
                 <label htmlFor="donation"></label>
                 <input
