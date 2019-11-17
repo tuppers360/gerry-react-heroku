@@ -1,8 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-const axios = require("axios");
 const bodyParser = require("body-parser");
+const axios = require("axios");
 const path = require("path");
+const router = require("./routes/routes.js");
 
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
@@ -10,8 +11,10 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(router);
 
 app.use(cors());
 
