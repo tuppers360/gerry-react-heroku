@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import axios from "axios";
+
 import StripeCheckoutButton from "./../components/stripe-button/stripe-button.component";
+
 import GiftAidLogo from "../../src/assets/gift-aid-logo.png";
 
 const Donate = () => {
@@ -14,6 +17,31 @@ const Donate = () => {
   const handleGiftAid = e => {
     setGiftAid(!giftAid);
     console.log(giftAid);
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    console.log(donation);
+    const amount = donation;
+    const name = "donation";
+    try {
+      await axios
+        .post(
+          "/intents",
+          { body: { amount, name } },
+          { headers: { "Content-Type": "application/json" } }
+        )
+        .then(
+          res => {
+            console.log(res);
+          },
+          error => {
+            console.log(error);
+          }
+        );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -79,41 +107,43 @@ const Donate = () => {
                   </div>
                 </div>
               </div>
-              <div className="input-group input-group-lg test-align mt-3">
-                <label htmlFor="donation"></label>
-                <input
-                  name="donation"
-                  type="text"
-                  aria-describedby="Donation"
-                  placeholder="Enter Donation"
-                  min="1"
-                  value={donation}
-                  onChange={handleChange}
-                  className="text-center col-2 col-sm-2 col-md-2 input-lg"
-                />
-              </div>
-              <div className="donate-message row justify-content-center mt-3">
-                <div className="col-6">
-                  {donation > 0 && (
-                    <span>
-                      £<span>{donation} </span>
-                      <span>
-                        could help someone travel to Africe to help sick
-                        children
-                      </span>
-                    </span>
-                  )}
-                  {donation < 1 && (
-                    <span>
-                      Help us plan for the future and support the local youths
-                      within 15 miles of Blackpool Tower.{" "}
-                    </span>
-                  )}
+              <form onSubmit={handleSubmit}>
+                <div className="input-group input-group-lg test-align mt-3">
+                  <label htmlFor="donation"></label>
+                  <input
+                    name="donation"
+                    type="text"
+                    aria-describedby="Donation"
+                    placeholder="Enter Donation"
+                    min="1"
+                    value={donation}
+                    onChange={handleChange}
+                    className="text-center col-2 col-sm-2 col-md-2 input-lg"
+                  />
                 </div>
-              </div>
-              <div className="mt-3">
-                <StripeCheckoutButton donation={donation} />
-              </div>
+                <div className="donate-message row justify-content-center mt-3">
+                  <div className="col-6">
+                    {donation > 0 && (
+                      <span>
+                        £<span>{donation} </span>
+                        <span>
+                          could help someone travel to Africe to help sick
+                          children
+                        </span>
+                      </span>
+                    )}
+                    {donation < 1 && (
+                      <span>
+                        Help us plan for the future and support the local youths
+                        within 15 miles of Blackpool Tower.{" "}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="mt-3">
+                  <button type="submit">Test Elements</button>
+                </div>
+              </form>
               <div className="mt-5">
                 <img
                   src={GiftAidLogo}

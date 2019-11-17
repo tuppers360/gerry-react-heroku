@@ -55,3 +55,21 @@ app.post("/api/donate", (req, res) => {
     }
   });
 });
+
+app.post("/intents", urlEncoder, async (req, res) => {
+  let data = req.body;
+
+  let options = {
+    amount: data.body.amount,
+    name: data.body.name
+  };
+
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: options.amount,
+    currency: "gbp",
+    payment_method_types: ["card"]
+  });
+
+  console.log(paymentIntent);
+  res.send(paymentIntent);
+});
