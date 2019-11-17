@@ -34,45 +34,45 @@ const Donate = () => {
               </h3>
               <h3 className="mt-5">You're donating £{donation}</h3>
               <div className="donationbox">
-                <div class="radio-tile-group">
-                  <div class="input-container">
+                <div className="radio-tile-group">
+                  <div className="input-container">
                     <input
                       id="walk"
-                      class="radio-button"
+                      className="radio-button"
                       type="radio"
                       name="radio"
                     />
-                    <div class="radio-tile">
-                      <div class="icon walk-icon"></div>
-                      <label for="walk" class="radio-tile-label">
+                    <div className="radio-tile">
+                      <div className="icon walk-icon"></div>
+                      <label htmlFor="walk" className="radio-tile-label">
                         Make a <span>£10</span> Donation
                       </label>
                     </div>
                   </div>
-                  <div class="input-container">
+                  <div className="input-container">
                     <input
                       id="bike"
-                      class="radio-button"
+                      className="radio-button"
                       type="radio"
                       name="radio"
                     />
-                    <div class="radio-tile">
-                      <div class="icon bike-icon"></div>
-                      <label for="bike" class="radio-tile-label">
+                    <div className="radio-tile">
+                      <div className="icon bike-icon"></div>
+                      <label htmlFor="bike" className="radio-tile-label">
                         Make a <span>£20</span> Donation
                       </label>
                     </div>
                   </div>
-                  <div class="input-container">
+                  <div className="input-container">
                     <input
                       id="bike"
-                      class="radio-button"
+                      className="radio-button"
                       type="radio"
                       name="radio"
                     />
-                    <div class="radio-tile">
-                      <div class="icon bike-icon"></div>
-                      <label for="bike" class="radio-tile-label">
+                    <div className="radio-tile">
+                      <div className="icon bike-icon"></div>
+                      <label htmlFor="bike" className="radio-tile-label">
                         Make a <span>£50</span> Donation
                       </label>
                     </div>
