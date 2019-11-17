@@ -16,8 +16,8 @@ router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: "contactus@suptgerryrichardson.co.uk",
-      pass: "Lq%7%383"
+      user: process.env.NODEMAILER_USER,
+      pass: process.env.NODEMAILER_PWD
     },
     tls: {
       rejectUnauthorized: false
@@ -36,7 +36,7 @@ router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
 
   let mailOptions = {
     from: data.body.email, // sender address
-    to: "contactus@suptgerryrichardson.co.uk", // list of receivers
+    to: process.env.NODEMAILER_CONTACT_EMAIL, // list of receivers
     subject: data.body.subject, // Subject line
     text: data.body.message, // plain text body
     html: data.body.message // html body
