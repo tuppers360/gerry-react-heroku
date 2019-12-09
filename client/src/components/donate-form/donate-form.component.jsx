@@ -216,6 +216,9 @@ const DonationForm = () => {
             </div>
           )}
           <div className="row justify-content-center">
+            <div>GIFT HERE</div>
+          </div>
+          <div className="row justify-content-center">
             <div className="col-12 col-sm-6 justify-content-md-center">
               <Link
                 to={{
