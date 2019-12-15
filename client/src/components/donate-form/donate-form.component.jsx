@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import styled from "styled-components";
+import GiftAidLogo from "../../assets/gift-aid-logo.png";
 
 const Styles = styled.div`
   a:hover {
@@ -92,6 +93,7 @@ const Styles = styled.div`
 
 const DonationForm = () => {
   const [donation, setDonation] = useState("");
+  const [giftAid, setGiftAid] = useState(false);
   const [donationButtons, setDonationButtons] = useState([
     {
       id: "1",
@@ -111,10 +113,6 @@ const DonationForm = () => {
   //TODO - still to implement this fully as Monthly option not completed at this time.
   const [activeButtonAmountType, setActiveButtonAmountType] = useState(1);
 
-  const handleChange = amount => {
-    setDonation(amount);
-  };
-
   const handleClick = (id, donation) => {
     if (showCustomDonation) setShowCustomDonation(!showCustomDonation);
     setActiveButtonAmount(id);
@@ -130,7 +128,7 @@ const DonationForm = () => {
   return (
     <React.Fragment>
       <Styles>
-        <div className="container">
+        <div className="container col-md-12 col-lg-8 offset-lg-2">
           <div className="d-flex justify-content-center mb-5 mt-5">
             <h2>Donate to The Gerry Richardson Trust now</h2>
           </div>
@@ -139,7 +137,7 @@ const DonationForm = () => {
               And help us to help the local youths of Blackpool, Fylde and Wyre
             </h3>
           </div>
-          <div className="row justify-content-center col-md-12 col-lg-8 offset-lg-2">
+          <div className="row justify-content-center">
             <ul
               className="btn-group-donation-type mb-2"
               aria-label="Donation Button Group Type"
@@ -160,7 +158,7 @@ const DonationForm = () => {
               </li>
             </ul>
           </div>
-          <div className="row justify-content-center col-md-12 col-lg-8 offset-lg-2">
+          <div className="row justify-content-center">
             <ul
               className="btn-group-donate-buttons mb-2"
               aria-label="Donation Button Group Amount"
@@ -191,11 +189,11 @@ const DonationForm = () => {
             </ul>
           </div>
           {showCustomDonation && (
-            <div className="row justify-content-center col-md-12 col-lg-8 offset-lg-2">
+            <div className="row justify-content-center">
               <div className="form-group row">
                 <label
                   htmlFor="customdonationamount"
-                  className="col-md-6 col-lg-6"
+                  className="col-md-5 col-lg-6"
                 >
                   Donate what you want to:
                 </label>
@@ -216,7 +214,54 @@ const DonationForm = () => {
             </div>
           )}
           <div className="row justify-content-center">
-            <div>GIFT HERE</div>
+            <img src={GiftAidLogo} className="mt-3" alt="Gift Aid" />
+          </div>
+          <div className="row justify-content-center">
+            <div className="row">
+              <h3>Are you a UK tax payer?</h3>
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            With Gift Aid boost your donation by&nbsp;
+            <strong>
+              25%&nbsp;
+              {donation > 0 && (
+                <span>
+                  (
+                  {new Intl.NumberFormat("en-GB", {
+                    style: "currency",
+                    currency: "GBP"
+                  }).format(donation * 0.25)}
+                  )&nbsp;
+                </span>
+              )}
+            </strong>
+            at no extra cost to you.
+          </div>
+          <div className="row justify-content-center">
+            <label htmlFor="giftAid">
+              Please claim Gift Aid on my behalf
+              <input
+                type="checkbox"
+                value={giftAid}
+                onChange={e => setGiftAid(!giftAid)}
+                id="giftAid"
+              />
+            </label>
+          </div>
+          <div className="row justify-content-center">
+            <small className="mt-3 col-md-8">
+              I confirm that this is my own money and I would like The Gerry
+              Richardson Trust to treat all the donations I have made in the
+              past (if any) and any future donations I make, unless I notify you
+              otherwise, as Gift Aid donations.
+            </small>
+            <small className="mt-2 mb-4 col-md-8">
+              I also confirm that I am a UK taxpayer and understand that if I
+              pay less Income Tax and/or Capital Gains Tax in the current tax
+              year than the amount of Gift Aid claimed on all my donations it is
+              my responsibility to pay any difference.
+            </small>
           </div>
           <div className="row justify-content-center">
             <div className="col-12 col-sm-6 justify-content-md-center">
@@ -224,7 +269,8 @@ const DonationForm = () => {
                 to={{
                   pathname: "/donate/payment",
                   state: {
-                    donation: donation
+                    donation: donation,
+                    giftAid: giftAid
                   }
                 }}
               >

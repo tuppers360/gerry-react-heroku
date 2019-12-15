@@ -29,9 +29,11 @@ const Styles = styled.div`
 const DonatePaymentForm = props => {
   const [clientSecret, setClientSecret] = useState(null);
   const [donation, setDonation] = useState(0);
+  const [giftAid, setGiftAid] = useState(false);
 
   useEffect(() => {
     setDonation(props.location.state.donation);
+    setGiftAid(props.location.state.giftAid);
     console.log("USEEFFECT:", props);
   }, [props]);
 
@@ -39,7 +41,7 @@ const DonatePaymentForm = props => {
     e.preventDefault();
     const amount = donation * 100;
     const name = "donation";
-
+    const giftAid = giftAid;
     api
       .createPaymentIntent({
         amount,
@@ -49,7 +51,7 @@ const DonatePaymentForm = props => {
       .then(clientSecret => {
         setClientSecret(clientSecret);
 
-        props.stripe.handleCardPayment(clientSecret).then(payload => {
+        props.stripe.handleCardPayment(clientSecret, meta).then(payload => {
           if (payload.error) {
             console.log("[error]", payload.error);
           } else {

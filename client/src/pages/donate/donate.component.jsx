@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import DonationForm from "../../components/donate-form/donate-form.component";
 
 const Donate = () => {
-  const [giftAid, setGiftAid] = useState(false);
-
-  const handleGiftAid = e => {
-    setGiftAid(!giftAid);
-    console.log(giftAid);
-  };
-
   return (
     <React.Fragment>
       <section className="jumbotron header-jumbotron">
