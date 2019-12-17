@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import { Button } from "react-bootstrap";
+import useForm from "react-hook-form";
 import styled from "styled-components";
 import api from "./../utils/api";
 
@@ -30,6 +31,12 @@ const DonatePaymentForm = props => {
   const [clientSecret, setClientSecret] = useState(null);
   const [donation, setDonation] = useState(0);
   const [giftAid, setGiftAid] = useState(false);
+  const { register, handleSubmit, errors } = useForm();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: ""
+  });
 
   useEffect(() => {
     setDonation(props.location.state.donation);
@@ -37,31 +44,45 @@ const DonatePaymentForm = props => {
     console.log("USEEFFECT:", props);
   }, [props]);
 
-  const handleSubmit = async e => {
+  const onSubmit = async (data, e) => {
     e.preventDefault();
+    const cardElement = props.elements.getElement("card");
     const amount = donation * 100;
     const name = "donation";
-    const giftAid = giftAid;
+    const aid = giftAid;
     api
       .createPaymentIntent({
         amount,
         name,
-        payment_method_types: ["card"]
+        payment_method_types: ["card"],
+        aid
       })
       .then(clientSecret => {
         setClientSecret(clientSecret);
 
-        props.stripe.handleCardPayment(clientSecret, meta).then(payload => {
-          if (payload.error) {
-            console.log("[error]", payload.error);
-          } else {
-            console.log("[PaymentIntent]", payload.paymentIntent);
-          }
-        });
+        props.stripe
+          .confirmCardPayment(clientSecret, {
+            payment_method: {
+              card: cardElement
+            }
+          })
+          .then(payload => {
+            if (payload.error) {
+              console.log("[error]", payload.error);
+            } else {
+              console.log("[PaymentIntent]", payload.paymentIntent);
+            }
+          });
       })
       .catch(err => {
         console.log(err.message);
       });
+  };
+
+  const handleInputChange = e => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    console.log("FORMDATA:", formData);
   };
 
   var style = {
@@ -87,7 +108,12 @@ const DonatePaymentForm = props => {
   return (
     <Styles>
       <h1 className="text-center">You're donating £{donation}</h1>
-      <form onSubmit={handleSubmit} className="justify-content-md-center">
+      {errors && <h3 className="error">Test</h3>}
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="justify-content-md-center"
+        noValidate
+      >
         <div className="col-md-6 offset-md-3">
           <h3>Your Details</h3>
           <div className="form-group row">
@@ -98,9 +124,18 @@ const DonatePaymentForm = props => {
               <input
                 id="firstName"
                 type="text"
-                className="form-control"
+                name="firstName"
+                className={`${
+                  errors.firstName ? "form-control inputError" : "form-control"
+                }`}
                 placeholder="First name"
+                ref={register({ required: "Please enter your First name" })}
+                onChange={handleInputChange}
+                value={formData.firstName}
               />
+              {errors.firstName && (
+                <span className="error">{errors.firstName.message}</span>
+              )}
             </div>
           </div>
           <div className="form-group row">
@@ -111,22 +146,46 @@ const DonatePaymentForm = props => {
               <input
                 id="lastName"
                 type="text"
-                className="form-control"
+                name="lastName"
+                className={`${
+                  errors.lastName ? "form-control inputError" : "form-control"
+                }`}
                 placeholder="Last name"
+                ref={register({ required: "Please enter your Last name" })}
+                onChange={handleInputChange}
+                value={formData.lastName}
               />
+              {errors.lastName && (
+                <span className="error">{errors.lastName.message}</span>
+              )}
             </div>
           </div>
           <div className="form-group row">
-            <label htmlFor="inputEmail" className="col-sm-4 col-form-label">
+            <label htmlFor="email" className="col-sm-4 col-form-label">
               Email*
             </label>
             <div className="col-sm-8">
               <input
+                className={`${
+                  errors.email ? "form-control inputError" : "form-control"
+                }`}
+                name="email"
                 type="email"
-                className="form-control"
-                id="inputEmail"
-                placeholder="Email"
+                onChange={handleInputChange}
+                value={formData.email}
+                aria-describedby="Email"
+                placeholder="Enter email"
+                ref={register({
+                  required: "Please enter your email address",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "Please enter a valid email address"
+                  }
+                })}
               />
+              {errors.email && (
+                <span className="error">{errors.email.message}</span>
+              )}
             </div>
           </div>
           <div className="form-group row">

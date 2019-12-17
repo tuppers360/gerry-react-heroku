@@ -65,12 +65,12 @@ app.post("/intents", urlEncoder, async (req, res) => {
   console.log("DATA:", data);
   let options = {
     amount: data.amount,
-    currency: "gbp",
-    payment_method_types: ["card"]
+    currency: "gbp"
   };
 
   try {
     const paymentIntent = await stripe.paymentIntents.create(options);
+    console.log("PAYMENT INTENT", paymentIntent);
     res.json(paymentIntent);
   } catch (err) {
     res.json(err);
