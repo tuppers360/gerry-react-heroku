@@ -11,8 +11,8 @@ router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    name: "www.suptgerryrichardson.co.uk",
-    host: "smtp.ionos.co.uk",
+    name: process.env.NODEMAILER_NAME,
+    host: process.env.NODEMAILER_SMTP_HOST,
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
