@@ -6,7 +6,8 @@ import { Home } from "./components/home/home";
 import { About } from "./components/about";
 import { Apply } from "./components/apply";
 import { Contact } from "./components/contact";
-import Donate from "./pages/donate.component";
+import Donate from "./pages/donate/donate.component";
+import Payment from "./pages/donate/payment/payment.component";
 import { Footer } from "./components/footer";
 import { Stories } from "./components/stories/stories";
 import { HolliesStory } from "./components/stories/holliesStory/holliesStory";
@@ -26,6 +27,7 @@ class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/stories" component={Stories} />
               <Route path="/apply" component={Apply} />
+              <Route path="/donate/payment" component={Payment} />
               <Route path="/donate" component={Donate} />
               <Route path="/" component={Home} />
               <Route component={NoMatch}></Route>
