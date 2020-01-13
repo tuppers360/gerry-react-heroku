@@ -1,12 +1,23 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Montserrat|Open+Sans&display=swap");
 
 html {
   padding: env(safe-area-insert);
 }
 body {
   overflow-x: hidden;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   color: #505962;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }
 /*--- Nav Scrolling Offset --*/
 .offset:before {
@@ -22,9 +33,16 @@ body {
 /*====================== Mission Section ======================*/
 
 .narrow {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   padding-top: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .narrow {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
 }
 .btn-sm {
   border-width: medium;
@@ -192,11 +210,6 @@ footer .social .fa-instagram:hover {
   background: #fff;
 }
 
-/* .jumbotron {
-  background-image: url("./assets/beachImage.jpg") !important;
-  background-size: cover !important;
-} */
-
 .error {
   color: red;
   font-size: 12px;
@@ -206,13 +219,4 @@ footer .social .fa-instagram:hover {
 .inputError {
   border-color: red;
   border-width: 1px;
-}
-
-.test-align {
-  display: inline-block;
-  text-align: center;
-}
-
-label {
-  font-weight: 700;
 }

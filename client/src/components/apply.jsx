@@ -22,7 +22,7 @@ export const Apply = () => (
             of our website.
           </p>
           <ul>
-            <li>All form fileds are required.</li>
+            <li>All form fields are required.</li>
             <li>
               Your application must meet our criteria - live within 15 miles of
               Blackpool Tower and be under the age of 25

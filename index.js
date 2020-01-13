@@ -19,7 +19,11 @@ app.use(router);
 app.use(cors());
 
 app.get("/api/public-key", (req, res) => {
-  res.send({ publicKey: process.env.STRIPE_PUBLIC_KEY });
+  const testKey = process.env.STRIPE_PUBLIC_KEY;
+  res.send(testKey);
+
+  console.log("TEST KEY RESPONSE", testKey);
+  //console.log("RESPONSE", res);
 });
 
 app.get("/api", (req, res) => {
@@ -54,4 +58,22 @@ app.post("/api/donate", (req, res) => {
       res.status(200).send({ success: stripeRes });
     }
   });
+});
+
+app.post("/intents", urlEncoder, async (req, res) => {
+  let data = req.body;
+  console.log("DATA:", data);
+  let options = {
+    amount: data.amount,
+    currency: "gbp",
+    metadata: { gift_aid: data.aid }
+  };
+
+  try {
+    const paymentIntent = await stripe.paymentIntents.create(options);
+    console.log("PAYMENT INTENT", paymentIntent);
+    res.json(paymentIntent);
+  } catch (err) {
+    res.json(err);
+  }
 });

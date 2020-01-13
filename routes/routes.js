@@ -41,7 +41,7 @@ router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
     text: data.body.message, // plain text body
     html: data.body.message // html body
   };
-
+  console.log("MAILOPTIONS:", mailOptions);
   // send mail with defined transport object
   await transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
