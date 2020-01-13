@@ -4,7 +4,7 @@ import ScrollToTop from "./components/scrollToTop";
 import { Route, Switch } from "react-router-dom";
 import { Home } from "./components/home/home";
 import { About } from "./components/about";
-import { Apply } from "./components/apply";
+import { Application } from "./components/application";
 import { Contact } from "./components/contact";
 import Donate from "./pages/donate/donate.component";
 import Payment from "./pages/donate/payment/payment.component";
@@ -26,7 +26,7 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/stories" component={Stories} />
-              <Route path="/apply" component={Apply} />
+              <Route path="/application" component={Application} />
               <Route path="/donate/payment" component={Payment} />
               <Route path="/donate" component={Donate} />
               <Route path="/" component={Home} />

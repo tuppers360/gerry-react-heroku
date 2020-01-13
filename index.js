@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const path = require("path");
-const router = require("./routes/routes.js");
+const router = require("./routes/nodemailer.js");
 
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 

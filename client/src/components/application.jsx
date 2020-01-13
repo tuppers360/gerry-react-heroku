@@ -1,7 +1,7 @@
 import React from "react";
-import ApplyForm from "./apply-form/apply-form.component";
+import ApplicationForm from "./application-form/application-form.component";
 
-export const Apply = () => (
+export const Application = () => (
   <React.Fragment>
     <section id="top" className="jumbotron header-jumbotron">
       <div className="narrow">
@@ -50,7 +50,7 @@ export const Apply = () => (
               contact you by email.
             </li>
           </ul>
-          <ApplyForm />
+          <ApplicationForm />
         </div>
         <div className="col-md-4 col-sm-12">
           <div className="card bg-light mb-3">

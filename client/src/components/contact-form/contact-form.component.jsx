@@ -11,7 +11,6 @@ const ContactForm = () => {
     e.preventDefault();
     isSubmitting(true);
     data.subject = "Contact from Gerry Richardson Trust";
-    console.log("FORMDATA:", data);
     try {
       await axios
         .post(
@@ -21,8 +20,6 @@ const ContactForm = () => {
         )
         .then(
           res => {
-            console.log(res);
-            console.log("No errors, submit callback called!");
             isFormSubmitted(true);
             e.target.reset();
           },
@@ -31,6 +28,7 @@ const ContactForm = () => {
           }
         );
     } catch (error) {
+      // TODO - handle errors server & client
       console.log(error);
     } finally {
       isSubmitting(false);
@@ -39,6 +37,7 @@ const ContactForm = () => {
 
   return (
     <React.Fragment>
+      {/* TODO - add fontawesome icons to alerts */}
       {Object.keys(errors).length > 0 && (
         <div className="alert alert-danger">
           <h4 className="alert-heading">Holy guacamole!</h4>

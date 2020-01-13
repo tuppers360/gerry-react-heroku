@@ -69,7 +69,7 @@ export const Footer = () => (
                     Do you live with 15 miles of Blackpool Tower? Are you under
                     25 years of age?
                   </p>
-                  <Link to="/apply" className="btn btn-danger">
+                  <Link to="/application" className="btn btn-danger">
                     Apply Here
                   </Link>
                 </div>
