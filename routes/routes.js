@@ -6,7 +6,7 @@ const router = express.Router();
 urlEncoder = bodyParser.urlencoded({ extended: true });
 jsonParser = bodyParser.json();
 
-router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
+router.post("/api/nodemailer/contact", urlEncoder, (req, res) => {
   let data = req.body;
 
   // create reusable transporter object using the default SMTP transport
@@ -41,9 +41,41 @@ router.post("/api/nodemailer/contact", urlEncoder, async (req, res) => {
     text: data.body.message, // plain text body
     html: data.body.message // html body
   };
-  console.log("MAILOPTIONS:", mailOptions);
+  let mailOptionsClient = {
+    from: "noreply@gerryrichardsontrust.org", // sender address
+    to: data.body.email, // list of receivers
+    subject: "Gerry Richardson Trust Contact Form", // Subject line
+    text: `Thanks for being awesome!\r\n
+      We have received your message and would like to thank you for writing to us.\r\n
+      If your inquiry is urgent, please use the telephone number listed below to talk to one of our staff members. Otherwise, we will reply by email as soon as possible.\r\n
+      Talk to you soon, Gerry Richardson Trust\r\n
+      Tel: 01253 590510\r\n
+      Email: contactus@gerryrichardsontrust.org`, // plain text body
+    html: `<strong>Thanks for being awesome!</strong>
+      <p>We have received your message and would like to thank you for writing to us.</p>
+      <p>If your inquiry is urgent, please use the telephone number listed below to talk to one of our staff members. Otherwise, we will reply by email as soon as possible.</p>
+      <p>Talk to you soon,</p>
+      <p>Gerry Richardson Trust</p>
+      <address>
+      Northdene,<br>
+      Stoney Lane,<br>
+      Hambleton,<br>
+      Poulton-Le-Fylde,<br>
+      FY6 9AF
+      </address>
+      <p><strong>Tel:</strong> 01253 590510</p>
+      <p><strong>Email:</strong> contactus@gerryrichardsontrust.org</p>` // html body
+  };
   // send mail with defined transport object
-  await transporter.sendMail(mailOptions, (error, info) => {
+  transporter.sendMail(mailOptions, (error, info) => {
+    //TODO - implement error message return and display it on site
+    if (error) {
+      return console.log(error);
+    }
+    console.log("Message sent: %s", info.messageId);
+    res.sendStatus(200);
+  });
+  transporter.sendMail(mailOptionsClient, (error, info) => {
     if (error) {
       return console.log(error);
     }

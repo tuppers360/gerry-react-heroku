@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import { Button } from "react-bootstrap";
-import useForm from "react-hook-form";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import api from "./../utils/api";
 
@@ -52,7 +52,7 @@ const DonatePaymentForm = props => {
     const name = "donation";
     const aid = giftAid;
     console.log("Aid", aid);
-    api
+    await api
       .createPaymentIntent({
         amount,
         name,
