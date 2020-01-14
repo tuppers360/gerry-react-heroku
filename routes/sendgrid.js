@@ -148,12 +148,13 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
   // using Twilio SendGrid's v3 Node.js Library
   // https://github.com/sendgrid/sendgrid-nodejs
   console.log("SEND GRID: Sending by Send Grid");
+  console.log(process.env.SENDGRID_DONATION_EMAIL);
   console.log({ sgMail });
   try {
     const msg = {
       from: data.body.email, // sender address
       to: process.env.SENDGRID_DONATION_EMAIL, // list of receivers
-      subject: data.body.subject, // Subject line
+      subject: `Donation from: ${data.body.firstName} ${data.body.lastName}`, // Subject line
       text: `FROM: ${data.body.firstName} ${data.body.lastName}; 
             Email: ${data.body.email}; 
             Address: ${data.body.address};
@@ -167,6 +168,7 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
             <p>Gift Aid: ${data.body.giftAid}</p>
             <p>Donation: ${data.body.donation}</p>` // html body
     };
+    console.log({ msg });
     sgMail.send(msg);
 
     const msgClient = {
