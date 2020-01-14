@@ -14,7 +14,7 @@ const ContactForm = () => {
     try {
       await axios
         .post(
-          "/api/nodemailer/contact",
+          "/api/sendgrid/contact",
           { body: data },
           { headers: { "Content-Type": "application/json" } }
         )

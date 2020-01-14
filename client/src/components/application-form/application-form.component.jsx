@@ -14,7 +14,7 @@ const ApplicationForm = () => {
     try {
       await axios
         .post(
-          "/api/nodemailer/application",
+          "/api/sendgrid/application",
           { body: data },
           { headers: { "Content-Type": "application/json" } }
         )

@@ -1,5 +1,4 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const router = express.Router();
 const sgMail = require("@sendgrid/mail");
@@ -7,7 +6,7 @@ const sgMail = require("@sendgrid/mail");
 urlEncoder = bodyParser.urlencoded({ extended: true });
 jsonParser = bodyParser.json();
 
-router.post("/api/nodemailer/contact", urlEncoder, (req, res) => {
+router.post("/api/sendgrid/contact", urlEncoder, (req, res) => {
   let data = req.body;
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   // using Twilio SendGrid's v3 Node.js Library
@@ -17,7 +16,7 @@ router.post("/api/nodemailer/contact", urlEncoder, (req, res) => {
   try {
     const msg = {
       from: data.body.email, // sender address
-      to: process.env.NODEMAILER_CONTACT_EMAIL, // list of receivers
+      to: process.env.SENDGRID_CONTACT_EMAIL, // list of receivers
       subject: data.body.subject, // Subject line
       text: `FROM: ${data.body.name};
             Email: ${data.body.email};
@@ -68,7 +67,7 @@ router.post("/api/nodemailer/contact", urlEncoder, (req, res) => {
   console.log("SEND GRID: Message sent");
 });
 
-router.post("/api/nodemailer/application", urlEncoder, (req, res) => {
+router.post("/api/sendgrid/application", urlEncoder, (req, res) => {
   let data = req.body;
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   // using Twilio SendGrid's v3 Node.js Library
@@ -78,7 +77,7 @@ router.post("/api/nodemailer/application", urlEncoder, (req, res) => {
   try {
     const msg = {
       from: data.body.email, // sender address
-      to: process.env.NODEMAILER_APPLICATION_EMAIL, // list of receivers
+      to: process.env.SENDGRID_APPLICATION_EMAIL, // list of receivers
       subject: data.body.subject, // Subject line
       text: `FROM: ${data.body.firstName} ${data.body.lastName}; 
             DOB: ${data.body.dateOfBirth}; 
@@ -143,7 +142,7 @@ router.post("/api/nodemailer/application", urlEncoder, (req, res) => {
 });
 
 // DONATION ROUTE
-router.post("/api/nodemailer/donation", urlEncoder, (req, res) => {
+router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
   let data = req.body;
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   // using Twilio SendGrid's v3 Node.js Library
@@ -153,7 +152,7 @@ router.post("/api/nodemailer/donation", urlEncoder, (req, res) => {
   try {
     const msg = {
       from: data.body.email, // sender address
-      to: process.env.NODEMAILER_DONATION_EMAIL, // list of receivers
+      to: process.env.SENDGRID_DONATION_EMAIL, // list of receivers
       subject: data.body.subject, // Subject line
       text: `FROM: ${data.body.firstName} ${data.body.lastName}; 
             Email: ${data.body.email}; 

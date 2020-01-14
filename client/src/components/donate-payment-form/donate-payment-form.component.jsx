@@ -77,7 +77,7 @@ const DonatePaymentForm = props => {
           .then(
             axios
               .post(
-                "/api/nodemailer/donation",
+                "/api/sendgrid/donation",
                 { body: data },
                 { headers: { "Content-Type": "application/json" } }
               )
