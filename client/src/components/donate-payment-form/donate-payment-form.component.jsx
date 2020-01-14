@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import api from "./../utils/api";
+import axios from "axios";
 
 const Styles = styled.div`
   h3 {
@@ -31,13 +32,9 @@ const DonatePaymentForm = props => {
   const [clientSecret, setClientSecret] = useState(null);
   const [donation, setDonation] = useState(0);
   const [giftAid, setGiftAid] = useState(false);
-  const { register, handleSubmit, errors } = useForm();
   const [succeeded, setSucceeded] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: ""
-  });
+  const [processing, isProcessing] = useState(false);
+  const { register, handleSubmit, errors } = useForm();
 
   useEffect(() => {
     setDonation(props.location.state.donation);
@@ -47,17 +44,16 @@ const DonatePaymentForm = props => {
 
   const onSubmit = async (data, e) => {
     e.preventDefault();
+    isProcessing(true);
     const cardElement = props.elements.getElement("card");
-    const amount = donation * 100;
-    const name = "donation";
-    const aid = giftAid;
-    console.log("Aid", aid);
+    data.donation = donation;
+    data.giftAid = giftAid;
+    console.log({ data });
     await api
       .createPaymentIntent({
-        amount,
-        name,
+        amount: data.donation * 100,
         payment_method_types: ["card"],
-        aid
+        giftAid: data.giftAid
       })
       .then(clientSecret => {
         setClientSecret(clientSecret);
@@ -70,23 +66,35 @@ const DonatePaymentForm = props => {
           })
           .then(payload => {
             if (payload.error) {
+              isProcessing(false);
               console.log("[error]", payload.error);
             } else {
               setSucceeded(true);
               console.log("[Succeeded]", succeeded);
               console.log("[PaymentIntent]", payload.paymentIntent);
             }
-          });
+          })
+          .then(
+            axios
+              .post(
+                "/api/nodemailer/donation",
+                { body: data },
+                { headers: { "Content-Type": "application/json" } }
+              )
+              .then(
+                res => {
+                  console.log("Submitted Successfully", data);
+                  e.target.reset();
+                },
+                error => {
+                  console.log(error);
+                }
+              )
+          );
       })
       .catch(err => {
         console.log(err.message);
       });
-  };
-
-  const handleInputChange = e => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    console.log("FORMDATA:", formData);
   };
 
   var style = {
@@ -138,8 +146,6 @@ const DonatePaymentForm = props => {
                     }`}
                     placeholder="First name"
                     ref={register({ required: "Please enter your First name" })}
-                    onChange={handleInputChange}
-                    value={formData.firstName}
                   />
                   {errors.firstName && (
                     <span className="error">{errors.firstName.message}</span>
@@ -162,8 +168,6 @@ const DonatePaymentForm = props => {
                     }`}
                     placeholder="Last name"
                     ref={register({ required: "Please enter your Last name" })}
-                    onChange={handleInputChange}
-                    value={formData.lastName}
                   />
                   {errors.lastName && (
                     <span className="error">{errors.lastName.message}</span>
@@ -179,10 +183,9 @@ const DonatePaymentForm = props => {
                     className={`${
                       errors.email ? "form-control inputError" : "form-control"
                     }`}
+                    id="email"
                     name="email"
                     type="email"
-                    onChange={handleInputChange}
-                    value={formData.email}
                     aria-describedby="Email"
                     placeholder="Enter email"
                     ref={register({
@@ -213,34 +216,35 @@ const DonatePaymentForm = props => {
               </div>
               <h3>Billing Address</h3>
               <div className="form-group row">
-                <label
-                  htmlFor="inputAddress"
-                  className="col-sm-4 col-form-label"
-                >
+                <label htmlFor="address" className="col-sm-4 col-form-label">
                   Address*
                 </label>
                 <div className="col-sm-8">
                   <input
+                    className={`${
+                      errors.address
+                        ? "form-control inputError"
+                        : "form-control"
+                    }`}
+                    id="address"
+                    name="address"
                     type="text"
-                    className="form-control"
-                    id="inputAddress"
                     placeholder="Gerry Richardson Way"
+                    ref={register({
+                      required: "Please enter your address"
+                    })}
                   />
+                  {errors.address && (
+                    <span className="error">{errors.address.message}</span>
+                  )}
                 </div>
               </div>
               <div className="form-group row">
-                <label
-                  htmlFor="inputAddress2"
-                  className="col-sm-4 col-form-label"
-                >
+                <label htmlFor="address2" className="col-sm-4 col-form-label">
                   <span className="sr-only sr-only-focusable">Address 2</span>
                 </label>
                 <div className="col-sm-8">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="inputAddress2"
-                  />
+                  <input type="text" className="form-control" id="address2" />
                 </div>
               </div>
               <div className="form-group row">
@@ -249,11 +253,20 @@ const DonatePaymentForm = props => {
                 </label>
                 <div className="col-sm-8">
                   <input
-                    type="text"
-                    className="form-control"
+                    className={`${
+                      errors.town ? "form-control inputError" : "form-control"
+                    }`}
                     id="town"
+                    name="town"
+                    type="text"
                     placeholder="Town"
+                    ref={register({
+                      required: "Please enter your town"
+                    })}
                   />
+                  {errors.town && (
+                    <span className="error">{errors.town.message}</span>
+                  )}
                 </div>
               </div>
               <div className="form-group row">
@@ -262,11 +275,22 @@ const DonatePaymentForm = props => {
                 </label>
                 <div className="col-sm-8">
                   <input
-                    type="text"
-                    className="form-control"
+                    className={`${
+                      errors.postCode
+                        ? "form-control inputError"
+                        : "form-control"
+                    }`}
                     id="postCode"
+                    name="postCode"
+                    type="text"
                     placeholder="Post Code"
+                    ref={register({
+                      required: "Please enter your post code"
+                    })}
                   />
+                  {errors.postCode && (
+                    <span className="error">{errors.postCode.message}</span>
+                  )}
                 </div>
               </div>
               <h3>Payment Details</h3>
@@ -280,10 +304,15 @@ const DonatePaymentForm = props => {
                 </div>
               </div>
               <div className="form-row justify-content-md-center">
-                <div className="col-sm-8 col-md-8">
-                  <Button variant="primary" type="submit" size="lg" block>
-                    Pay £{donation}
-                  </Button>
+                <div className="col-sm-12 col-md-12">
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-lg btn-block mt-3"
+                    disabled={processing}
+                  >
+                    {processing && <i className="fas fa-sync fa-spin"></i>}
+                    {!processing ? `Pay £${donation}` : " Processing"}
+                  </button>
                 </div>
               </div>
             </div>
@@ -292,15 +321,20 @@ const DonatePaymentForm = props => {
       )}
       {succeeded && (
         <div className="text-center narrow">
-          <h1>Thank you</h1>
-          <h3>Your payment succeeded</h3>
+          <h1 className="mt-3">Thank you</h1>
+          <h3 className="mt-3">Your Donation has been authorised</h3>
+          <p className="mt-3">
+            Thank you for your generous gift to the Gerry Richardson Trust.
+          </p>
+          <p>We are thrilled to have your support.</p>
           <p>
-            Thank you for your generous gift to the Gerry Richardson Trust. We
-            are thrilled to have your support. Through your donation we will be
-            able to accomplish our goal of supporting young people, aged 25 or
-            under, to attend courses and activities of an educational, cultural,
-            sporting, adventuresome or character-building nature. You truly make
-            the difference for us, and we are extremely grateful!
+            Through your donation we will be able to accomplish our goal of
+            supporting young people, aged 25 or under, to attend courses and
+            activities of an educational, cultural, sporting, adventuresome or
+            character-building nature.
+          </p>
+          <p>
+            You truly make the difference for us, and we are extremely grateful!
           </p>
         </div>
       )}

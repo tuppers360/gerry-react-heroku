@@ -129,11 +129,11 @@ const DonationForm = () => {
     <React.Fragment>
       <Styles>
         <div className="container col-md-12 col-lg-8 offset-lg-2">
-          <div className="d-flex justify-content-center mb-5 mt-5">
-            <h2>Donate to The Gerry Richardson Trust now</h2>
+          <div className="text-center mb-5 mt-5">
+            <h1>Donate to The Gerry Richardson Trust now</h1>
           </div>
           <div className="d-flex justify-content-center">
-            <h3 className="mb-5">
+            <h3 className="mb-5 text-center">
               And help us to help the local youths of Blackpool, Fylde and Wyre
             </h3>
           </div>

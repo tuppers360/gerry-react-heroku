@@ -66,7 +66,7 @@ app.post("/intents", urlEncoder, async (req, res) => {
   let options = {
     amount: data.amount,
     currency: "gbp",
-    metadata: { gift_aid: data.aid }
+    metadata: { gift_aid: data.giftAid }
   };
 
   try {
