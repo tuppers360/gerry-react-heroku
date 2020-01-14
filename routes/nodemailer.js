@@ -38,7 +38,13 @@ router.post("/api/nodemailer/contact", urlEncoder, (req, res) => {
     to: process.env.NODEMAILER_CONTACT_EMAIL, // list of receivers
     subject: data.body.subject, // Subject line
     text: data.body.message, // plain text body
-    html: data.body.message // html body
+    html: data.body.message, // html body
+    text: `FROM: ${data.body.name}; 
+            Email: ${data.body.email}; 
+            Message: ${data.body.address} ${data.body.postCode}`, // plain text body
+    html: `<h3>From: ${data.body.name}</h3> 
+            <p>Email: ${data.body.email}</p> 
+            <p>Message: ${data.body.message}</p>` // html body
   };
   let mailOptionsClient = {
     from: "noreply@gerryrichardsontrust.org", // sender address
@@ -46,7 +52,7 @@ router.post("/api/nodemailer/contact", urlEncoder, (req, res) => {
     subject: "Gerry Richardson Trust Contact Form", // Subject line
     text: `Thanks for being awesome!\r\n
       We have received your message and would like to thank you for writing to us.\r\n
-      If your inquiry is urgent, please use the telephone number listed below to talk to one of our staff members. Otherwise, we will reply by email as soon as possible.\r\n
+      If your inquiry is urgent, please use the telephone number listed below. Otherwise, we will reply by email as soon as possible.\r\n
       Talk to you soon, Gerry Richardson Trustees\r\n
       Northdene,\r\n
       Stoney Lane,\r\n
@@ -57,7 +63,7 @@ router.post("/api/nodemailer/contact", urlEncoder, (req, res) => {
       Email: contactus@gerryrichardsontrust.org`, // plain text body
     html: `<strong>Thanks for being awesome!</strong>
       <p>We have received your message and would like to thank you for writing to us.</p>
-      <p>If your inquiry is urgent, please use the telephone number listed below to talk to one of our staff members. Otherwise, we will reply by email as soon as possible.</p>
+      <p>If your inquiry is urgent, please use the telephone number listed below. Otherwise, we will reply by email as soon as possible.</p>
       <p>Talk to you soon,</p>
       <p>Gerry Richardson Trustees</p>
       <address>
