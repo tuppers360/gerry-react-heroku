@@ -12,7 +12,7 @@ import { Footer } from "./components/footer";
 import { Stories } from "./components/stories/stories";
 import { HolliesStory } from "./components/stories/holliesStory/holliesStory";
 import { NoMatch } from "./components/noMatch";
-import "./App.css";
+import "./App.scss";
 
 class App extends Component {
   render() {
