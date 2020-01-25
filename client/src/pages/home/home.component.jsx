@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ThankYou } from "./../thankyou/thankyou";
 import GerryLogo from "./blackpool_tower_darker_resize.png";
 import styled from "styled-components";
+import { ThankYou } from "./../../components/thankyou/thankyou";
 
 const Styles = styled.div`
   /*====================== Landing Section ======================*/
@@ -98,8 +98,8 @@ export const Home = () => (
     </div>
     {/* End Mission Section */}
     {/* Start Jumbotron Section */}
-    <section class="stories-container">
-      <div class="story left">
+    <section className="stories-container">
+      <div className="story left">
         <h2>Hollies Story</h2>
         <p>
           <Link to="/stories/hollies-story" className="btn btn-lg btn-primary">
@@ -107,8 +107,9 @@ export const Home = () => (
           </Link>
         </p>
       </div>
-      <div class="story right">
-        <h2>Sales Point 3</h2>
+      <div className="story right">
+        <h1>Our Goal</h1>
+        <h2>To help children all accross the Fylde</h2>
         <p>
           <Link to="/stories" className="btn btn-lg btn-primary">
             <i className="fab fa-readme"></i> More Stories

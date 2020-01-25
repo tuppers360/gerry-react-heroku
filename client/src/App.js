@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import NavigationBar from "./components/navigationbar";
 import ScrollToTop from "./components/scrollToTop";
 import { Route, Switch } from "react-router-dom";
-import { Home } from "./components/home/home";
 import { About } from "./components/about";
 import { Application } from "./components/application";
 import { Contact } from "./components/contact";
 import Donate from "./pages/donate/donate.component";
-import Payment from "./pages/donate/payment/payment.component";
+import Payment from "./pages/payment/payment.component";
 import { Footer } from "./components/footer";
 import { Stories } from "./components/stories/stories";
 import { HolliesStory } from "./components/stories/holliesStory/holliesStory";
 import { NoMatch } from "./components/noMatch";
 import "./App.scss";
+import { Home } from "./pages/home/home.component";
 
 class App extends Component {
   render() {

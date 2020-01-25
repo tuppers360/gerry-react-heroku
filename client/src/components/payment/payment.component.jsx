@@ -1,5 +1,5 @@
 import React from "react";
-import DonatePayment from "../../../components/donate-payment/donate-payment.component";
+import DonatePayment from "../../components/donate-payment/donate-payment.component";
 
 const Payment = props => {
   return (

@@ -248,6 +248,7 @@ footer .social .fa-instagram:hover {
   background-image: url(https://s3-us-west-2.amazonaws.com/florantara/codepen/Desktop-Wallpaper-HD2.jpg);
   background-size: cover;
   position: relative;
+  padding: 0 20px;
 
   &::before {
     content: "";
@@ -266,12 +267,16 @@ footer .social .fa-instagram:hover {
   &.right {
     background-image: url("/images/stories.jpg");
   }
+  h1 {
+    color: #ffc107;
+    font-size: 1.2rem;
+    z-index: 2;
+  }
   h2 {
     color: white;
     z-index: 2;
-
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   p {
     color: white;
