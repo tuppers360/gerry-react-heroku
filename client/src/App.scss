@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Montserrat|Open+Sans&display=swap");
 
-html {
-  padding: env(safe-area-insert);
+html,
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 body {
-  overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   color: #505962;
@@ -18,6 +21,7 @@ h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-style: italic;
+  font-size: 1em;
 }
 /*--- Nav Scrolling Offset --*/
 .offset:before {
@@ -30,6 +34,13 @@ h6 {
   color: #0c5b88;
 }
 
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 /*====================== Mission Section ======================*/
 
 .narrow {

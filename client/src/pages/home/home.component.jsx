@@ -13,13 +13,11 @@ export const Home = () => (
     <div className="caption text-center text-light text-uppercase">
       <h1 className="font-weight-bold">Welcome to the</h1>
       <h3>Gerry Richardson Trust</h3>
-      <a href="#mission" className="btn btn-outline-light btn-lg rounded-0">
+      <a href={"#mission"} className="btn btn-outline-light btn-lg rounded-0">
         Our Mission
       </a>
     </div>
-    {/* Start Mission Section */}
-    <div id="mission" className="offset">
-      {/* Start Top Section */}
+    <div id="mission">
       <div className="narrow text-center">
         <div className="col-12">
           <h1>Our Mission</h1>
@@ -39,30 +37,30 @@ export const Home = () => (
           </Link>
         </div>
       </div>
-      {/* End Animation Section */}
     </div>
-    {/* End Mission Section */}
-    {/* Start Stories Section */}
     <section className="stories-container">
-      <div className="story left">
+      <div className="story">
+        <img src="/images/nepal.jpg" alt="" />
         <h2>Hollies Story</h2>
-        <p>
+        <span className="button-left-bottom">
           <Link to="/stories/hollies-story" className="btn btn-lg btn-primary">
             <i className="fab fa-readme"></i> Read
           </Link>
-        </p>
+        </span>
       </div>
-      <div className="story right">
-        <h1>Our Goal</h1>
-        <h2>To help children all accross the Fylde</h2>
-        <p>
-          <Link to="/stories" className="btn btn-lg btn-primary">
-            <i className="fab fa-readme"></i> More Stories
-          </Link>
-        </p>
+      <div className="story">
+        <img src="/images/stories.jpg" alt="" />
+        <div className="content">
+          <h4>Our Goal</h4>
+          <p>To help children all accross the Fylde</p>
+          <span>
+            <Link to="/stories" className="btn btn-lg btn-primary">
+              <i className="fab fa-readme"></i> More Stories
+            </Link>
+          </span>
+        </div>
       </div>
     </section>
-    {/* End Stories Section */}
     <ThankYou />
   </React.Fragment>
 );
