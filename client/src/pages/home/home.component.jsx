@@ -19,20 +19,20 @@ const styleslanding = {
 
 export const Home = () => (
   <React.Fragment>
-    <main>
-      <h1>Our Mission</h1>
-      <p class="lead">
-        The trust seeks to promote youth development by supporting young people,
-        aged 25 or under, to attend courses and activities of an educational,
-        cultural, sporting, adventuresome or character-building nature. It is
-        willing to entertain written applications for financial assistance from
-        young people living or working within 15 miles of the town hall in
-        Blackpool, Lancashire.
-      </p>
-    </main>
-    <section class="main">
-      <h1>Our Mission</h1>
-      <p class="lead">
+    <header>
+      <div className="header-text">
+        <div className="header-text-items">
+          <h1>Gerry Richardson</h1>
+          <h3>Trust</h3>
+          <span className="button">
+            <a href="#mission">Our Mission</a>
+          </span>
+        </div>
+      </div>
+    </header>
+    <section id="mission" class="main mission">
+      <h2>Our Mission</h2>
+      <p>
         The trust seeks to promote youth development by supporting young people,
         aged 25 or under, to attend courses and activities of an educational,
         cultural, sporting, adventuresome or character-building nature. It is
@@ -57,7 +57,6 @@ export const Home = () => (
             </article>
           </a>
         </div>
-
         <div class="item-2">
           <a href="/#" class="card">
             <div class="thumb" style={styleslanding}></div>
@@ -71,7 +70,6 @@ export const Home = () => (
             </article>
           </a>
         </div>
-
         <div class="item-3">
           <a href="/#" class="card">
             <div class="thumb" style={stylesstrange}></div>
@@ -85,7 +83,6 @@ export const Home = () => (
             </article>
           </a>
         </div>
-
         <div class="item-4">
           <a href="/#" class="card">
             <div class="thumb" style={stylesstrange}></div>
@@ -99,7 +96,6 @@ export const Home = () => (
             </article>
           </a>
         </div>
-
         <div class="item-5">
           <a href="/#" class="card">
             <div class="thumb" style={styleslanding}></div>
@@ -113,7 +109,6 @@ export const Home = () => (
             </article>
           </a>
         </div>
-
         <div class="item-6">
           <a href="/#" class="card">
             <div class="thumb" style={styleslanding}></div>

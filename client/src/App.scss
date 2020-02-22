@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Montserrat|Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,800|Open+Sans|Roboto:400,700,900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #505962;
 }
@@ -24,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-style: italic;
   font-size: 1em;
@@ -44,11 +44,10 @@ h6 {
   }
 }
 
-header {
-  grid-column: span 3;
-}
-
-nav {
+header,
+nav,
+.mission,
+footer {
   grid-column: span 3;
 }
 
@@ -59,16 +58,6 @@ main,
   padding: 10px 0px;
   width: 90%;
   margin: 0 auto;
-}
-
-.mission {
-  grid-column: span 3;
-  background-color: purple;
-  padding: 20px;
-}
-
-footer {
-  grid-column: span 3;
 }
 
 .row {

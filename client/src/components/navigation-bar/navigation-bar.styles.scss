@@ -54,6 +54,7 @@ a {
   width: 100%;
   text-align: center;
   order: 3;
+  display: none;
 
   &.button {
     order: 2;
@@ -64,8 +65,6 @@ a {
   }
 }
 
-/* Navbar Toggle */
-
 .toggle {
   cursor: pointer;
 }
@@ -75,7 +74,7 @@ a {
   display: flex;
 
   a {
-    padding: 7.5px 15px;
+    padding: 7.5px 30px;
     background: #278ea5;
     border: 1px #278ea5 solid;
     border-radius: 5px;
@@ -85,6 +84,8 @@ a {
       text-decoration: none;
       transition: all 0.25s;
       color: #fff;
+      background: #1f4287;
+      border: 1px #1f4287 solid;
     }
   }
 }
@@ -103,6 +104,7 @@ a {
     width: auto;
     order: 1;
     display: block;
+    padding-right: 15px;
   }
 
   .toggle {
