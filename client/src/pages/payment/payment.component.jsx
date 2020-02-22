@@ -4,12 +4,8 @@ import DonatePayment from "../../components/donate-payment/donate-payment.compon
 const Payment = props => {
   return (
     <React.Fragment>
-      <section className="jumbotron header-jumbotron">
-        <div className="narrow">
-          <h1 className="jumbotron-heading">Donate</h1>
-        </div>
-      </section>
-      <div className="narrow">
+      <div className="main">
+        <h1>Donate</h1>
         <div>
           <DonatePayment {...props} />
         </div>

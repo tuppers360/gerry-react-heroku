@@ -192,7 +192,6 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
         Email: contactus@gerryrichardsontrust.org`, // plain text body
       html: `<p>Hi ${data.body.firstName}</p>
         <strong>Thank you for your donation to the Gerry Richardson Trust</strong>
-        <p>Thank you for your donation to the Gerry Richardson Trust</p>
         <p>Thank you for supporting the Gerry Richardson Trust work with your generous donation. Your valuable gift will help in our aim to support young people accross the Fylde.</p>
         <p>It means a lot to us and it means a great deal more to the people we help & support.</p>
         <p>Kind regards</p>

@@ -2,31 +2,8 @@ import React, { useState, useEffect } from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import styled from "styled-components";
 import api from "./../utils/api";
 import axios from "axios";
-
-const Styles = styled.div`
-  h3 {
-    display: flex;
-    color: #0091cd;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  h3:before,
-  h3:after {
-    content: "";
-    border-top: 1px solid;
-    margin: 0 20px 0 0;
-    flex: 1 0 20px;
-  }
-
-  h3:after {
-    margin: 0 0 0 20px;
-  }
-`;
 
 const DonatePaymentForm = props => {
   const [clientSecret, setClientSecret] = useState(null);
@@ -118,23 +95,17 @@ const DonatePaymentForm = props => {
   };
 
   return (
-    <Styles>
+    <React.Fragment>
       {!succeeded && (
         <div>
-          <h1 className="text-center">You're donating £{donation}</h1>
+          <h1>You're donating £{donation}</h1>
 
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="justify-content-md-center"
-            noValidate
-          >
-            <div className="col-md-6 offset-md-3">
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
+            <div>
               <h3>Your Details</h3>
-              <div className="form-group row">
-                <label htmlFor="firstName" className="col-sm-4 col-form-label">
-                  First Name(s)*
-                </label>
-                <div className="col-sm-8">
+              <div>
+                <label htmlFor="firstName">First Name(s)*</label>
+                <div>
                   <input
                     id="firstName"
                     type="text"
@@ -152,11 +123,9 @@ const DonatePaymentForm = props => {
                   )}
                 </div>
               </div>
-              <div className="form-group row">
-                <label htmlFor="lastName" className="col-sm-4 col-form-label">
-                  Last Name(s)*
-                </label>
-                <div className="col-sm-8">
+              <div>
+                <label htmlFor="lastName">Last Name(s)*</label>
+                <div>
                   <input
                     id="lastName"
                     type="text"
@@ -174,11 +143,9 @@ const DonatePaymentForm = props => {
                   )}
                 </div>
               </div>
-              <div className="form-group row">
-                <label htmlFor="email" className="col-sm-4 col-form-label">
-                  Email*
-                </label>
-                <div className="col-sm-8">
+              <div>
+                <label htmlFor="email">Email*</label>
+                <div>
                   <input
                     className={`${
                       errors.email ? "form-control inputError" : "form-control"
@@ -201,11 +168,9 @@ const DonatePaymentForm = props => {
                   )}
                 </div>
               </div>
-              <div className="form-group row">
-                <label htmlFor="telNum" className="col-sm-4 col-form-label">
-                  Tel Number
-                </label>
-                <div className="col-sm-8">
+              <div>
+                <label htmlFor="telNum">Tel Number</label>
+                <div>
                   <input
                     type="text"
                     className="form-control"
@@ -215,11 +180,9 @@ const DonatePaymentForm = props => {
                 </div>
               </div>
               <h3>Billing Address</h3>
-              <div className="form-group row">
-                <label htmlFor="address" className="col-sm-4 col-form-label">
-                  Address*
-                </label>
-                <div className="col-sm-8">
+              <div>
+                <label htmlFor="address">Address*</label>
+                <div>
                   <input
                     className={`${
                       errors.address
@@ -239,19 +202,17 @@ const DonatePaymentForm = props => {
                   )}
                 </div>
               </div>
-              <div className="form-group row">
-                <label htmlFor="address2" className="col-sm-4 col-form-label">
+              <div>
+                <label htmlFor="address2">
                   <span className="sr-only sr-only-focusable">Address 2</span>
                 </label>
-                <div className="col-sm-8">
+                <div>
                   <input type="text" className="form-control" id="address2" />
                 </div>
               </div>
-              <div className="form-group row">
-                <label htmlFor="town" className="col-sm-4 col-form-label">
-                  Town*
-                </label>
-                <div className="col-sm-8">
+              <div>
+                <label htmlFor="town">Town*</label>
+                <div>
                   <input
                     className={`${
                       errors.town ? "form-control inputError" : "form-control"
@@ -269,11 +230,9 @@ const DonatePaymentForm = props => {
                   )}
                 </div>
               </div>
-              <div className="form-group row">
-                <label htmlFor="postCode" className="col-sm-4 col-form-label">
-                  Post Code*
-                </label>
-                <div className="col-sm-8">
+              <div>
+                <label htmlFor="postCode">Post Code*</label>
+                <div>
                   <input
                     className={`${
                       errors.postCode
@@ -320,12 +279,10 @@ const DonatePaymentForm = props => {
         </div>
       )}
       {succeeded && (
-        <div className="text-center narrow">
-          <h1 className="mt-3">Thank you</h1>
-          <h3 className="mt-3">Your Donation has been authorised</h3>
-          <p className="mt-3">
-            Thank you for your generous gift to the Gerry Richardson Trust.
-          </p>
+        <div>
+          <h1>Thank you</h1>
+          <h3>Your Donation has been authorised</h3>
+          <p>Thank you for your generous gift to the Gerry Richardson Trust.</p>
           <p>We are thrilled to have your support.</p>
           <p>
             Through your donation we will be able to accomplish our goal of
@@ -338,7 +295,7 @@ const DonatePaymentForm = props => {
           </p>
         </div>
       )}
-    </Styles>
+    </React.Fragment>
   );
 };
 
