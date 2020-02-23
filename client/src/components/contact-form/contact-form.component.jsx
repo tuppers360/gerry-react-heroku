@@ -54,7 +54,7 @@ const ContactForm = () => {
         </div>
       )}
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="form-group">
+        <div>
           <label htmlFor="name">Name</label>
           <input
             className={`${
@@ -68,7 +68,7 @@ const ContactForm = () => {
           />
           {errors.name && <span className="error">{errors.name.message}</span>}
         </div>
-        <div className="form-group">
+        <div>
           <label htmlFor="email">Email address</label>
           <input
             className={`${
@@ -93,7 +93,7 @@ const ContactForm = () => {
             <span className="error">{errors.email.message}</span>
           )}
         </div>
-        <div className="form-group">
+        <div>
           <label htmlFor="message">Message</label>
           <textarea
             name="message"

@@ -36,14 +36,6 @@ h6 {
   min-height: 100vh;
 }
 
-@media (min-width: 768px) {
-  .layout-container {
-    display: grid;
-    grid-template-columns: 100px 1fr 100px;
-    grid-template-rows: auto 1fr auto;
-  }
-}
-
 header,
 nav,
 .mission,
@@ -59,13 +51,22 @@ main,
   width: 90%;
   margin: 0 auto;
 }
+@media (min-width: 768px) {
+  .layout-container {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-rows: auto 1fr auto;
+  }
 
+  .main {
+    width: 70%;
+  }
+}
 .row {
   grid-column: 1/4;
   padding: 30px;
   text-align: center;
   font-size: 1.4em;
-  background-color: #690;
   color: white;
 }
 
@@ -99,111 +100,6 @@ main,
   .item-1 h1 {
     font-size: 30px;
   }
-}
-/*--- Nav Scrolling Offset --*/
-.offset:before {
-  height: 4rem;
-  margin-top: -4rem;
-  content: "";
-  display: block;
-}
-.text-gerry {
-  color: #0c5b88;
-}
-
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-/*====================== Mission Section ======================*/
-
-.narrow {
-  width: 70%;
-  margin: 0 auto;
-  padding-top: 1rem;
-}
-@media only screen and (max-width: 600px) {
-  .narrow {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 1rem;
-  }
-}
-.btn-sm {
-  border-width: medium;
-  /* border-radius: 0; comment out this for now */
-  padding: 0.5rem 1.1rem;
-  font-size: 0.9rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin: 1rem;
-}
-.jumbotron {
-  margin-top: 4rem;
-  margin-bottom: 0;
-  border-radius: 0;
-  padding: 1rem 0 1rem 0;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-.header-jumbotron {
-  background-color: #0091cd;
-  color: #fff;
-}
-h3.heading {
-  font-size: 1.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 1.9rem;
-}
-.heading-underline {
-  width: 3rem;
-  height: 0.2rem;
-  background-color: #0c5b88;
-  margin: 0 auto 2rem;
-}
-
-/* ============ CONTACT SECTION ===============*/
-.contact-card-header {
-  background-color: #0091cd;
-  border: none;
-}
-/* ============ HOME STORIES SECTION ===============*/
-.homeStories .card {
-  border: none;
-}
-.homeStories img {
-  filter: brightness(50%);
-}
-/* ============ HOLLIE STORIES SECTION ===============*/
-.hollie {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-}
-.hollieStory .card {
-  margin-top: -1rem;
-  border: none;
-}
-/*============= THANKYOU SECTION =============*/
-.thankyou .card-title {
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.thankyou .card {
-  margin-top: 1rem;
-  border: none;
-}
-.thankyou .card-subtitle {
-  font-size: 2rem;
-  font-weight: 700;
-}
-.thankyou img {
-  filter: brightness(50%);
 }
 
 .error {

@@ -55,8 +55,8 @@ const ApplicationForm = () => {
         </div>
       )}
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="form-row">
-          <div className="col-md-6">
+        <div>
+          <div>
             <label htmlFor="firstName">First Name</label>
             <input
               className={`${
@@ -72,7 +72,7 @@ const ApplicationForm = () => {
               <span className="error">{errors.firstName.message}</span>
             )}
           </div>
-          <div className="col-md-6">
+          <div>
             <label htmlFor="lastName">Last Name</label>
             <input
               className={`${
@@ -89,8 +89,8 @@ const ApplicationForm = () => {
             )}
           </div>
         </div>
-        <div className="form-row">
-          <div className="col-md-6">
+        <div>
+          <div>
             <label htmlFor="dateOfBirth">Date Of Birth</label>
             <input
               className={`${
@@ -113,8 +113,8 @@ const ApplicationForm = () => {
             )}
           </div>
         </div>
-        <div className="form-row">
-          <div className="col-md-6">
+        <div>
+          <div>
             <label htmlFor="email">Email address</label>
             <input
               name="email"
@@ -132,7 +132,7 @@ const ApplicationForm = () => {
                 }
               })}
             />
-            <small id="emailHelp" className="form-text text-muted">
+            <small id="emailHelp">
               We'll never share your email with anyone else.
             </small>
             {errors.email && (
@@ -140,8 +140,8 @@ const ApplicationForm = () => {
             )}
           </div>
         </div>
-        <div className="form-row">
-          <div className="col-md-6">
+        <div>
+          <div>
             <label htmlFor="address">Address</label>
             <input
               name="address"
@@ -157,7 +157,7 @@ const ApplicationForm = () => {
               <span className="error">{errors.address.message}</span>
             )}
           </div>
-          <div className="col-md-6">
+          <div>
             <label htmlFor="postCode">Post Code</label>
             <input
               name="postCode"
@@ -174,8 +174,8 @@ const ApplicationForm = () => {
             )}
           </div>
         </div>
-        <div className="form-row">
-          <div className="col-md-12">
+        <div>
+          <div>
             <label htmlFor="application">
               Please provide us with as much information about your application
               as possible. How will this funding make a difference? Who will
