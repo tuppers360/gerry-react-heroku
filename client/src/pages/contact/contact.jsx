@@ -12,7 +12,7 @@ export const Contact = () => (
           Below you will find a few ways to contact us
         </h2>
       </div>
-      <div className="contact-container">
+      <div className="contact-container-grid">
         <div className="contact-item">
           <div>
             <i className="fa fa-envelope"></i> Send us a message
