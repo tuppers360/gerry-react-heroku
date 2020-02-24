@@ -46,10 +46,7 @@ footer {
 main,
 .main {
   flex: 1;
-  grid-column: 2/3;
-  padding: 10px 0px;
-  width: 90%;
-  margin: 0 auto;
+  grid-column: span 3;
 }
 @media (min-width: 768px) {
   .layout-container {

@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import NavigationBar from "./components/navigation-bar/navigation-bar.component";
 import { About } from "./components/about";
 import { Application } from "./components/application";
-import { Contact } from "./components/contact";
+import { Contact } from "./pages/contact/contact";
 import Donate from "./pages/donate/donate.component";
 import Payment from "./pages/payment/payment.component";
 import { Footer } from "./components/footer/footer.component";
