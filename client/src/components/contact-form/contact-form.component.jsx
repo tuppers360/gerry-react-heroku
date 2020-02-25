@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import "./contact-form.styles.scss";
 
 const ContactForm = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -41,9 +42,7 @@ const ContactForm = () => {
       {Object.keys(errors).length > 0 && (
         <div className="alert alert-danger">
           <h4 className="alert-heading">Holy guacamole!</h4>
-          <p className="mb-0">
-            You should check in on some of those fields below.
-          </p>
+          <p>You should check in on some of those fields below.</p>
         </div>
       )}
       {formSubmitted && (
@@ -57,9 +56,7 @@ const ContactForm = () => {
         <div>
           <label htmlFor="name">Name</label>
           <input
-            className={`${
-              errors.name ? "form-control inputError" : "form-control"
-            }`}
+            className={`${errors.name ? "field inputError" : "field"}`}
             name="name"
             type="text"
             aria-describedby="Name Help"
@@ -71,9 +68,7 @@ const ContactForm = () => {
         <div>
           <label htmlFor="email">Email address</label>
           <input
-            className={`${
-              errors.email ? "form-control inputError" : "form-control"
-            }`}
+            className={`${errors.email ? "field inputError" : "field"}`}
             name="email"
             type="email"
             aria-describedby="Email Help"
@@ -99,7 +94,7 @@ const ContactForm = () => {
             name="message"
             type="text"
             className={`${
-              errors.message ? "form-control inputError" : "form-control"
+              errors.message ? "field inputError area" : "field area"
             }`}
             aria-describedby="Message Help text"
             placeholder="Enter your message"
@@ -111,11 +106,7 @@ const ContactForm = () => {
           )}
         </div>
         <div className="mx-auto">
-          <button
-            type="submit"
-            className="btn btn-primary btn-block"
-            disabled={submitting}
-          >
+          <button type="submit" className="btn-contact" disabled={submitting}>
             {submitting && <i className="fas fa-sync fa-spin"></i>}
             {!submitting ? "Submit" : " Submitting"}
           </button>

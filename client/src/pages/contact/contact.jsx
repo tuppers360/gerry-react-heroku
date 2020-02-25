@@ -13,18 +13,18 @@ export const Contact = () => (
         </h2>
       </div>
       <div className="contact-container-grid">
-        <div className="contact-item">
-          <div>
+        <div className="contact-item contact-box">
+          <h3>
             <i className="fa fa-envelope"></i> Send us a message
-          </div>
+          </h3>
           <div>
             <ContactForm />
           </div>
         </div>
         <div className="contact-item">
-          <div>
+          <h3>
             <i className="fa fa-home"></i> Get in touch
-          </div>
+          </h3>
           <div>
             <p>
               We’re very approachable and would love to speak to you. Feel free
