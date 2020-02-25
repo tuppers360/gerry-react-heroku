@@ -8,34 +8,34 @@ const NavigationBar = () => {
   return (
     <React.Fragment>
       <nav>
-        <ul class="menu">
-          <li class="logo">
+        <ul className="menu">
+          <li className="logo">
             <Link to="/">Gerry Richardson</Link>
           </li>
           <li
-            class={"nav-item " + (isActive ? "active" : "")}
+            className={"nav-item " + (isActive ? "active" : "")}
             onClick={() => setIsActive(!isActive)}
           >
             <Link to="/stories">Stories</Link>
           </li>
           <li
-            class={"nav-item " + (isActive ? "active" : "")}
+            className={"nav-item " + (isActive ? "active" : "")}
             onClick={() => setIsActive(!isActive)}
           >
             <Link to="/about">About</Link>
           </li>
           <li
-            class={"nav-item " + (isActive ? "active" : "")}
+            className={"nav-item " + (isActive ? "active" : "")}
             onClick={() => setIsActive(!isActive)}
           >
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li class="nav-item button donate">
+          <li className="nav-item button donate">
             <Link to="/donate">Donate</Link>
           </li>
-          <li class="toggle" onClick={() => setIsActive(!isActive)}>
+          <li className="toggle" onClick={() => setIsActive(!isActive)}>
             <span>
-              <i class="fas fa-bars"></i>
+              <i className="fas fa-bars"></i>
             </span>
           </li>
         </ul>
