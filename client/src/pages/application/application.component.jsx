@@ -6,11 +6,11 @@ export const Application = () => (
   <React.Fragment>
     <main>
       <div className="contact-header">
-        <h1>Apply for a grant</h1>
+        <h2>Apply for a grant</h2>
+        <h1>Application Form</h1>
       </div>
       <div className="application-container-grid">
         <div className="application-item">
-          <h3>Application Form</h3>
           <p>
             These notes are to help you provide all the information required so
             that Trustees can come to a decision about your application.

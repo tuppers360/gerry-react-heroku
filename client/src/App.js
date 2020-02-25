@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ScrollToTop from "./components/scrollToTop";
 import { Route, Switch } from "react-router-dom";
 import NavigationBar from "./components/navigation-bar/navigation-bar.component";
-import { About } from "./components/about";
+import { About } from "./pages/about/about.component";
 import { Application } from "./pages/application/application.component";
 import { Contact } from "./pages/contact/contact";
 import Donate from "./pages/donate/donate.component";

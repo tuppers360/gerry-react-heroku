@@ -1,4 +1,4 @@
-.application-header {
+.about-header {
   text-align: center;
   background-color: #f2f3f4;
   padding: 0 10px;
@@ -38,23 +38,12 @@
   }
 }
 
-.application-container-grid {
-  display: grid;
+.about-container {
   padding: 20px;
 }
 
-.application-item {
-  ul {
-    padding: 0 40px;
-  }
-
-  p.bolder {
-    font-weight: 700;
-  }
-}
-
 @media screen and (min-width: 768px) {
-  .application-header {
+  .about-header {
     text-align: center;
     background-color: #f2f3f4;
     padding: 0 10px;
@@ -74,14 +63,8 @@
     }
   }
 
-  .application-container-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+  .about-container {
     width: 70%;
     margin: auto;
-  }
-
-  .application-item {
-    padding: 40px;
   }
 }
