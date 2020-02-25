@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import "./application-form.styles.scss";
 
 const ApplicationForm = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -59,9 +60,7 @@ const ApplicationForm = () => {
           <div>
             <label htmlFor="firstName">First Name</label>
             <input
-              className={`${
-                errors.firstName ? "form-control inputError" : "form-control"
-              }`}
+              className={`${errors.firstName ? "field inputError" : "field"}`}
               name="firstName"
               type="text"
               aria-describedby="First Name"
@@ -75,9 +74,7 @@ const ApplicationForm = () => {
           <div>
             <label htmlFor="lastName">Last Name</label>
             <input
-              className={`${
-                errors.lastName ? "form-control inputError" : "form-control"
-              }`}
+              className={`${errors.lastName ? "field inputError" : "field"}`}
               name="lastName"
               type="text"
               aria-describedby="Name Help"
@@ -93,9 +90,7 @@ const ApplicationForm = () => {
           <div>
             <label htmlFor="dateOfBirth">Date Of Birth</label>
             <input
-              className={`${
-                errors.dateOfBirth ? "form-control inputError" : "form-control"
-              }`}
+              className={`${errors.dateOfBirth ? "field inputError" : "field"}`}
               name="dateOfBirth"
               type="text"
               aria-describedby="Date Of Birth"
@@ -119,9 +114,7 @@ const ApplicationForm = () => {
             <input
               name="email"
               type="email"
-              className={`${
-                errors.email ? "form-control inputError" : "form-control"
-              }`}
+              className={`${errors.email ? "field inputError" : "field"}`}
               aria-describedby="Email Help"
               placeholder="Enter email"
               ref={register({
@@ -132,7 +125,7 @@ const ApplicationForm = () => {
                 }
               })}
             />
-            <small id="emailHelp">
+            <small id="emailHelp" className="form-text text-muted">
               We'll never share your email with anyone else.
             </small>
             {errors.email && (
@@ -146,9 +139,7 @@ const ApplicationForm = () => {
             <input
               name="address"
               type="text"
-              className={`${
-                errors.address ? "form-control inputError" : "form-control"
-              }`}
+              className={`${errors.address ? "field inputError" : "field"}`}
               aria-describedby="Address"
               placeholder="Address"
               ref={register({ required: "Please enter your address" })}
@@ -162,9 +153,7 @@ const ApplicationForm = () => {
             <input
               name="postCode"
               type="text"
-              className={`${
-                errors.postCode ? "form-control inputError" : "form-control"
-              }`}
+              className={`${errors.postCode ? "field inputError" : "field"}`}
               aria-describedby="Post Code"
               placeholder="Post Code"
               ref={register({ required: "Please enter your post code" })}
@@ -184,9 +173,7 @@ const ApplicationForm = () => {
             <textarea
               name="application"
               type="text"
-              className={`${
-                errors.application ? "form-control inputError" : "form-control"
-              }`}
+              className={`${errors.application ? "field inputError" : "field"}`}
               aria-describedby="Application text"
               placeholder="Enter your message"
               ref={register({ required: "Please enter your application" })}
@@ -197,11 +184,7 @@ const ApplicationForm = () => {
             )}
           </div>
         </div>
-        <button
-          type="submit"
-          className="btn btn-primary btn-block mt-3"
-          disabled={submitting}
-        >
+        <button type="submit" className="btn-application" disabled={submitting}>
           {submitting && <i className="fas fa-sync fa-spin"></i>}
           {!submitting ? "Submit Application" : " Submitting Application"}
         </button>

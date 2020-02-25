@@ -3,7 +3,7 @@ import ScrollToTop from "./components/scrollToTop";
 import { Route, Switch } from "react-router-dom";
 import NavigationBar from "./components/navigation-bar/navigation-bar.component";
 import { About } from "./components/about";
-import { Application } from "./components/application";
+import { Application } from "./pages/application/application.component";
 import { Contact } from "./pages/contact/contact";
 import Donate from "./pages/donate/donate.component";
 import Payment from "./pages/payment/payment.component";
