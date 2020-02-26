@@ -27,12 +27,12 @@
     line-height: 1.63;
     letter-spacing: 1.2px;
     text-align: center;
-    color: #373d3f;
+    color: $darkgrey;
   }
   h2.subtitle {
     margin: 1em auto 2em auto;
     font-weight: 500;
-    color: #373d3f;
+    color: $darkgrey;
   }
 
   .application-header-text {
@@ -61,7 +61,7 @@
     h2.subtitle {
       margin: 1em auto 2em auto;
       font-weight: 500;
-      color: #373d3f;
+      color: $darkgrey;
     }
   }
 
