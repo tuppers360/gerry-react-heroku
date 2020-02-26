@@ -42,14 +42,6 @@ const DonationForm = () => {
     <React.Fragment>
       <div>
         <div>
-          <h1>Donate to The Gerry Richardson Trust now</h1>
-        </div>
-        <div>
-          <h3>
-            And help us to help the local youths of Blackpool, Fylde and Wyre
-          </h3>
-        </div>
-        <div>
           <ul
             className="btn-group-donation-type"
             aria-label="Donation Button Group Type"
