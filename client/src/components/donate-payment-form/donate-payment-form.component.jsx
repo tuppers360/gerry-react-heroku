@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
-import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import api from "./../utils/api";
 import axios from "axios";
@@ -83,7 +82,8 @@ const DonatePaymentForm = props => {
       fontSize: "16px",
       "::placeholder": {
         color: "#aab7c4"
-      }
+      },
+      padding: "0.5rem 1rem"
     },
     invalid: {
       color: "#fa755a",
@@ -219,16 +219,8 @@ const DonatePaymentForm = props => {
           </div>
           <div className="form-group">
             <h2 className="heading">Payment Details</h2>
-            <CardElement
-              className="sr-input sr-card-element"
-              style={style}
-              classes={classes}
-            />
-            <button
-              type="submit"
-              className="btn btn-primary btn-lg btn-block mt-3"
-              disabled={processing}
-            >
+            <CardElement className="field" style={style} classes={classes} />
+            <button type="submit" className="btn-donate" disabled={processing}>
               {processing && <i className="fas fa-sync fa-spin"></i>}
               {!processing ? `Pay £${donation}` : " Processing"}
             </button>
