@@ -16,7 +16,13 @@ const NavigationBar = () => {
             className={"nav-item " + (isActive ? "active" : "")}
             onClick={() => setIsActive(!isActive)}
           >
-            <Link to="/stories">Stories</Link>
+            <Link to="/#">Stories (coming soon)</Link>
+          </li>
+          <li
+            className={"nav-item " + (isActive ? "active" : "")}
+            onClick={() => setIsActive(!isActive)}
+          >
+            <Link to="/#">News (coming soon)</Link>
           </li>
           <li
             className={"nav-item " + (isActive ? "active" : "")}
