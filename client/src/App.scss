@@ -101,14 +101,14 @@ main,
 }
 
 .error {
-  color: red;
+  color: $errorred;
   font-size: 12px;
   font-weight: 700;
 }
 
 .inputError {
-  border-color: red;
-  border-width: 1px;
+  border-color: $errorred;
+  border-width: 5px;
 }
 
 label {
@@ -132,6 +132,10 @@ label {
   &:focus {
     background-color: #fff;
     border: 2px solid #1f4287;
+  }
+
+  &::placeholder {
+    color: $placeholdergrey;
   }
 }
 
