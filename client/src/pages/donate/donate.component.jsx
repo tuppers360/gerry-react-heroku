@@ -7,9 +7,10 @@ const Donate = () => {
     <React.Fragment>
       <main>
         <div className="donate-header">
-          <h1>Donate to The Gerry Richardson Trust now</h1>
-          <h2>
-            And help us to help the local youths of Blackpool, Fylde and Wyre
+          <h2>Donate to</h2>
+          <h1>The Gerry Richardson Trust</h1>
+          <h2 className="subtitle">
+            help us to help the local youths of Blackpool, Fylde and Wyre
           </h2>
         </div>
         <div className="donate-container">
