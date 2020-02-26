@@ -40,8 +40,14 @@
   }
 }
 
+h2.heading {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+}
+
 .contact-box {
-  box-shadow: 0px 0px 10px 1px;
   border-radius: 5px;
 
   p {
