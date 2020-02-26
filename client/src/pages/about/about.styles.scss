@@ -1,6 +1,8 @@
+@import "./../../assets/scss/1-helpers/variables";
+
 .about-header {
   text-align: center;
-  background-color: #f2f3f4;
+  background-color: $lightgrey;
   padding: 0 10px;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -45,7 +47,7 @@
 @media screen and (min-width: 768px) {
   .about-header {
     text-align: center;
-    background-color: #f2f3f4;
+    background-color: $lightgrey;
     padding: 0 10px;
     padding-top: 2rem;
     padding-bottom: 2rem;
