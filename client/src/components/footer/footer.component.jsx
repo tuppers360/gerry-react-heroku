@@ -22,22 +22,22 @@ export const Footer = () => (
           <div className="social-icons">
             <ul>
               <li>
-                <a href="http://www.facebook.com">
+                <a href="https://www.facebook.com/groups/649311542556032/">
                   <i className="fab fa-lg fa-facebook-f"></i>
                 </a>
               </li>
               <li>
-                <a href="http://www.twitter.com">
+                <a href="https://twitter.com/gerrytrust">
                   <i className="fab fa-lg fa-twitter"></i>
                 </a>
               </li>
-              <li>
+              {/*<li>
                 <a href="http://www.linkedin.com">
                   <i className="fab fa-lg fa-linkedin-in"></i>
                 </a>
-              </li>
+              </li>*/}
               <li>
-                <a href="http://www.instgram.com">
+                <a href="https://www.instagram.com/gerryrichardsontrust/">
                   <i className="fab fa-lg fa-instagram"></i>
                 </a>
               </li>
