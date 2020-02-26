@@ -1,19 +1,30 @@
-h3 {
-  display: flex;
-  color: #0091cd;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+@import "./../../assets/scss/1-helpers/variables";
+
+h2.heading {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 300;
   text-align: center;
 }
-h3:before,
-h3:after {
-  content: "";
-  border-top: 1px solid;
-  margin: 0 20px 0 0;
-  flex: 1 0 20px;
-}
 
-h3:after {
-  margin: 0 0 0 20px;
+.payment-container {
+  label {
+    display: block;
+    padding: 1rem 0 0.25rem;
+    font-size: 16;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  button,
+  select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form-group {
+    padding-top: 40px;
+  }
 }

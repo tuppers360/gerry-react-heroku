@@ -1,0 +1,72 @@
+@import "./../../assets/scss/1-helpers/variables";
+
+.payment-header {
+  text-align: center;
+  background-color: $lightgrey;
+  padding: 0 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.45;
+    letter-spacing: 0.8px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    color: #107896;
+  }
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.63;
+    letter-spacing: 1.2px;
+    text-align: center;
+    color: $darkgrey;
+  }
+  h2.subtitle {
+    margin: 1em auto 2em auto;
+    font-weight: 500;
+    color: $darkgrey;
+  }
+
+  .payment-header-text {
+    text-transform: uppercase;
+  }
+}
+
+.payment-container {
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .payment-header {
+    text-align: center;
+    background-color: $lightgrey;
+    padding: 0 10px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+    }
+    h2.subtitle {
+      margin: 1em auto 2em auto;
+      font-weight: 500;
+      color: $darkgrey;
+    }
+  }
+
+  .payment-container {
+    width: 50%;
+    margin: auto;
+  }
+}
