@@ -47,7 +47,7 @@ const ContactForm = () => {
       )}
       {formSubmitted && (
         <div className="alert alert-success" role="alert">
-          <h4 className="alert-heading">Success</h4>
+          <h4 className="alert-heading">Eureka!</h4>
           <hr />
           <p>Thank you for your message we will be in contact you soon!</p>
         </div>

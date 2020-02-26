@@ -6,12 +6,7 @@ const Payment = props => {
   return (
     <React.Fragment>
       <main>
-        <div className="payment-header">
-          <h1>You're donating £{props.location.state.donation}</h1>
-        </div>
-        <div className="payment-container">
-          <DonatePayment {...props} />
-        </div>
+        <DonatePayment {...props} />
       </main>
     </React.Fragment>
   );
