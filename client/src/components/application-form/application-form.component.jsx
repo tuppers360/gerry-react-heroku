@@ -175,7 +175,7 @@ const ApplicationForm = () => {
               type="text"
               className={`${errors.application ? "field inputError" : "field"}`}
               aria-describedby="Application text"
-              placeholder="Enter your message"
+              placeholder="Enter your application details"
               ref={register({ required: "Please enter your application" })}
               rows="6"
             ></textarea>
