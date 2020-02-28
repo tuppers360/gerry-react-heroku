@@ -47,6 +47,8 @@ const DonatePaymentForm = props => {
               console.log("[error]", payload.error);
             } else {
               setSucceeded(true);
+              //TODO - temp fix to scroll to top on form submission. Possibly need diaplog box.
+              window.scrollTo(0, 0);
               console.log("[Succeeded]", succeeded);
               console.log("[PaymentIntent]", payload.paymentIntent);
             }
@@ -61,9 +63,9 @@ const DonatePaymentForm = props => {
               .then(
                 res => {
                   console.log("Submitted Successfully", data);
-                  e.target.reset();
                 },
                 error => {
+                  // TODO - need to look at handling error for email but Stripe is suceeded.
                   console.log(error);
                 }
               )
