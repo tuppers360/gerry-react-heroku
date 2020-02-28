@@ -63,3 +63,36 @@ a:hover {
   text-decoration: none;
   margin: 5px 5px;
 }
+
+.giftaid {
+  margin: 3rem 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .checkbox-container {
+    font-size: 2rem;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.declaration {
+  text-align: center;
+}
