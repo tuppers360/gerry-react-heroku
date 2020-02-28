@@ -22,6 +22,8 @@ const ContactForm = () => {
         .then(
           res => {
             isFormSubmitted(true);
+            //TODO - temp fix to scroll to top on form submission. Possibly need diaplog box.
+            window.scrollTo(0, 0);
             e.target.reset();
           },
           error => {
