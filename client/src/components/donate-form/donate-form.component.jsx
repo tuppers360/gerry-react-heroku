@@ -92,24 +92,21 @@ const DonationForm = () => {
         </ul>
       </div>
       {showCustomDonation && (
-        <div>
-          <div>
-            <label htmlFor="customdonationamount">
-              Donate what you want to:
-            </label>
-            <div>
-              <input
-                id="customdonationamount"
-                pattern="[0-9]*"
-                name="donation"
-                type="number"
-                aria-describedby="Custom Donation Amount"
-                placeholder="Enter Donation"
-                min="1"
-                onChange={e => setDonation(e.currentTarget.value)}
-              />
-            </div>
-          </div>
+        <div className="customdonation-amount">
+          <label htmlFor="customdonationamount">
+            <span>Donate what you want to:</span>
+            <input
+              id="customdonationamount"
+              pattern="[0-9]*"
+              name="donation"
+              type="text"
+              aria-describedby="Custom Donation Amount"
+              placeholder="Enter Donation"
+              min="1"
+              onChange={e => setDonation(e.currentTarget.value)}
+              className="field"
+            />
+          </label>
         </div>
       )}
       <div className="giftaid">
