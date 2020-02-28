@@ -156,18 +156,18 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
       from: data.body.email, // sender address
       to: process.env.SENDGRID_DONATION_EMAIL, // list of receivers
       subject: `Donation from: ${data.body.firstName} ${data.body.lastName}`, // Subject line
-      text: `Donator: ${data.body.firstName} ${data.body.lastName}; 
+      text: `Name: ${data.body.firstName} ${data.body.lastName}; 
             Email: ${data.body.email}; 
             Address: ${data.body.address};
             Town: ${data.body.town};
             Post Code: ${data.body.postCode}; 
             Gift Aid: ${data.body.giftAid};
-            Donation: ${data.body.donation}`, // plain text body
+            Donation: £${data.body.donation}`, // plain text body
       html: `<h3>Donator: ${data.body.firstName} ${data.body.lastName}</h3> 
             <p>Email: ${data.body.email}</p> 
             <p>Address: <address>${data.body.address}<br/>${data.body.postCode}</address></p> 
             <p>Gift Aid: ${data.body.giftAid}</p>
-            <p>Donation: ${data.body.donation}</p>` // html body
+            <p>Donation: £${data.body.donation}</p>` // html body
     };
     console.log({ msg });
     sgMail.send(msg);
