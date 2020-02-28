@@ -115,7 +115,7 @@ const DonatePaymentForm = props => {
               <div className="form-group">
                 <h2 className="heading">Your Details</h2>
                 <div>
-                  <label htmlFor="firstName">First Name(s)*</label>
+                  <label htmlFor="firstName">First Name(s)</label>
                   <input
                     id="firstName"
                     type="text"
@@ -131,7 +131,7 @@ const DonatePaymentForm = props => {
                   )}
                 </div>
                 <div>
-                  <label htmlFor="lastName">Last Name(s)*</label>
+                  <label htmlFor="lastName">Last Name(s)</label>
                   <input
                     id="lastName"
                     type="text"
@@ -147,7 +147,7 @@ const DonatePaymentForm = props => {
                   )}
                 </div>
                 <div>
-                  <label htmlFor="email">Email*</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     className={`${errors.email ? "field inputError" : "field"}`}
                     id="email"
@@ -180,7 +180,7 @@ const DonatePaymentForm = props => {
               <div className="form-group">
                 <h2 className="heading">Billing Address</h2>
                 <div>
-                  <label htmlFor="address">Address*</label>
+                  <label htmlFor="address">Address</label>
                   <input
                     className={`${
                       errors.address ? "field inputError" : "field"
@@ -204,7 +204,7 @@ const DonatePaymentForm = props => {
                   <input type="text" className="field" id="address2" />
                 </div>
                 <div>
-                  <label htmlFor="town">Town*</label>
+                  <label htmlFor="town">Town</label>
                   <input
                     className={`${errors.town ? "field inputError" : "field"}`}
                     id="town"
@@ -220,7 +220,7 @@ const DonatePaymentForm = props => {
                   )}
                 </div>
                 <div>
-                  <label htmlFor="postCode">Post Code*</label>
+                  <label htmlFor="postCode">Post Code</label>
                   <input
                     className={`${
                       errors.postCode ? "field inputError" : "field"
@@ -240,7 +240,9 @@ const DonatePaymentForm = props => {
               </div>
               <div className="form-group">
                 <h2 className="heading">Payment Details</h2>
+                <label htmlFor="postCode">Credit Card</label>
                 <CardElement
+                  id="creditCard"
                   className="field"
                   style={style}
                   classes={classes}
