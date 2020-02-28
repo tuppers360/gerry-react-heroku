@@ -65,27 +65,37 @@ a:hover {
 }
 
 .giftaid {
-  margin: 3rem 0;
+  margin: 2rem 0 1rem 0;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
 
   h2 {
-    padding: 2rem 0;
+    padding: 2rem 0 0 0;
     font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
+  }
+
+  small {
+    text-align: center;
   }
 
   h3 {
     font-size: 1.1rem;
     font-weight: 400;
     text-align: center;
+    padding: 2rem 0 0 0;
   }
 
   .checkbox-container {
     font-size: 2rem;
+  }
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 700;
   }
 
   input {
@@ -95,6 +105,11 @@ a:hover {
 
 .declaration {
   text-align: center;
+  margin-bottom: 2rem;
+
+  small {
+    font-size: 0.8rem;
+  }
 }
 
 .customdonation-amount {
@@ -106,6 +121,7 @@ a:hover {
     text-align: center;
 
     span {
+      font-size: 1.2rem;
       padding-bottom: 20px;
     }
 
@@ -117,5 +133,30 @@ a:hover {
         text-align: center;
       }
     }
+  }
+}
+
+.btn-donate {
+  display: block;
+  margin-top: 20px;
+  padding: 0.5rem 2rem;
+  font-size: 1.1rem;
+  background-color: #093145;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  width: auto;
+
+  a:hover {
+    background-color: #3c6478;
+    color: #fff;
+  }
+
+  &.disabled {
+    background-color: #3c6478;
+    pointer-events: none;
   }
 }

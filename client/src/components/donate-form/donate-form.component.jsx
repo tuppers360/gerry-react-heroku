@@ -112,6 +112,11 @@ const DonationForm = () => {
       <div className="giftaid">
         <img src={GiftAidLogo} alt="Gift Aid" />
         <h2>Are you a UK tax payer?</h2>
+        <small>
+          Gift Aid is reclaimed by the charity from the tax you pay for the
+          current year. Your address is needed to identify you as a current UK
+          taxpayer.
+        </small>
         <h3>
           Boost your donation by&nbsp;
           <strong>
@@ -131,8 +136,8 @@ const DonationForm = () => {
         </h3>
         <label
           htmlFor="giftAid"
-          className={`checkbox-container ${
-            giftAid ? "far fa-check-square" : "far fa-square"
+          className={`checkbox-container far ${
+            giftAid ? "fa-check-square" : "fa-square"
           }`}
         >
           <input
@@ -145,46 +150,38 @@ const DonationForm = () => {
         <span>Please claim Gift Aid on my behalf</span>
       </div>
 
-      <div className="declaration">
-        <p>
-          Gift Aid is reclaimed by the charity from the tax you pay for the
-          current year. Your address is needed to identify you as a current UK
-          taxpayer.
-        </p>
-        <p>
-          I confirm that this is my own money and I would like The Gerry
-          Richardson Trust to treat all the donations I have made in the past
-          (if any) and any future donations I make, unless I notify you
-          otherwise, as Gift Aid donations.
-        </p>
-        <p>
-          I also confirm that I am a UK taxpayer and understand that if I pay
-          less Income Tax and/or Capital Gains Tax in the current tax year than
-          the amount of Gift Aid claimed on all my donations it is my
-          responsibility to pay any difference.
-        </p>
-      </div>
-      <div>
-        <div>
-          <Link
-            to={{
-              pathname: "/donate/payment",
-              state: {
-                donation: donation,
-                giftAid: giftAid
-              }
-            }}
-          >
-            <Button
-              variant="danger"
-              size="lg"
-              disabled={donation > 0 ? false : true}
-              block
-            >
-              Donate
-            </Button>
-          </Link>
+      {giftAid && (
+        <div className="declaration">
+          <p>
+            <small>
+              I confirm that this is my own money and I would like The Gerry
+              Richardson Trust to treat all the donations I have made in the
+              past (if any) and any future donations I make, unless I notify you
+              otherwise, as Gift Aid donations.
+            </small>
+          </p>
+          <p>
+            <small>
+              I also confirm that I am a UK taxpayer and understand that if I
+              pay less Income Tax and/or Capital Gains Tax in the current tax
+              year than the amount of Gift Aid claimed on all my donations it is
+              my responsibility to pay any difference.
+            </small>
+          </p>
         </div>
+      )}
+      <div className={`btn-donate ${donation >= 0.3 ? "" : "disabled"}`}>
+        <Link
+          to={{
+            pathname: "/donate/payment",
+            state: {
+              donation: donation,
+              giftAid: giftAid
+            }
+          }}
+        >
+          Donate
+        </Link>
       </div>
     </React.Fragment>
   );
