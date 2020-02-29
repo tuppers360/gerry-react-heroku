@@ -7,12 +7,16 @@ import HollieStory_5 from "./hollie_5.jpg";
 import HollieStory_6 from "./hollie_6.jpg";
 import HollieStory_7 from "./hollie_7.jpg";
 import HollieStory_8 from "./hollie_8.jpg";
+import "./hollies-story.styles.scss";
 
 export const HolliesStory = () => (
   <React.Fragment>
-    <div className="main">
-      <h1>Hollies Story</h1>
-      <div>
+    <main>
+      <div className="story-header">
+        <h1>Hollies Story</h1>
+      </div>
+      <div className="story-container">
+        <img src={HollieStory_1} alt="Card" />
         <p>
           On the 7th July 2016, I along with a group of 12 other extremely
           excited Blackpool Sixth Form Students and 2 equally excited tutors set
@@ -48,7 +52,7 @@ export const HolliesStory = () => (
           goats to the Goddess Kali to appease her - the patience and dedication
           of the people at all these places was truly inspiring to us.
         </p>
-        <section>
+        {/*<section>
           <div>
             <div>
               <div>
@@ -81,7 +85,7 @@ export const HolliesStory = () => (
               </div>
             </div>
           </div>
-        </section>
+        </section>*/}
         <p>
           Monday 11th July was the day that we had all been waiting for, after a
           very early get up and a very bumpy drive we finally arrived at
@@ -170,7 +174,7 @@ export const HolliesStory = () => (
           with with patience and a positive attitude is applied then its effects
           will be felt far less.
         </p>
-        <section>
+        {/*<section>
           <div>
             <div>
               <div>
@@ -187,8 +191,8 @@ export const HolliesStory = () => (
               </div>
             </div>
           </div>
-        </section>
+        </section>*/}
       </div>
-    </div>
+    </main>
   </React.Fragment>
 );
