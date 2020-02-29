@@ -84,7 +84,13 @@
     transform: translateY(-50%);
     left: 5%;
     width: 90%;
+
+    &.left {
+      font-family: "Julietta-Messie-Demo";
+      font-size: 5rem;
+    }
   }
+
   h4 {
     color: #ffc107;
     font-size: 3rem;

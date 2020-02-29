@@ -7,7 +7,7 @@ const HomeStories = () => {
     <section className="stories-container">
       <div className="story left">
         <img src="/images/nepal.jpg" alt="" />
-        <h2>Hollies Story</h2>
+        <h2 className="left">Hollies Story</h2>
         <span className="button-left-bottom">
           <Link to="/stories/hollies-story" className="btn btn-lg btn-primary">
             <i className="fab fa-readme"></i> Read
