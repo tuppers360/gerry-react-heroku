@@ -178,7 +178,7 @@ const DonatePaymentForm = props => {
                 </div>
               </div>
               <div className="form-group">
-                <h2 className="heading">Billing Address</h2>
+                <h2 className="heading">Address Details</h2>
                 <div>
                   <label htmlFor="address">Address</label>
                   <input
