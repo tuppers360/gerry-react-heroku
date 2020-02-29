@@ -150,6 +150,10 @@ a:hover {
   text-align: center;
   width: auto;
 
+  a {
+    display: block;
+  }
+
   a:hover {
     background-color: #3c6478;
     color: #fff;
