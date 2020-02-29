@@ -25,26 +25,24 @@ export const Contact = () => (
           <h2 className="heading">
             <i className="fa fa-home"></i> Get in touch
           </h2>
-          <div>
-            <p>
-              We’re very approachable and would love to speak to you. Feel free
-              to call, send us an email, Tweet us or simply complete the enquiry
-              form.
-            </p>
-            <p>
-              <strong>Gerry Richardson Trust</strong>
-              <br />
-              Northdene,
-              <br />
-              Stoney Lane,
-              <br />
-              Hambleton,
-              <br />
-              Poulton-Le-Fylde,
-              <br />
-              FY6 9AF
-            </p>
-          </div>
+          <p>
+            We’re very approachable and would love to speak to you. Feel free to
+            call, send us an email, Tweet us or simply complete the enquiry
+            form.
+          </p>
+          <p>
+            <strong>Gerry Richardson Trust</strong>
+            <br />
+            Northdene,
+            <br />
+            Stoney Lane,
+            <br />
+            Hambleton,
+            <br />
+            Poulton-Le-Fylde,
+            <br />
+            FY6 9AF
+          </p>
         </div>
       </div>
     </main>
