@@ -1,3 +1,5 @@
+@import "./../../assets/scss/1-helpers/variables";
+
 .stories-container {
   grid-column: span 3;
   color: white;
@@ -38,7 +40,7 @@
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
@@ -55,12 +57,8 @@
     &.left {
       font-family: "Julietta-Messie-Demo";
       font-size: 5rem;
+      letter-spacing: 2px;
     }
-  }
-
-  h4 {
-    color: #ffc107;
-    font-size: 2rem;
   }
 
   .content {
@@ -74,19 +72,18 @@
 
     h4 {
       text-align: center;
+      color: $sterling;
+      font-size: 1.5rem;
     }
+
     p {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       font-style: normal;
       font-stretch: normal;
       line-height: 1.38;
       letter-spacing: -0.1px;
       text-align: center;
-    }
-    span {
-      display: flex;
-      justify-content: center;
     }
   }
   .button-left-bottom {
@@ -104,19 +101,44 @@
   }
   .story {
     h1 {
-      color: #ffc107;
+      color: $lighterindigo;
       font-size: 1.8rem;
     }
     h2 {
-      font-size: 2.5rem;
+      &.left {
+        font-size: 3rem;
+      }
     }
     .content {
       h4 {
         font-weight: normal;
-        font-size: 1.8 rem;
+        font-size: 1.8rem;
       }
       p {
-        font-size: 3rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .story {
+    h1 {
+      color: $lighterindigo;
+      font-size: 1.8rem;
+    }
+    h2 {
+      &.left {
+        font-size: 4rem;
+      }
+    }
+    .content {
+      h4 {
+        font-weight: normal;
+        font-size: 2rem;
+      }
+      p {
+        font-size: 2.5rem;
       }
     }
   }
