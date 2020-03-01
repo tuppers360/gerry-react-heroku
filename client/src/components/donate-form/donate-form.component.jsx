@@ -156,8 +156,8 @@ const DonationForm = () => {
             <small>
               I confirm that this is my own money and I would like The Gerry
               Richardson Trust to treat all the donations I have made in the
-              past (if any) and any future donations I make, unless I notify you
-              otherwise, as Gift Aid donations.
+              past 4 years (if any) and any future donations I make, unless I
+              notify you otherwise, as Gift Aid donations.
             </small>
           </p>
           <p>
