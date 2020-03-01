@@ -2,18 +2,19 @@ import React from "react";
 import HomeStories from "../../components/home-stories/home-stories.component";
 import "./home.styles.scss";
 
+//TODO - will need styling to git the card box now background-image removed
 const stylesflex = {
-  "background-image":
+  background:
     "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-5.jpg)"
 };
 
 const stylesstrange = {
-  "background-image":
+  background:
     "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/strange.jpg)"
 };
 
 const styleslanding = {
-  "background-image":
+  background:
     "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/landing.png)"
 };
 
@@ -30,7 +31,7 @@ export const Home = () => (
         </div>
       </div>
     </header>
-    <section id="mission" class="main mission">
+    <section id="mission" className="main mission">
       <h2>Our Mission</h2>
       <p>
         The trust seeks to promote youth development by supporting young people,
@@ -42,11 +43,11 @@ export const Home = () => (
       </p>
     </section>
     <HomeStories />
-    <div class="row">
-      <div class="band">
-        <div class="item-1">
-          <a href="/#" class="card">
-            <div class="thumb" style={stylesflex}></div>
+    <div className="row">
+      <div className="band">
+        <div className="item-1">
+          <a href="/#" className="card">
+            <div className="thumb" style={stylesflex}></div>
             <article>
               <h1>Some Local Group</h1>
               <span>
@@ -57,9 +58,9 @@ export const Home = () => (
             </article>
           </a>
         </div>
-        <div class="item-2">
-          <a href="/#" class="card">
-            <div class="thumb" style={styleslanding}></div>
+        <div className="item-2">
+          <a href="/#" className="card">
+            <div className="thumb" style={styleslanding}></div>
             <article>
               <h1>Some Local Group</h1>
               <span>
@@ -70,9 +71,9 @@ export const Home = () => (
             </article>
           </a>
         </div>
-        <div class="item-3">
-          <a href="/#" class="card">
-            <div class="thumb" style={stylesstrange}></div>
+        <div className="item-3">
+          <a href="/#" className="card">
+            <div className="thumb" style={stylesstrange}></div>
             <article>
               <h1>Some Local Group</h1>
               <span>
@@ -83,9 +84,9 @@ export const Home = () => (
             </article>
           </a>
         </div>
-        <div class="item-4">
-          <a href="/#" class="card">
-            <div class="thumb" style={stylesstrange}></div>
+        <div className="item-4">
+          <a href="/#" className="card">
+            <div className="thumb" style={stylesstrange}></div>
             <article>
               <h1>Some Local Group</h1>
               <span>
@@ -96,9 +97,9 @@ export const Home = () => (
             </article>
           </a>
         </div>
-        <div class="item-5">
-          <a href="/#" class="card">
-            <div class="thumb" style={styleslanding}></div>
+        <div className="item-5">
+          <a href="/#" className="card">
+            <div className="thumb" style={styleslanding}></div>
             <article>
               <h1>Some Local Group</h1>
               <span>
@@ -109,9 +110,9 @@ export const Home = () => (
             </article>
           </a>
         </div>
-        <div class="item-6">
-          <a href="/#" class="card">
-            <div class="thumb" style={styleslanding}></div>
+        <div className="item-6">
+          <a href="/#" className="card">
+            <div className="thumb" style={styleslanding}></div>
             <article>
               <h1>Some Local Group</h1>
               <span>
