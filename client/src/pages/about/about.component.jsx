@@ -1,15 +1,13 @@
 import React from "react";
-import { Team } from "../../components/team";
 import "./about.styles.scss";
 
 export const About = () => (
   <React.Fragment>
-    <main>
+    <div className="main">
       <div className="about-header">
         <h1>About Us</h1>
       </div>
       <div className="about-container">
-        <Team />
         <div>
           <p>
             On the 23rd August 1971 Superintendent Gerald Richardson was shot
@@ -59,6 +57,270 @@ export const About = () => (
           </p>
         </div>
       </div>
-    </main>
+      {/*//TODO - create component to render each box passing details*/}
+      <div className="trustee-container">
+        <h1>Meet the Trustees</h1>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/lee_wilson.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="https://twitter.com/Leew1341S">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              Lee Wilson
+              <br />
+              <span>Chair</span>
+            </h2>
+          </div>
+        </div>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/chris_hardy.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="https://twitter.com/CI3951Hardy">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              Chris Hardy
+              <br />
+              <span>Trustee / Compere</span>
+            </h2>
+          </div>
+        </div>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/claire_goss.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="https://twitter.com/claralou3819">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              Claire van Deurs Goss
+              <br />
+              <span>Trustee</span>
+            </h2>
+          </div>
+        </div>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/sample4.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="#">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              David Williamson
+              <br />
+              <span>Treasurer / Trustee</span>
+            </h2>
+          </div>
+        </div>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/sample.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="#">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              Gareth Tupman
+              <br />
+              <span>Trustee</span>
+            </h2>
+          </div>
+        </div>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/sample2.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="#">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              Susannah Clarke
+              <br />
+              <span>Trustee</span>
+            </h2>
+          </div>
+        </div>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/sample5.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="#">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              Jacqueline Longdon Bem
+              <br />
+              <span>Trustee</span>
+            </h2>
+          </div>
+        </div>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/sample6.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="#">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              Sarah Longden
+              <br />
+              <span>Trustee</span>
+            </h2>
+          </div>
+        </div>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/sample7.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="#">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              Christine Pickard
+              <br />
+              <span>Trustee</span>
+            </h2>
+          </div>
+        </div>
+        <div className="box">
+          <div className="imgBx">
+            <img src="/images/sample8.jpg" alt="" />
+          </div>
+          <ul className="social-icon">
+            <li>
+              <a href="#">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <div className="details">
+            <h2>
+              John Pickard
+              <br />
+              <span>Trustee</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
   </React.Fragment>
 );
