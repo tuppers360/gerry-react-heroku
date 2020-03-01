@@ -11,6 +11,7 @@
 html,
 body {
   width: 100%;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
@@ -40,31 +41,27 @@ h6 {
 
 header,
 nav,
-.mission,
-footer {
-  grid-column: span 3;
-}
-
+footer,
 main,
 .main {
-  flex: 1;
   grid-column: span 3;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .layout-container {
     display: grid;
     grid-template-columns: 100px 1fr 100px;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto;
   }
 
   .main {
     width: 70%;
   }
 }
+
 .row {
-  grid-column: 1/4;
-  padding: 30px;
+  grid-column: span 3;
+  padding: 50px 10px;
   text-align: center;
   font-size: 1.4em;
   color: white;
