@@ -8,7 +8,7 @@ import { Contact } from "./pages/contact/contact";
 import Donate from "./pages/donate/donate.component";
 import Payment from "./pages/payment/payment.component";
 import { Footer } from "./components/footer/footer.component";
-import { Stories } from "./components/stories/stories";
+import { Stories } from "./pages/stories/stories.component";
 import { HolliesStory } from "./components/stories/hollies-story/hollies-story.component";
 import { CourtneyEmilyStory } from "./components/stories/courtney-emily-story/courtney-emily-story.component";
 import { NoMatch } from "./components/noMatch";
