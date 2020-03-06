@@ -119,25 +119,8 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/sample4.jpg" alt="" />
+            <img src="/images/david_williamson.jpg" alt="" />
           </div>
-          <ul className="social-icon">
-            <li>
-              <a href="#">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
           <div className="details">
             <h2>
               David Williamson
