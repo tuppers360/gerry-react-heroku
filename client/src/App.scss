@@ -111,45 +111,125 @@ main,
   }
 }
 
-.error {
-  color: $errorred;
-  font-size: 12px;
-  font-weight: 700;
-}
+// .error {
+//   color: $errorred;
+//   font-size: 12px;
+//   font-weight: 700;
+// }
 
-.inputError {
-  border-color: $errorred;
-  border-width: 5px;
-}
+// .inputError {
+//   border-color: $errorred;
+//   border-width: 5px;
+// }
 
-label {
-  padding-top: 20px;
-}
+// label {
+//   padding-top: 20px;
+// }
 
-.field {
-  width: 100%;
-  padding: 0.5rem 1rem;
-  outline: none;
-  border-radius: 5px;
-  border: 2px solid rgba(0, 0, 0, 0);
-  background-color: rgba(230, 230, 230, 0.6);
-  font-size: 1.1rem;
-  transition: 0.3s;
+// .field {
+//   width: 100%;
+//   padding: 0.5rem 1rem;
+//   outline: none;
+//   border-radius: 5px;
+//   border: 2px solid rgba(0, 0, 0, 0);
+//   background-color: rgba(230, 230, 230, 0.6);
+//   font-size: 1.1rem;
+//   transition: 0.3s;
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+//   &:hover {
+//     background-color: rgba(0, 0, 0, 0.1);
+//   }
+
+//   &:focus {
+//     background-color: #fff;
+//     border: 2px solid #1f4287;
+//   }
+
+//   &::placeholder {
+//     color: $placeholdergrey;
+//   }
+// }
+
+// .area {
+//   min-height: 150px;
+// }
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    align-self: flex-start;
+    padding: 10px 0;
   }
 
-  &:focus {
-    background-color: #fff;
-    border: 2px solid #1f4287;
+  .form__label {
+    font-weight: 600;
+    margin: 0;
   }
 
-  &::placeholder {
-    color: $placeholdergrey;
-  }
-}
+  .form__input {
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 425px;
 
-.area {
-  min-height: 150px;
+    /* Fix for Safari/iOs date fields */
+    min-height: calc(0.9em + (0.8em * 2) + 0.6em);
+
+    padding: 0.8em;
+    font-size: 0.9rem;
+
+    outline: none;
+    border: 1px solid $pearl;
+    border-radius: 4px;
+    background: $lightgrey;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+
+    &:focus {
+      background: #fff;
+    }
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &.form__area {
+      min-height: 250px;
+    }
+  }
+
+  .form__input--error {
+    color: $darkestruby;
+    background: #fff;
+    border-color: $darkestruby;
+
+    &::placeholder {
+      color: $ruby;
+    }
+  }
+
+  .form__error {
+    padding-top: 10px;
+    color: $ruby;
+    font-size: 0.85rem;
+  }
+
+  .form__btn {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 16px;
+    margin: 10px 0;
+
+    color: #fff;
+    background: #14b64a;
+    border: 2px solid #0fa942;
+    border-radius: 5px;
+
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      background: #0fa942;
+    }
+  }
 }
