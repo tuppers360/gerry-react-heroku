@@ -55,22 +55,32 @@ const ContactForm = () => {
         </div>
       )}
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div>
-          <label htmlFor="name">Name</label>
+        <div className="form__item">
+          <label htmlFor="name" className="form__label">
+            Name
+          </label>
           <input
-            className={`${errors.name ? "field inputError" : "field"}`}
+            className={`form__input ${
+              errors.email ? "form__input--error" : ""
+            }`}
             name="name"
             type="text"
             aria-describedby="Name Help"
             placeholder="Enter name"
             ref={register({ required: "Please enter your name" })}
           />
-          {errors.name && <span className="error">{errors.name.message}</span>}
+          {errors.name && (
+            <span className="form__error">{errors.name.message}</span>
+          )}
         </div>
-        <div>
-          <label htmlFor="email">Email address</label>
+        <div className="form__item">
+          <label htmlFor="email" className="form__label">
+            Email address
+          </label>
           <input
-            className={`${errors.email ? "field inputError" : "field"}`}
+            className={`form__input ${
+              errors.email ? "form__input--error" : ""
+            }`}
             name="email"
             type="email"
             aria-describedby="Email Help"
@@ -83,20 +93,22 @@ const ContactForm = () => {
               }
             })}
           />
-          <small id="emailHelp" className="form-text text-muted">
+          {errors.email && (
+            <span className="form__error">{errors.email.message}</span>
+          )}
+          <small id="emailHelp">
             We'll never share your email with anyone else.
           </small>
-          {errors.email && (
-            <span className="error">{errors.email.message}</span>
-          )}
         </div>
-        <div>
-          <label htmlFor="message">Message</label>
+        <div className="form__item">
+          <label htmlFor="message" className="form__label">
+            Message
+          </label>
           <textarea
             name="message"
             type="text"
-            className={`${
-              errors.message ? "field inputError area" : "field area"
+            className={`form__input form__area ${
+              errors.email ? "form__input--error" : ""
             }`}
             aria-describedby="Message Help text"
             placeholder="Enter your message"
@@ -104,11 +116,11 @@ const ContactForm = () => {
             rows="6"
           ></textarea>
           {errors.message && (
-            <span className="error">{errors.message.message}</span>
+            <span className="form__error">{errors.message.message}</span>
           )}
         </div>
-        <div className="mx-auto">
-          <button type="submit" className="btn-contact" disabled={submitting}>
+        <div className="form__item">
+          <button type="submit" className="form__btn" disabled={submitting}>
             {submitting && <i className="fas fa-sync fa-spin"></i>}
             {!submitting ? "Submit" : " Submitting"}
           </button>
