@@ -1,0 +1,51 @@
+@import "./../../assets/scss/1-helpers/variables";
+
+h2.heading {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+}
+
+.payment-container {
+  label {
+    display: block;
+    padding: 1rem 0 0.25rem;
+    font-size: 16;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  button,
+  select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form-group {
+    padding-top: 40px;
+  }
+}
+
+.btn-donate {
+  margin-top: 4rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.1rem;
+  background-color: #093145;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #3c6478;
+  }
+}
+
+.btn-donate {
+  display: block;
+  width: 100%;
+}

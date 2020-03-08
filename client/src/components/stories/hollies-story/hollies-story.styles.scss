@@ -1,0 +1,94 @@
+@import "./../../../assets/scss/1-helpers/variables";
+
+.story-header {
+  text-align: center;
+  padding: 0 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  h1 {
+    font-family: "Julietta-Messie-Demo";
+    font-size: 4rem;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.45;
+    letter-spacing: 0.8px;
+    text-align: center;
+    margin-bottom: 0;
+    color: $grey;
+  }
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.63;
+    letter-spacing: 1.2px;
+    text-align: center;
+    color: $darkgrey;
+  }
+  h2.subtitle {
+    margin: 1em auto 2em auto;
+    font-weight: 500;
+    color: $darkgrey;
+  }
+}
+
+.story-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    height: 200px;
+    object-fit: cover;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .story-header {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    h1 {
+      font-size: 110px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1;
+      letter-spacing: normal;
+    }
+    h2 {
+      font-size: 1.8rem;
+    }
+    h2.subtitle {
+      margin: 1em auto 2em auto;
+      font-weight: 500;
+      color: $darkgrey;
+    }
+  }
+
+  .story-container {
+    width: 70%;
+    padding: 20px 0;
+    margin: auto;
+
+    img {
+      height: 500px;
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .story-container {
+    width: 50%;
+
+    img {
+      height: 500px;
+    }
+  }
+}

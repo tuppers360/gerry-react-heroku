@@ -8,11 +8,11 @@ jsonParser = bodyParser.json();
 
 router.post("/api/sendgrid/contact", urlEncoder, (req, res) => {
   let data = req.body;
+  console.log("DATA", { data });
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   // using Twilio SendGrid's v3 Node.js Library
   // https://github.com/sendgrid/sendgrid-nodejs
-  console.log("SEND GRID: Sending by Send Grid");
-  console.log({ sgMail });
+  console.log("SEND GRID: Sending by Send Grid", { sgMail });
   try {
     const msg = {
       from: data.body.email, // sender address
@@ -144,6 +144,7 @@ router.post("/api/sendgrid/application", urlEncoder, (req, res) => {
 // DONATION ROUTE
 router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
   let data = req.body;
+  console.log("DATA", { data });
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   // using Twilio SendGrid's v3 Node.js Library
   // https://github.com/sendgrid/sendgrid-nodejs
@@ -155,18 +156,18 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
       from: data.body.email, // sender address
       to: process.env.SENDGRID_DONATION_EMAIL, // list of receivers
       subject: `Donation from: ${data.body.firstName} ${data.body.lastName}`, // Subject line
-      text: `FROM: ${data.body.firstName} ${data.body.lastName}; 
+      text: `Name: ${data.body.firstName} ${data.body.lastName}; 
             Email: ${data.body.email}; 
             Address: ${data.body.address};
             Town: ${data.body.town};
             Post Code: ${data.body.postCode}; 
             Gift Aid: ${data.body.giftAid};
-            Donation: ${data.body.donation}`, // plain text body
-      html: `<h3>Applicant: ${data.body.firstName} ${data.body.lastName}</h3> 
+            Donation: £${data.body.donation}`, // plain text body
+      html: `<h3>Donator: ${data.body.firstName} ${data.body.lastName}</h3> 
             <p>Email: ${data.body.email}</p> 
             <p>Address: <address>${data.body.address}<br/>${data.body.postCode}</address></p> 
             <p>Gift Aid: ${data.body.giftAid}</p>
-            <p>Donation: ${data.body.donation}</p>` // html body
+            <p>Donation: £${data.body.donation}</p>` // html body
     };
     console.log({ msg });
     sgMail.send(msg);
@@ -180,6 +181,15 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
         Thank you for supporting the Gerry Richardson Trust work with your generous donation. Your valuable gift will help in our aim to support young people accross the Fylde.\r\n
         We will contact you by email to let you know if you are successful or not.\r\n
         It means a lot to us and it means a great deal more to the people we help & support.\r\n
+        ${
+          data.body.giftAid
+            ? `As you have opted to allow us to claim Gift Aid please notify the charity if you:\r\n
+            want to cancel this declaration\r\n          
+            change your name or home address\r\n
+            no longer pay sufficient tax on your income and/or capital gains\r\n`
+            : `You have opted not to allow us to claim Gift Aid. 
+              Should you change your mind please contactus using the details below and we can help you to sign up.\r\n`
+        }
         If we need any futher information we will contact you by email\r\n
         Kind regards\r\n
         Gerry Richardson Trustees\r\n
@@ -192,9 +202,19 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
         Email: contactus@gerryrichardsontrust.org`, // plain text body
       html: `<p>Hi ${data.body.firstName}</p>
         <strong>Thank you for your donation to the Gerry Richardson Trust</strong>
-        <p>Thank you for your donation to the Gerry Richardson Trust</p>
         <p>Thank you for supporting the Gerry Richardson Trust work with your generous donation. Your valuable gift will help in our aim to support young people accross the Fylde.</p>
         <p>It means a lot to us and it means a great deal more to the people we help & support.</p>
+        ${
+          data.body.giftAid
+            ? `<p>As you have opted to allow us to claim Gift Aid please notify the charity if you:</p>
+            <ul>
+              <li>want to cancel this declaration</li>
+              <li>change your name or home address</li>
+              <li>no longer pay sufficient tax on your income and/or capital gains</li>
+            </ul>`
+            : `<p>You have opted not to allow us to claim Gift Aid. 
+              Should you change your mind please contactus using the details below and we can help you to sign up.</p>`
+        }
         <p>Kind regards</p>
         <p>Gerry Richardson Trustees</p>
         <address>

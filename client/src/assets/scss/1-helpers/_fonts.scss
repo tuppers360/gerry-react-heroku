@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Julietta-Messie-Demo";
+  src: url("./../../../assets/fonts/Julietta-Messie-Demo.ttf.woff")
+      format("woff"),
+    url("./../../../assets/fonts/Julietta-Messie-Demo.ttf.svg#Julietta-Messie-Demo")
+      format("svg"),
+    url("./../../../assets/fonts/Julietta-Messie-Demo.ttf.eot"),
+    url("./../../../assets/fonts/Julietta-Messie-Demo.ttf.eot?#iefix")
+      format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Header - Roboto Condensed & Body - Cabin
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,700&display=swap");
+
+// Header - Ubuntu & Body - Spen Sans
+// @import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+// Header - Source Sans & Body - Sintony
+// @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=Sintony:400,700&display=swap");

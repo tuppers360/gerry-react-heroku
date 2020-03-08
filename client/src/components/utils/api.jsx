@@ -1,4 +1,5 @@
 const createPaymentIntent = options => {
+  console.log("options", { options });
   return window
     .fetch(`/intents`, {
       method: "POST",

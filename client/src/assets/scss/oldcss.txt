@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Montserrat|Open+Sans&display=swap");
+
+html {
+  padding: env(safe-area-insert);
+}
+body {
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #505962;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+/*--- Nav Scrolling Offset --*/
+.offset:before {
+  height: 4rem;
+  margin-top: -4rem;
+  content: "";
+  display: block;
+}
+.text-gerry {
+  color: #0c5b88;
+}
+
+/*====================== Mission Section ======================*/
+
+.narrow {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .narrow {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
+}
+.btn-sm {
+  border-width: medium;
+  /* border-radius: 0; comment out this for now */
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 1rem;
+}
+.jumbotron {
+  margin-top: 4rem;
+  margin-bottom: 0;
+  border-radius: 0;
+  padding: 1rem 0 1rem 0;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.header-jumbotron {
+  background-color: #0091cd;
+  color: #fff;
+}
+h3.heading {
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.9rem;
+}
+.heading-underline {
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #0c5b88;
+  margin: 0 auto 2rem;
+}
+
+/* ============ CONTACT SECTION ===============*/
+.contact-card-header {
+  background-color: #0091cd;
+  border: none;
+}
+/* ============ HOME STORIES SECTION ===============*/
+.homeStories .card {
+  border: none;
+}
+.homeStories img {
+  filter: brightness(50%);
+}
+/* ============ HOLLIE STORIES SECTION ===============*/
+.hollie {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+.hollieStory .card {
+  margin-top: -1rem;
+  border: none;
+}
+/*============= THANKYOU SECTION =============*/
+.thankyou .card-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.thankyou .card {
+  margin-top: 1rem;
+  border: none;
+}
+.thankyou .card-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.thankyou img {
+  filter: brightness(50%);
+}
+/*============= FOOTER SECTION =============*/
+
+footer {
+  background-color: #062d44;
+  color: #fff;
+  padding-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+footer img {
+  height: 1.5rem;
+  margin-bottom: 1rem;
+}
+footer .card {
+  background-color: #062d44;
+  border: none;
+}
+footer .card-apply-online {
+  border: 1px #083f5f;
+  border-radius: 5px;
+  background-color: #083f5f;
+}
+footer .social {
+  margin: 0;
+  padding: 0;
+}
+footer .social ul {
+  margin: 0;
+  padding: 5px;
+}
+footer .social ul li {
+  margin: 5px;
+  list-style: none outside none;
+  display: inline-block;
+}
+footer .social i {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 12px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+footer .social i:hover {
+  text-decoration: none;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+footer .social .fa-facebook-f {
+  color: #fff;
+  background: #4060a5;
+}
+footer .social .fa-twitter {
+  color: #fff;
+  background: #00abe3;
+}
+footer .social .fa-linkedin-in {
+  color: #fff;
+  background: #0094bc;
+}
+footer .social .fa-instagram {
+  color: #fff;
+  background: #bc2a8d;
+}
+footer .social .fa-facebook-f:hover {
+  color: #4060a5;
+  background: #fff;
+}
+footer .social .fa-twitter:hover {
+  color: #00abe3;
+  background: #fff;
+}
+footer .social .fa-linkedin-in:hover {
+  color: #0094bc;
+  background: #fff;
+}
+footer .social .fa-instagram:hover {
+  color: #bc2a8d;
+  background: #fff;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.inputError {
+  border-color: red;
+  border-width: 1px;
+}
