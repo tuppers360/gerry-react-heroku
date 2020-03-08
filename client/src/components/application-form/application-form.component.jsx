@@ -57,10 +57,16 @@ const ApplicationForm = () => {
       )}
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div>
-          <div>
-            <label htmlFor="firstName">First Name</label>
+          <div className="form__item">
+            <label htmlFor="firstName" className="form__label">
+              First Name
+            </label>
             <input
-              className={`${errors.firstName ? "field inputError" : "field"}`}
+              className={`${
+                errors.firstName
+                  ? "form__input form__input--error"
+                  : "form__input"
+              }`}
               name="firstName"
               type="text"
               aria-describedby="First Name"
@@ -68,13 +74,19 @@ const ApplicationForm = () => {
               ref={register({ required: "Please enter your first name" })}
             />
             {errors.firstName && (
-              <span className="error">{errors.firstName.message}</span>
+              <span className="form__error">{errors.firstName.message}</span>
             )}
           </div>
-          <div>
-            <label htmlFor="lastName">Last Name</label>
+          <div className="form__item">
+            <label htmlFor="lastName" className="form__label">
+              Last Name
+            </label>
             <input
-              className={`${errors.lastName ? "field inputError" : "field"}`}
+              className={`${
+                errors.lastName
+                  ? "form__input form__input--error"
+                  : "form__input"
+              }`}
               name="lastName"
               type="text"
               aria-describedby="Name Help"
@@ -82,15 +94,21 @@ const ApplicationForm = () => {
               ref={register({ required: "Please enter your last name" })}
             />
             {errors.lastName && (
-              <span className="error">{errors.lastName.message}</span>
+              <span className="form__error">{errors.lastName.message}</span>
             )}
           </div>
         </div>
         <div>
-          <div>
-            <label htmlFor="dateOfBirth">Date Of Birth</label>
+          <div className="form__item">
+            <label htmlFor="dateOfBirth" className="form__label">
+              Date Of Birth
+            </label>
             <input
-              className={`${errors.dateOfBirth ? "field inputError" : "field"}`}
+              className={`${
+                errors.dateOfBirth
+                  ? "form__input form__input--error"
+                  : "form__input"
+              }`}
               name="dateOfBirth"
               type="text"
               aria-describedby="Date Of Birth"
@@ -104,17 +122,21 @@ const ApplicationForm = () => {
               })}
             />
             {errors.dateOfBirth && (
-              <span className="error">{errors.dateOfBirth.message}</span>
+              <span className="form__error">{errors.dateOfBirth.message}</span>
             )}
           </div>
         </div>
         <div>
-          <div>
-            <label htmlFor="email">Email address</label>
+          <div className="form__item">
+            <label htmlFor="email" className="form__label">
+              Email address
+            </label>
             <input
               name="email"
               type="email"
-              className={`${errors.email ? "field inputError" : "field"}`}
+              className={`${
+                errors.email ? "form__input form__input--error" : "form__input"
+              }`}
               aria-describedby="Email Help"
               placeholder="Enter email"
               ref={register({
@@ -129,43 +151,55 @@ const ApplicationForm = () => {
               We'll never share your email with anyone else.
             </small>
             {errors.email && (
-              <span className="error">{errors.email.message}</span>
+              <span className="form__error">{errors.email.message}</span>
             )}
           </div>
         </div>
         <div>
-          <div>
-            <label htmlFor="address">Address</label>
+          <div className="form__item">
+            <label htmlFor="address" className="form__label">
+              Address
+            </label>
             <input
               name="address"
               type="text"
-              className={`${errors.address ? "field inputError" : "field"}`}
+              className={`${
+                errors.address
+                  ? "form__input form__input--error"
+                  : "form__input"
+              }`}
               aria-describedby="Address"
               placeholder="Address"
               ref={register({ required: "Please enter your address" })}
             />
             {errors.address && (
-              <span className="error">{errors.address.message}</span>
+              <span className="form__error">{errors.address.message}</span>
             )}
           </div>
-          <div>
-            <label htmlFor="postCode">Post Code</label>
+          <div className="form__item">
+            <label htmlFor="postCode" className="form__label">
+              Post Code
+            </label>
             <input
               name="postCode"
               type="text"
-              className={`${errors.postCode ? "field inputError" : "field"}`}
+              className={`${
+                errors.postCode
+                  ? "form__input form__input--error"
+                  : "form__input"
+              }`}
               aria-describedby="Post Code"
               placeholder="Post Code"
               ref={register({ required: "Please enter your post code" })}
             />
             {errors.postCode && (
-              <span className="error">{errors.postCode.message}</span>
+              <span className="form__error">{errors.postCode.message}</span>
             )}
           </div>
         </div>
         <div>
-          <div>
-            <label htmlFor="application">
+          <div className="form__item">
+            <label htmlFor="application" className="form__label">
               Please provide us with as much information about your application
               as possible. How will this funding make a difference? Who will
               benefit?
@@ -173,14 +207,18 @@ const ApplicationForm = () => {
             <textarea
               name="application"
               type="text"
-              className={`${errors.application ? "field inputError" : "field"}`}
+              className={`${
+                errors.application
+                  ? "form__input form__input--error"
+                  : "form__input"
+              }`}
               aria-describedby="Application text"
               placeholder="Enter your application details"
               ref={register({ required: "Please enter your application" })}
               rows="6"
             ></textarea>
             {errors.application && (
-              <span className="error">{errors.application.message}</span>
+              <span className="form__error">{errors.application.message}</span>
             )}
           </div>
         </div>

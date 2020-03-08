@@ -81,7 +81,7 @@ const DonatePaymentForm = props => {
       color: "#32325d",
       fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: "antialiased",
-      fontSize: "16px",
+      fontSize: "18px",
       "::placeholder": {
         color: "#aab7c4"
       },
@@ -94,7 +94,7 @@ const DonatePaymentForm = props => {
   };
 
   var classes = {
-    base: "field"
+    base: "form__input"
   };
 
   return (
@@ -112,174 +112,157 @@ const DonatePaymentForm = props => {
               </div>
             )}
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
-              <div className="form-group">
-                <h2 className="heading">Your Details</h2>
-                <div>
-                  <label htmlFor="firstName">First Name(s)</label>
-                  <input
-                    id="firstName"
-                    type="text"
-                    name="firstName"
-                    className={`${
-                      errors.firstName
-                        ? "form__input form__input--error"
-                        : "form__input"
-                    }`}
-                    placeholder="First name"
-                    ref={register({ required: "Please enter your First name" })}
-                  />
-                  {errors.firstName && (
-                    <span className="form__error">
-                      {errors.firstName.message}
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="lastName">Last Name(s)</label>
-                  <input
-                    id="lastName"
-                    type="text"
-                    name="lastName"
-                    className={`${
-                      errors.lastName
-                        ? "form__input form__input--error"
-                        : "form__input"
-                    }`}
-                    placeholder="Last name"
-                    ref={register({ required: "Please enter your Last name" })}
-                  />
-                  {errors.lastName && (
-                    <span className="form__error">
-                      {errors.lastName.message}
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="email">Email</label>
-                  <input
-                    className={`${
-                      errors.email
-                        ? "form__input form__input--error"
-                        : "form__input"
-                    }`}
-                    id="email"
-                    name="email"
-                    type="email"
-                    aria-describedby="Email"
-                    placeholder="Enter email"
-                    ref={register({
-                      required: "Please enter your email address",
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                        message: "Please enter a valid email address"
-                      }
-                    })}
-                  />
-                  {errors.email && (
-                    <span className="form__error">{errors.email.message}</span>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="telNum">Tel Number</label>
-                  <input
-                    type="text"
-                    className="field"
-                    id="telNum"
-                    placeholder="Tel Num"
-                  />
-                </div>
-              </div>
-              <div className="form-group">
-                <h2 className="heading">Address Details</h2>
-                <div>
-                  <label htmlFor="address">Address</label>
-                  <input
-                    className={`${
-                      errors.address
-                        ? "form__input form__input--error"
-                        : "form__input"
-                    }`}
-                    id="address"
-                    name="address"
-                    type="text"
-                    placeholder="Gerry Richardson Way"
-                    ref={register({
-                      required: "Please enter your address"
-                    })}
-                  />
-                  {errors.address && (
-                    <span className="form__error">
-                      {errors.address.message}
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="address2">
-                    <span className="sr-only sr-only-focusable">Address 2</span>
-                  </label>
-                  <input type="text" className="field" id="address2" />
-                </div>
-                <div>
-                  <label htmlFor="town">Town</label>
-                  <input
-                    className={`${
-                      errors.town
-                        ? "form__input form__input--error"
-                        : "form__input"
-                    }`}
-                    id="town"
-                    name="town"
-                    type="text"
-                    placeholder="Town"
-                    ref={register({
-                      required: "Please enter your town"
-                    })}
-                  />
-                  {errors.town && (
-                    <span className="form__error">{errors.town.message}</span>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="postCode">Post Code</label>
-                  <input
-                    className={`${
-                      errors.postCode
-                        ? "form__input form__input--error"
-                        : "form__input"
-                    }`}
-                    id="postCode"
-                    name="postCode"
-                    type="text"
-                    placeholder="Post Code"
-                    ref={register({
-                      required: "Please enter your post code"
-                    })}
-                  />
-                  {errors.postCode && (
-                    <span className="form__error">
-                      {errors.postCode.message}
-                    </span>
-                  )}
-                </div>
-              </div>
-              <div className="form-group">
-                <h2 className="heading">Payment Details</h2>
-                <label htmlFor="postCode">Credit Card</label>
-                <CardElement
-                  id="creditCard"
-                  className="field"
-                  style={style}
-                  classes={classes}
+              <h2 className="heading">Your Details</h2>
+              <div className="form__item">
+                <label htmlFor="firstName">First Name(s)</label>
+                <input
+                  id="firstName"
+                  type="text"
+                  name="firstName"
+                  className={`${
+                    errors.firstName
+                      ? "form__input form__input--error"
+                      : "form__input"
+                  }`}
+                  placeholder="First name"
+                  ref={register({ required: "Please enter your First name" })}
                 />
-                <button
-                  type="submit"
-                  className="btn-donate"
-                  disabled={processing}
-                >
-                  {processing && <i className="fas fa-sync fa-spin"></i>}
-                  {!processing ? `Pay £${donation}` : " Processing"}
-                </button>
+                {errors.firstName && (
+                  <span className="form__error">
+                    {errors.firstName.message}
+                  </span>
+                )}
               </div>
+              <div className="form__item">
+                <label htmlFor="lastName">Last Name(s)</label>
+                <input
+                  id="lastName"
+                  type="text"
+                  name="lastName"
+                  className={`${
+                    errors.lastName
+                      ? "form__input form__input--error"
+                      : "form__input"
+                  }`}
+                  placeholder="Last name"
+                  ref={register({ required: "Please enter your Last name" })}
+                />
+                {errors.lastName && (
+                  <span className="form__error">{errors.lastName.message}</span>
+                )}
+              </div>
+              <div className="form__item">
+                <label htmlFor="email">Email</label>
+                <input
+                  className={`${
+                    errors.email
+                      ? "form__input form__input--error"
+                      : "form__input"
+                  }`}
+                  id="email"
+                  name="email"
+                  type="email"
+                  aria-describedby="Email"
+                  placeholder="Enter email"
+                  ref={register({
+                    required: "Please enter your email address",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                      message: "Please enter a valid email address"
+                    }
+                  })}
+                />
+                {errors.email && (
+                  <span className="form__error">{errors.email.message}</span>
+                )}
+              </div>
+              <div className="form__item">
+                <label htmlFor="telNum">Tel Number</label>
+                <input
+                  type="text"
+                  className="form__input"
+                  id="telNum"
+                  placeholder="Tel Num"
+                />
+              </div>
+              <h2 className="heading">Address Details</h2>
+              <div className="form__item">
+                <label htmlFor="address">Address</label>
+                <input
+                  className={`${
+                    errors.address
+                      ? "form__input form__input--error"
+                      : "form__input"
+                  }`}
+                  id="address"
+                  name="address"
+                  type="text"
+                  placeholder="Gerry Richardson Way"
+                  ref={register({
+                    required: "Please enter your address"
+                  })}
+                />
+                {errors.address && (
+                  <span className="form__error">{errors.address.message}</span>
+                )}
+              </div>
+              <div className="form__item">
+                <label htmlFor="address2">
+                  <span className="sr-only sr-only-focusable">Address 2</span>
+                </label>
+                <input type="text" className="form__input" id="address2" />
+              </div>
+              <div className="form__item">
+                <label htmlFor="town">Town</label>
+                <input
+                  className={`${
+                    errors.town
+                      ? "form__input form__input--error"
+                      : "form__input"
+                  }`}
+                  id="town"
+                  name="town"
+                  type="text"
+                  placeholder="Town"
+                  ref={register({
+                    required: "Please enter your town"
+                  })}
+                />
+                {errors.town && (
+                  <span className="form__error">{errors.town.message}</span>
+                )}
+              </div>
+              <div className="form__item">
+                <label htmlFor="postCode">Post Code</label>
+                <input
+                  className={`${
+                    errors.postCode
+                      ? "form__input form__input--error"
+                      : "form__input"
+                  }`}
+                  id="postCode"
+                  name="postCode"
+                  type="text"
+                  placeholder="Post Code"
+                  ref={register({
+                    required: "Please enter your post code"
+                  })}
+                />
+                {errors.postCode && (
+                  <span className="form__error">{errors.postCode.message}</span>
+                )}
+              </div>
+              <h2 className="heading">Payment Details</h2>
+              <label htmlFor="postCode">Credit Card</label>
+              <CardElement id="creditCard" style={style} classes={classes} />
+              <button
+                type="submit"
+                className="btn-donate"
+                disabled={processing}
+              >
+                {processing && <i className="fas fa-sync fa-spin"></i>}
+                {!processing ? `Pay £${donation}` : " Processing"}
+              </button>
             </form>
           </div>
         </div>
