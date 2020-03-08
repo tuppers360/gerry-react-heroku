@@ -121,13 +121,17 @@ const DonatePaymentForm = props => {
                     type="text"
                     name="firstName"
                     className={`${
-                      errors.firstName ? "field inputError" : "field"
+                      errors.firstName
+                        ? "form__input form__input--error"
+                        : "form__input"
                     }`}
                     placeholder="First name"
                     ref={register({ required: "Please enter your First name" })}
                   />
                   {errors.firstName && (
-                    <span className="error">{errors.firstName.message}</span>
+                    <span className="form__error">
+                      {errors.firstName.message}
+                    </span>
                   )}
                 </div>
                 <div>
@@ -137,19 +141,27 @@ const DonatePaymentForm = props => {
                     type="text"
                     name="lastName"
                     className={`${
-                      errors.lastName ? "field inputError" : "field"
+                      errors.lastName
+                        ? "form__input form__input--error"
+                        : "form__input"
                     }`}
                     placeholder="Last name"
                     ref={register({ required: "Please enter your Last name" })}
                   />
                   {errors.lastName && (
-                    <span className="error">{errors.lastName.message}</span>
+                    <span className="form__error">
+                      {errors.lastName.message}
+                    </span>
                   )}
                 </div>
                 <div>
                   <label htmlFor="email">Email</label>
                   <input
-                    className={`${errors.email ? "field inputError" : "field"}`}
+                    className={`${
+                      errors.email
+                        ? "form__input form__input--error"
+                        : "form__input"
+                    }`}
                     id="email"
                     name="email"
                     type="email"
@@ -164,7 +176,7 @@ const DonatePaymentForm = props => {
                     })}
                   />
                   {errors.email && (
-                    <span className="error">{errors.email.message}</span>
+                    <span className="form__error">{errors.email.message}</span>
                   )}
                 </div>
                 <div>
@@ -183,7 +195,9 @@ const DonatePaymentForm = props => {
                   <label htmlFor="address">Address</label>
                   <input
                     className={`${
-                      errors.address ? "field inputError" : "field"
+                      errors.address
+                        ? "form__input form__input--error"
+                        : "form__input"
                     }`}
                     id="address"
                     name="address"
@@ -194,7 +208,9 @@ const DonatePaymentForm = props => {
                     })}
                   />
                   {errors.address && (
-                    <span className="error">{errors.address.message}</span>
+                    <span className="form__error">
+                      {errors.address.message}
+                    </span>
                   )}
                 </div>
                 <div>
@@ -206,7 +222,11 @@ const DonatePaymentForm = props => {
                 <div>
                   <label htmlFor="town">Town</label>
                   <input
-                    className={`${errors.town ? "field inputError" : "field"}`}
+                    className={`${
+                      errors.town
+                        ? "form__input form__input--error"
+                        : "form__input"
+                    }`}
                     id="town"
                     name="town"
                     type="text"
@@ -216,14 +236,16 @@ const DonatePaymentForm = props => {
                     })}
                   />
                   {errors.town && (
-                    <span className="error">{errors.town.message}</span>
+                    <span className="form__error">{errors.town.message}</span>
                   )}
                 </div>
                 <div>
                   <label htmlFor="postCode">Post Code</label>
                   <input
                     className={`${
-                      errors.postCode ? "field inputError" : "field"
+                      errors.postCode
+                        ? "form__input form__input--error"
+                        : "form__input"
                     }`}
                     id="postCode"
                     name="postCode"
@@ -234,7 +256,9 @@ const DonatePaymentForm = props => {
                     })}
                   />
                   {errors.postCode && (
-                    <span className="error">{errors.postCode.message}</span>
+                    <span className="form__error">
+                      {errors.postCode.message}
+                    </span>
                   )}
                 </div>
               </div>
