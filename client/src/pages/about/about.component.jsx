@@ -247,7 +247,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/sample7.jpg" alt="" />
+            <img src="/images/chris_pickard.jpg" alt="" />
           </div>
           <ul className="social-icon">
             <li>
@@ -276,7 +276,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/sample8.jpg" alt="" />
+            <img src="/images/john_pickard.jpg" alt="" />
           </div>
           <ul className="social-icon">
             <li>
