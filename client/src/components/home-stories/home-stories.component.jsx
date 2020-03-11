@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./home-stories.styles.scss";
+import HomeStory from "./../../assets/images/stories/hollies-story/hollie_1.jpg";
+import MoreStories from "./../../assets/images/stories.jpg";
 
 const HomeStories = () => {
   return (
     <section className="stories-container">
       <div className="story left">
-        <img src="/images/nepal.jpg" alt="" />
+        <img src={HomeStory} alt="" />
         <h2 className="left">Hollies Story</h2>
         <span className="button-left-bottom">
           <Link to="/stories/hollies-story" className="btn btn-lg btn-primary">
@@ -15,7 +17,7 @@ const HomeStories = () => {
         </span>
       </div>
       <div className="story right">
-        <img src="/images/stories.jpg" alt="" />
+        <img src={MoreStories} alt="" />
         <div className="content">
           <h4>Our Goal</h4>
           <p>To help children all accross the Fylde</p>
