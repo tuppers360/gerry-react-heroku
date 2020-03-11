@@ -108,7 +108,7 @@ const ContactForm = () => {
             name="message"
             type="text"
             className={`form__input form__area ${
-              errors.email ? "form__input--error" : ""
+              errors.message ? "form__input--error" : ""
             }`}
             aria-describedby="Message Help text"
             placeholder="Enter your message"

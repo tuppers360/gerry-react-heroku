@@ -1,4 +1,14 @@
 import React from "react";
+import lee_wilson from './../../assets/images/lee_wilson.jpg';
+import chris_hardy from './../../assets/images/chris_hardy.jpg';
+import claire_goss from './../../assets/images/claire_goss.jpg';
+import gareth_tupman from './../../assets/images/sample4.jpg';
+import chris_pickard from './../../assets/images/chris_pickard.jpg';
+import john_pickard from './../../assets/images/john_pickard.jpg';
+import david_williamson from './../../assets/images/david_williamson.jpg';
+import susannah_clarke from './../../assets/images/sample2.jpg';
+import jacqueline_longdon from './../../assets/images/sample6.jpg';
+import sarah_longden from './../../assets/images/sample7.jpg';
 import "./about.styles.scss";
 
 export const About = () => (
@@ -62,7 +72,7 @@ export const About = () => (
         <h1>Meet the Trustees</h1>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/lee_wilson.jpg" alt="" />
+            <img src={lee_wilson} alt="" />
           </div>
           <ul className="social-icon">
             <li>
@@ -81,7 +91,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/chris_hardy.jpg" alt="" />
+            <img src={chris_hardy} alt="Chris Hardy" />
           </div>
           <ul className="social-icon">
             <li>
@@ -100,7 +110,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/claire_goss.jpg" alt="" />
+            <img src={claire_goss} alt="Claire van Deurs Goss" />
           </div>
           <ul className="social-icon">
             <li>
@@ -119,7 +129,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/david_williamson.jpg" alt="" />
+            <img src={david_williamson} alt="David Williamson" />
           </div>
           <div className="details">
             <h2>
@@ -131,7 +141,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/sample.jpg" alt="" />
+            <img src={gareth_tupman} alt="Gareth Tupman" />
           </div>
           <ul className="social-icon">
             <li>
@@ -160,7 +170,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/sample2.jpg" alt="" />
+            <img src={susannah_clarke} alt="Susannah Clarke" />
           </div>
           <ul className="social-icon">
             <li>
@@ -189,7 +199,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/sample5.jpg" alt="" />
+            <img src={jacqueline_longdon} alt="Jacqueline Longdon" />
           </div>
           <ul className="social-icon">
             <li>
@@ -218,7 +228,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/sample6.jpg" alt="" />
+            <img src={sarah_longden} alt="Sarah Longden" />
           </div>
           <ul className="social-icon">
             <li>
@@ -247,7 +257,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/chris_pickard.jpg" alt="" />
+            <img src={chris_pickard} alt="Christine Pickard" />
           </div>
           <ul className="social-icon">
             <li>
@@ -276,7 +286,7 @@ export const About = () => (
         </div>
         <div className="box">
           <div className="imgBx">
-            <img src="/images/john_pickard.jpg" alt="" />
+            <img src={john_pickard} alt="John Pickard" />
           </div>
           <ul className="social-icon">
             <li>

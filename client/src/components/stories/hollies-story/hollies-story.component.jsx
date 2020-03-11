@@ -1,12 +1,5 @@
 import React from "react";
-import HollieStory_1 from "./hollie_1.jpg";
-import HollieStory_2 from "./hollie_2.jpg";
-import HollieStory_3 from "./hollie_3.jpg";
-import HollieStory_4 from "./hollie_4.jpg";
-import HollieStory_5 from "./hollie_5.jpg";
-import HollieStory_6 from "./hollie_6.jpg";
-import HollieStory_7 from "./hollie_7.jpg";
-import HollieStory_8 from "./hollie_8.jpg";
+import HollieStory from "./../../../assets/images/stories/hollies-story/hollie_1.jpg";
 import "./hollies-story.styles.scss";
 
 export const HolliesStory = () => (
@@ -16,7 +9,7 @@ export const HolliesStory = () => (
         <h1>Hollies Story</h1>
       </div>
       <div className="story-container">
-        <img src={HollieStory_1} alt="Card" />
+        <img src={HollieStory} alt="Card" />
         <p>
           On the 7th July 2016, I along with a group of 12 other extremely
           excited Blackpool Sixth Form Students and 2 equally excited tutors set
@@ -52,40 +45,6 @@ export const HolliesStory = () => (
           goats to the Goddess Kali to appease her - the patience and dedication
           of the people at all these places was truly inspiring to us.
         </p>
-        {/*<section>
-          <div>
-            <div>
-              <div>
-                <img src={HollieStory_1} alt="Card" />
-                <div></div>
-              </div>
-              <div>
-                <img src={HollieStory_3} alt="Card" />
-                <div></div>
-              </div>
-              <div>
-                <img src={HollieStory_4} alt="Card" />
-                <div></div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div>
-              <div>
-                <img src={HollieStory_2} alt="Card" />
-                <div></div>
-              </div>
-              <div>
-                <img src={HollieStory_5} alt="Card" />
-                <div></div>
-              </div>
-              <div>
-                <img src={HollieStory_8} alt="Card" />
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </section>*/}
         <p>
           Monday 11th July was the day that we had all been waiting for, after a
           very early get up and a very bumpy drive we finally arrived at
@@ -174,24 +133,6 @@ export const HolliesStory = () => (
           with with patience and a positive attitude is applied then its effects
           will be felt far less.
         </p>
-        {/*<section>
-          <div>
-            <div>
-              <div>
-                <img src={HollieStory_6} alt="Card" />
-                <div></div>
-              </div>
-              <div>
-                <img src={HollieStory_7} alt="Card" />
-                <div></div>
-              </div>
-              <div>
-                <img src={HollieStory_7} alt="Card" />
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </section>*/}
       </div>
     </main>
   </React.Fragment>

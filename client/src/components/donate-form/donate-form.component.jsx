@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import GiftAidLogo from "../../assets/gift-aid-logo.png";
+import GiftAidLogo from "./../../assets/images/gift-aid-logo.png";
 import "./donate-form.styles.scss";
 
 const DonationForm = () => {
