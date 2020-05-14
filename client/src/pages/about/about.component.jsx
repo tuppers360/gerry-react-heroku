@@ -1,14 +1,14 @@
 import React from "react";
-import lee_wilson from './../../assets/images/lee_wilson.jpg';
-import chris_hardy from './../../assets/images/chris_hardy.jpg';
-import claire_goss from './../../assets/images/claire_goss.jpg';
-import gareth_tupman from './../../assets/images/sample4.jpg';
-import chris_pickard from './../../assets/images/chris_pickard.jpg';
-import john_pickard from './../../assets/images/john_pickard.jpg';
-import david_williamson from './../../assets/images/david_williamson.jpg';
-import susannah_clarke from './../../assets/images/sample2.jpg';
-import jacqueline_longdon from './../../assets/images/sample6.jpg';
-import sarah_longden from './../../assets/images/sample7.jpg';
+import lee_wilson from "./../../assets/images/lee_wilson.jpg";
+import chris_hardy from "./../../assets/images/chris_hardy.jpg";
+import claire_goss from "./../../assets/images/claire_goss.jpg";
+import gareth_tupman from "./../../assets/images/sample4.jpg";
+import chris_pickard from "./../../assets/images/chris_pickard.jpg";
+import john_pickard from "./../../assets/images/john_pickard.jpg";
+import david_williamson from "./../../assets/images/david_williamson.jpg";
+import susannah_clarke from "./../../assets/images/sample2.jpg";
+import jacqueline_longdon from "./../../assets/images/sample6.jpg";
+import sarah_longden from "./../../assets/images/sample7.jpg";
 import "./about.styles.scss";
 
 export const About = () => (
@@ -145,17 +145,12 @@ export const About = () => (
           </div>
           <ul className="social-icon">
             <li>
-              <a href="#">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
+              <a href="www.teitter.com/tuppers360">
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="www.instagram.com/">
                 <i className="fab fa-instagram"></i>
               </a>
             </li>
@@ -174,18 +169,8 @@ export const About = () => (
           </div>
           <ul className="social-icon">
             <li>
-              <a href="#">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
+              <a href="www.twitter.com">
                 <i className="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
               </a>
             </li>
           </ul>
@@ -203,18 +188,8 @@ export const About = () => (
           </div>
           <ul className="social-icon">
             <li>
-              <a href="#">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
+              <a href="www.twitter.com">
                 <i className="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
               </a>
             </li>
           </ul>
@@ -232,18 +207,8 @@ export const About = () => (
           </div>
           <ul className="social-icon">
             <li>
-              <a href="#">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
+              <a href="www.twitter.com">
                 <i className="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
               </a>
             </li>
           </ul>
@@ -261,17 +226,17 @@ export const About = () => (
           </div>
           <ul className="social-icon">
             <li>
-              <a href="#">
+              <a href="www.facebook.com">
                 <i className="fab fa-facebook-f"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="www.twitter.com">
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="www.instagram.com">
                 <i className="fab fa-instagram"></i>
               </a>
             </li>
@@ -290,17 +255,17 @@ export const About = () => (
           </div>
           <ul className="social-icon">
             <li>
-              <a href="#">
+              <a href="www.facebook.com">
                 <i className="fab fa-facebook-f"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="www.twitter.com">
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="www.instagram.com">
                 <i className="fab fa-instagram"></i>
               </a>
             </li>
