@@ -23,7 +23,7 @@ router.post("/api/sendgrid/contact", urlEncoder, (req, res) => {
             Message: ${data.body.address} ${data.body.postCode}`, // plain text body
       html: `<h3>From: ${data.body.name}</h3>
             <p>Email: ${data.body.email}</p>
-            <p>Message: ${data.body.message}</p>` // html body
+            <p>Message: ${data.body.message}</p>`, // html body
     };
     sgMail.send(msg);
 
@@ -55,7 +55,7 @@ router.post("/api/sendgrid/contact", urlEncoder, (req, res) => {
       FY6 9AF
       </address>
       <p><strong>Tel:</strong> 01253 590510</p>
-      <p><strong>Email:</strong> contactus@gerryrichardsontrust.org</p>` // html body
+      <p><strong>Email:</strong> contactus@gerryrichardsontrust.org</p>`, // html body
     };
     sgMail.send(msgClient);
     res.sendStatus(200);
@@ -88,7 +88,7 @@ router.post("/api/sendgrid/application", urlEncoder, (req, res) => {
             <p>DOB: ${data.body.dateOfBirth}</p> 
             <p>Email: ${data.body.email}</p> 
             <p>Address: ${data.body.address} ${data.body.postCode}</p> 
-            <p>Application: ${data.body.application}</p>` // html body
+            <p>Application: ${data.body.application}</p>`, // html body
     };
     sgMail.send(msg);
 
@@ -129,7 +129,7 @@ router.post("/api/sendgrid/application", urlEncoder, (req, res) => {
         FY6 9AF
         </address>
         <p><strong>Tel:</strong> 01253 590510</p>
-        <p><strong>Email:</strong> contactus@gerryrichardsontrust.org</p>` // html body
+        <p><strong>Email:</strong> contactus@gerryrichardsontrust.org</p>`, // html body
     };
     sgMail.send(msgClient);
     res.sendStatus(200);
@@ -167,7 +167,7 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
             <p>Email: ${data.body.email}</p> 
             <p>Address: <address>${data.body.address}<br/>${data.body.postCode}</address></p> 
             <p>Gift Aid: ${data.body.giftAid}</p>
-            <p>Donation: £${data.body.donation}</p>` // html body
+            <p>Donation: £${data.body.donation}</p>`, // html body
     };
     console.log({ msg });
     sgMail.send(msg);
@@ -178,7 +178,7 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
       subject: "Thank you for your donation", // Subject line
       text: `Hi ${data.body.firstName}\r\n
         Thank you for your donation to the Gerry Richardson Trust\r\n
-        Thank you for supporting the Gerry Richardson Trust work with your generous donation. Your valuable gift will help in our aim to support young people accross the Fylde.\r\n
+        Thank you for supporting the Gerry Richardson Trust work with your generous donation. Your valuable gift will help in our aim to support young people across the Fylde.\r\n
         We will contact you by email to let you know if you are successful or not.\r\n
         It means a lot to us and it means a great deal more to the people we help & support.\r\n
         ${
@@ -202,7 +202,7 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
         Email: contactus@gerryrichardsontrust.org`, // plain text body
       html: `<p>Hi ${data.body.firstName}</p>
         <strong>Thank you for your donation to the Gerry Richardson Trust</strong>
-        <p>Thank you for supporting the Gerry Richardson Trust work with your generous donation. Your valuable gift will help in our aim to support young people accross the Fylde.</p>
+        <p>Thank you for supporting the Gerry Richardson Trust work with your generous donation. Your valuable gift will help in our aim to support young people across the Fylde.</p>
         <p>It means a lot to us and it means a great deal more to the people we help & support.</p>
         ${
           data.body.giftAid
@@ -225,7 +225,7 @@ router.post("/api/sendgrid/donation", urlEncoder, (req, res) => {
         FY6 9AF
         </address>
         <p><strong>Tel:</strong> 01253 590510</p>
-        <p><strong>Email:</strong> contactus@gerryrichardsontrust.org</p>` // html body
+        <p><strong>Email:</strong> contactus@gerryrichardsontrust.org</p>`, // html body
     };
     sgMail.send(msgClient);
     res.sendStatus(200);

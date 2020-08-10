@@ -20,7 +20,7 @@ const HomeStories = () => {
         <img src={MoreStories} alt="" />
         <div className="content">
           <h4>Our Goal</h4>
-          <p>To help children all accross the Fylde</p>
+          <p>To help children all across the Fylde</p>
         </div>
         <span className="button-left-bottom">
           <Link to="/stories" className="btn btn-lg btn-primary">
